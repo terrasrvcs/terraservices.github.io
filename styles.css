@@ -42,19 +42,12 @@ a:hover {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
 }
 
-.logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  border: 2px solid #8a3a28; /* Rust Oxide */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+.logo-image {
+  height: 48px;   /* adjust up/down if you want it bigger/smaller */
+  width: auto;
+  display: block;
 }
 
 .main-nav {
