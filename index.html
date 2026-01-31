@@ -15,8 +15,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-  <img src="terra-services-logo.png" alt="Terra Services logo" class="logo-image" />
-</div>
+        <img src="terra-services-logo.png" alt="Terra Services logo" class="logo-image" />
+      </div>
       <nav class="main-nav">
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
@@ -111,25 +111,42 @@
         Share your idea, sketch, or problem. We’ll follow up to clarify details and outline a path from concept to creation.
       </p>
       <div class="contact-grid">
-        <form class="contact-form">
+
+        <!-- 🔌 LIVE FORMSPREE FORM -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/meeklajk"
+          method="POST"
+        >
+          <!-- Email subject -->
+          <input type="hidden" name="_subject" value="New Project Request — TERRA SERVICES" />
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
           <label>
             Name
             <input type="text" name="name" required />
           </label>
+
           <label>
             Email
             <input type="email" name="email" required />
           </label>
+
           <label>
             Project Overview
             <textarea
-              name="details"
+              name="message"
               rows="5"
               placeholder="What do you want to build, fix, or prototype?"
+              required
             ></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Send (placeholder only)</button>
+
+          <button type="submit" class="btn btn-primary">Send Request</button>
         </form>
+
         <div class="contact-info">
           <h3>Direct Contact</h3>
           <p><strong>Email:</strong> your.email@terraservices.org</p>
@@ -138,6 +155,7 @@
             Engineering-minded fabrication, prototyping, and problem solving for Boulder County and beyond.
           </p>
         </div>
+
       </div>
     </div>
   </section>
