@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TERRA SERVICES | Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Project gallery for Terra Services — fabrication, engineering, and prototypes."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html" aria-label="Return to home">
+          <img src="terra-services-logo.png" alt="Terra Services logo" class="logo-image" />
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="page-title">Gallery</h1>
+      <p class="section-intro">
+        A selection of fabrication, fixtures, prototypes, and builds. New work gets added regularly.
+      </p>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <figure class="gallery-tile">
+          <img src="images/gallery/weld-01.jpg" alt="Custom welded bracket" loading="lazy" decoding="async" />
+          <figcaption>Custom welded bracket</figcaption>
+        </figure>
+
+        <figure class="gallery-tile">
+          <img src="images/gallery/fixture-01.jpg" alt="Fabrication fixture" loading="lazy" decoding="async" />
+          <figcaption>Fabrication fixture</figcaption>
+        </figure>
+
+        <figure class="gallery-tile">
+          <img src="images/gallery/prototype-01.jpg" alt="Prototype component" loading="lazy" decoding="async" />
+          <figcaption>Prototype component</figcaption>
+        </figure>
+
+        <figure class="gallery-tile">
+          <img src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" loading="lazy" decoding="async" />
+          <figcaption>Work in progress</figcaption>
+        </figure>
+      </div>
+
+      <p class="gallery-note">
+        To add photos: drop them in <code>images/gallery/</code> and duplicate a tile above.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>TERRA SERVICES</strong>
+        <p>From concept to creation.</p>
+      </div>
+      <div class="footer-note">
+        <p>Fabrication ◦ Engineering ◦ Ideas made real</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple Lightbox -->
+  <script>
+    (function () {
+      const grid = document.getElementById("galleryGrid");
+      if (!grid) return;
+
+      const overlay = document.createElement("div");
+      overlay.className = "lightbox";
+      overlay.innerHTML = `
+        <div class="lightbox-inner" role="dialog" aria-modal="true">
+          <button class="lightbox-close" aria-label="Close">×</button>
+          <img class="lightbox-img" alt="">
+          <div class="lightbox-caption"></div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      const imgEl = overlay.querySelector(".lightbox-img");
+      const capEl = overlay.querySelector(".lightbox-caption");
+      const closeBtn = overlay.querySelector(".lightbox-close");
+
+      function openLightbox(src, alt, caption) {
+        imgEl.src = src;
+        imgEl.alt = alt || "";
+        capEl.textContent = caption || alt || "";
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove("open");
+        imgEl.src = "";
+        document.body.style.overflow = "";
+      }
+
+      grid.addEventListener("click", (e) => {
+        const img = e.target.closest("img");
+        if (!img) return;
+        const fig = img.closest("figure");
+        const caption = fig ? (fig.querySelector("figcaption")?.textContent || "") : "";
+        openLightbox(img.src, img.alt, caption);
+      });
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeLightbox();
+      });
+
+      closeBtn.addEventListener("click", closeLightbox);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+    })();
+  </script>
+</body>
+</html>
