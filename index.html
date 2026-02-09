@@ -22,6 +22,7 @@
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="gallery.html">Gallery</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -44,13 +45,13 @@
         </div>
       </div>
 
-      <!-- HERO GALLERY -->
+      <!-- HERO GALLERY (4 WINDOWS THAT CYCLE) -->
       <div class="hero-media">
         <div class="hero-gallery">
-          <img src="images/gallery/weld-01.jpg" alt="Custom welded bracket" />
-          <img src="images/gallery/fixture-01.jpg" alt="Fabrication fixture" />
-          <img src="images/gallery/prototype-01.jpg" alt="Prototype component" />
-          <img src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" />
+          <img id="heroImg0" src="images/gallery/weld-01.jpg" alt="Custom welded bracket" loading="lazy" decoding="async" />
+          <img id="heroImg1" src="images/gallery/fixture-01.jpg" alt="Fabrication fixture" loading="lazy" decoding="async" />
+          <img id="heroImg2" src="images/gallery/prototype-01.jpg" alt="Prototype component" loading="lazy" decoding="async" />
+          <img id="heroImg3" src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -194,6 +195,70 @@
     </div>
   </footer>
 
+  <!-- HERO GALLERY CYCLER -->
+  <script>
+    (function () {
+      // Add as many images as you want here.
+      // The first 4 seed the 4 windows; then it rotates.
+      const heroImages = [
+        { src: "images/gallery/weld-01.jpg", alt: "Custom welded bracket" },
+        { src: "images/gallery/fixture-01.jpg", alt: "Fabrication fixture" },
+        { src: "images/gallery/prototype-01.jpg", alt: "Prototype component" },
+        { src: "images/gallery/shop-01.jpg", alt: "Work in progress in the shop" },
+
+        // Add new images below this line:
+        // { src: "images/gallery/new-01.jpg", alt: "Describe it" },
+      ];
+
+      const slots = [
+        document.getElementById("heroImg0"),
+        document.getElementById("heroImg1"),
+        document.getElementById("heroImg2"),
+        document.getElementById("heroImg3"),
+      ].filter(Boolean);
+
+      if (slots.length !== 4 || heroImages.length < 4) return;
+
+      const reduceMotion =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      let nextIndex = 4 % heroImages.length;
+      let slotIndex = 0;
+
+      function preload(src) {
+        const img = new Image();
+        img.src = src;
+      }
+
+      for (let i = 0; i < Math.min(heroImages.length, 8); i++) preload(heroImages[i].src);
+
+      function swapOne() {
+        const slot = slots[slotIndex];
+        const next = heroImages[nextIndex];
+
+        preload(next.src);
+
+        if (!reduceMotion) slot.classList.add("is-fading");
+
+        const doSwap = () => {
+          slot.src = next.src;
+          slot.alt = next.alt || "Gallery image";
+          if (!reduceMotion) slot.classList.remove("is-fading");
+        };
+
+        if (reduceMotion) setTimeout(doSwap, 0);
+        else setTimeout(doSwap, 220);
+
+        slotIndex = (slotIndex + 1) % slots.length;
+        nextIndex = (nextIndex + 1) % heroImages.length;
+      }
+
+      const INTERVAL_MS = 3500;
+      setInterval(swapOne, INTERVAL_MS);
+    })();
+  </script>
+
   <!-- INLINE FORM SUBMIT SCRIPT -->
   <script>
     (function () {
@@ -219,7 +284,6 @@
         btn.textContent = "Sending…";
 
         try {
-          // Populate reply-to (helps many form handlers route replies properly)
           const emailField = form.querySelector("input[name='email']");
           const replyToField = form.querySelector("input[name='_replyto']");
           if (emailField && replyToField) replyToField.value = emailField.value || "";
@@ -234,14 +298,13 @@
             form.reset();
             showStatus("Sent. I’ll follow up shortly.", true);
           } else {
-            // Try to surface Formspree’s error message if present
             let msg = "Something went wrong. Please try again or email alex@terraservices.org directly.";
             try {
               const data = await res.json();
               if (data && data.errors && data.errors.length) {
                 msg = data.errors.map(e => e.message).join(" ");
               }
-            } catch { /* ignore JSON parse issues */ }
+            } catch {}
             showStatus(msg, false);
           }
         } catch {
