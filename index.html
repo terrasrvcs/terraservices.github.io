@@ -124,20 +124,21 @@
         <form
           id="contactForm"
           class="contact-form"
-          action="https://formspree.io/f/meeklajk"
+          action="https://formspree.io/f/xojnvjjo"
           method="POST"
         >
           <input type="hidden" name="_subject" value="New Project Request — TERRA SERVICES" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_replyto" value="" />
 
           <label>
             Name
-            <input type="text" name="name" required />
+            <input type="text" name="name" autocomplete="name" required />
           </label>
 
           <label>
             Email
-            <input type="email" name="email" required />
+            <input type="email" name="email" autocomplete="email" required />
           </label>
 
           <label>
@@ -204,10 +205,8 @@
       function showStatus(message, ok) {
         statusEl.textContent = message;
         statusEl.style.display = "block";
-        statusEl.style.border =
-          ok ? "1px solid #2e7d32" : "1px solid #b00020";
-        statusEl.style.background =
-          ok ? "rgba(46,125,50,0.08)" : "rgba(176,0,32,0.08)";
+        statusEl.style.border = ok ? "1px solid #2e7d32" : "1px solid #b00020";
+        statusEl.style.background = ok ? "rgba(46,125,50,0.08)" : "rgba(176,0,32,0.08)";
       }
 
       form.addEventListener("submit", async function (e) {
@@ -220,6 +219,11 @@
         btn.textContent = "Sending…";
 
         try {
+          // Populate reply-to (helps many form handlers route replies properly)
+          const emailField = form.querySelector("input[name='email']");
+          const replyToField = form.querySelector("input[name='_replyto']");
+          if (emailField && replyToField) replyToField.value = emailField.value || "";
+
           const res = await fetch(form.action, {
             method: "POST",
             body: new FormData(form),
@@ -230,10 +234,18 @@
             form.reset();
             showStatus("Sent. I’ll follow up shortly.", true);
           } else {
-            showStatus("Something went wrong. Please try again.", false);
+            // Try to surface Formspree’s error message if present
+            let msg = "Something went wrong. Please try again or email alex@terraservices.org directly.";
+            try {
+              const data = await res.json();
+              if (data && data.errors && data.errors.length) {
+                msg = data.errors.map(e => e.message).join(" ");
+              }
+            } catch { /* ignore JSON parse issues */ }
+            showStatus(msg, false);
           }
         } catch {
-          showStatus("Network error. Please email directly.", false);
+          showStatus("Network error. Please email alex@terraservices.org directly.", false);
         } finally {
           btn.disabled = false;
           btn.textContent = originalText;
