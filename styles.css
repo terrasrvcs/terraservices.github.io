@@ -371,3 +371,25 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-gallery img { height: 160px; }
   .gallery-tile img { height: 210px; }
 }
+/* --- Gallery tile slideshow --- */
+.gallery-tile .tile-slides {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* keeps tiles consistent even with few images */
+  overflow: hidden;
+  border-radius: 12px; /* adjust if your design uses a different radius */
+}
+
+.gallery-tile .tile-slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 250ms ease; /* short, less weird */
+}
+
+.gallery-tile .tile-slides img.is-active {
+  opacity: 1;
+}
