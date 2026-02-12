@@ -38,29 +38,48 @@
       </p>
 
       <div class="gallery-grid" id="galleryGrid">
-        <figure class="gallery-tile">
-          <img src="images/gallery/weld-01.jpg" alt="Custom welded bracket" loading="lazy" decoding="async" />
+
+        <!-- TILE: WELDING (add more <img> inside tile-slides to cycle) -->
+        <figure class="gallery-tile" data-cycle="true" data-interval="3500">
+          <div class="tile-slides">
+            <img src="images/gallery/weld-01.jpg" alt="Custom welded bracket" loading="lazy" decoding="async" />
+            <!-- Add more, example:
+            <img src="images/gallery/weld-02.jpg" alt="Custom welded bracket — angle view" loading="lazy" decoding="async" />
+            -->
+          </div>
           <figcaption>Custom welded bracket</figcaption>
         </figure>
 
-        <figure class="gallery-tile">
-          <img src="images/gallery/fixture-01.jpg" alt="Fabrication fixture" loading="lazy" decoding="async" />
+        <!-- TILE: FIXTURE (swap image whenever you're ready) -->
+        <figure class="gallery-tile" data-cycle="true" data-interval="3500">
+          <div class="tile-slides">
+            <img src="images/gallery/fixture-01.jpg" alt="Fabrication fixture" loading="lazy" decoding="async" />
+            <!-- Add more here to cycle -->
+          </div>
           <figcaption>Fabrication fixture</figcaption>
         </figure>
 
-        <figure class="gallery-tile">
-          <img src="images/gallery/prototype-01.jpg" alt="Prototype component" loading="lazy" decoding="async" />
+        <!-- TILE: PROTOTYPE -->
+        <figure class="gallery-tile" data-cycle="true" data-interval="3500">
+          <div class="tile-slides">
+            <img src="images/gallery/prototype-01.jpg" alt="Prototype component" loading="lazy" decoding="async" />
+          </div>
           <figcaption>Prototype component</figcaption>
         </figure>
 
-        <figure class="gallery-tile">
-          <img src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" loading="lazy" decoding="async" />
+        <!-- TILE: SHOP -->
+        <figure class="gallery-tile" data-cycle="true" data-interval="3500">
+          <div class="tile-slides">
+            <img src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" loading="lazy" decoding="async" />
+          </div>
           <figcaption>Work in progress</figcaption>
         </figure>
+
       </div>
 
       <p class="gallery-note">
-        To add photos: drop them in <code>images/gallery/</code> and duplicate a tile above.
+        To add photos: upload them to <code>images/gallery/</code>, then duplicate an existing tile or add more
+        <code>&lt;img&gt;</code> tags inside a tile to make it cycle.
       </p>
     </div>
   </main>
@@ -77,9 +96,9 @@
     </div>
   </footer>
 
-  <!-- Simple Lightbox -->
   <script>
     (function () {
+      // ---------- Lightbox ----------
       const grid = document.getElementById("galleryGrid");
       if (!grid) return;
 
@@ -112,12 +131,16 @@
         document.body.style.overflow = "";
       }
 
+      // When clicking a tile, open the currently visible slide
       grid.addEventListener("click", (e) => {
-        const img = e.target.closest("img");
-        if (!img) return;
-        const fig = img.closest("figure");
-        const caption = fig ? (fig.querySelector("figcaption")?.textContent || "") : "";
-        openLightbox(img.src, img.alt, caption);
+        const tile = e.target.closest(".gallery-tile");
+        if (!tile) return;
+
+        const visible = tile.querySelector(".tile-slides img.is-active") || tile.querySelector(".tile-slides img");
+        if (!visible) return;
+
+        const caption = tile.querySelector("figcaption")?.textContent || "";
+        openLightbox(visible.src, visible.alt, caption);
       });
 
       overlay.addEventListener("click", (e) => {
@@ -128,6 +151,32 @@
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeLightbox();
+      });
+
+      // ---------- Per-tile cycling ----------
+      const tiles = Array.from(document.querySelectorAll(".gallery-tile[data-cycle='true']"));
+
+      tiles.forEach((tile) => {
+        const slidesWrap = tile.querySelector(".tile-slides");
+        if (!slidesWrap) return;
+
+        const imgs = Array.from(slidesWrap.querySelectorAll("img"));
+        if (imgs.length === 0) return;
+
+        // Make first active
+        imgs.forEach((img, i) => img.classList.toggle("is-active", i === 0));
+
+        // If only 1 image, do nothing (prevents weird fade)
+        if (imgs.length === 1) return;
+
+        const interval = Math.max(1500, Number(tile.getAttribute("data-interval")) || 3500);
+        let idx = 0;
+
+        setInterval(() => {
+          imgs[idx].classList.remove("is-active");
+          idx = (idx + 1) % imgs.length;
+          imgs[idx].classList.add("is-active");
+        }, interval);
       });
     })();
   </script>
