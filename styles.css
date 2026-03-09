@@ -197,6 +197,21 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 12px;
 }
 
+/* ===== Shop ===== */
+.shop-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.shop-product-item {
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
 /* ===== Contact ===== */
 .contact-grid {
   margin-top: 16px;
@@ -366,18 +381,31 @@ img { max-width: 100%; height: auto; display: block; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+@media (max-width: 700px) {
+  .shop-products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop-product-item {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
 @media (max-width: 520px) {
   .gallery-grid { grid-template-columns: 1fr; }
   .hero-gallery img { height: 160px; }
   .gallery-tile img { height: 210px; }
 }
+
 /* --- Gallery tile slideshow --- */
 .gallery-tile .tile-slides {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3; /* keeps tiles consistent even with few images */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 12px; /* adjust if your design uses a different radius */
+  border-radius: 12px;
 }
 
 .gallery-tile .tile-slides img {
@@ -387,7 +415,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 250ms ease; /* short, less weird */
+  transition: opacity 250ms ease;
 }
 
 .gallery-tile .tile-slides img.is-active {
