@@ -206,7 +206,7 @@ img {
 /* ===== Shop ===== */
 .shop-products {
   display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 2rem;
   align-items: start;
   margin-top: 2rem;
@@ -216,7 +216,6 @@ img {
   width: 100%;
   min-width: 0;
 }
-
 /* ===== Contact ===== */
 .contact-grid {
   margin-top: 16px;
