@@ -216,6 +216,15 @@ img {
   width: 100%;
   min-width: 0;
 }
+
+/* Optional: center the 5th product on the second row */
+.shop-products .shop-product-item:nth-child(5) {
+  grid-column: 2 / 4;
+  justify-self: center;
+  width: 100%;
+  max-width: 320px;
+}
+
 /* ===== Contact ===== */
 .contact-grid {
   margin-top: 16px;
@@ -384,6 +393,12 @@ img {
 
   .shop-products {
     grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+
+  .shop-products .shop-product-item:nth-child(5) {
+    grid-column: auto;
+    justify-self: stretch;
+    max-width: none;
   }
 }
 
