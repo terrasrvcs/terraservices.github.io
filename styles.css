@@ -130,7 +130,7 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #ffffff;
   background: rgba(0, 0, 0, 0.88);
 }
 
@@ -244,10 +244,180 @@ a {
 }
 
 /* ===== About ===== */
-.about-inner {
+.about {
+  background:
+    radial-gradient(circle at top left, rgba(111, 78, 55, 0.08), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(58, 74, 61, 0.12), transparent 34%),
+    linear-gradient(180deg, #f7f5f1 0%, #f2eee7 100%);
+  color: #1f241f;
+}
+
+.about-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(58, 74, 61, 0.12);
+  border-radius: 28px;
+  padding: 3rem;
+  box-shadow:
+    0 10px 30px rgba(31, 36, 31, 0.06),
+    0 30px 70px rgba(31, 36, 31, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.about-header {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  margin: 0 0 0.9rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: rgba(92, 110, 93, 0.1);
+  color: #445246;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-header h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #20261f;
+}
+
+.about-lead {
+  margin: 1rem 0 0;
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #4d5a4f;
+  font-weight: 500;
+}
+
+.about-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.85fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-main p,
+.about-values-text p {
+  margin: 0 0 1.35rem;
+  font-size: 1.06rem;
+  line-height: 1.95;
+  color: #313a32;
+}
+
+.about-main p:last-child,
+.about-values-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-side {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.about-card {
+  background: #fcfbf8;
+  border: 1px solid rgba(58, 74, 61, 0.12);
+  border-radius: 22px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 28px rgba(31, 36, 31, 0.05);
+}
+
+.about-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: #243024;
+}
+
+.about-card h4 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #536454;
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4e5a50;
+}
+
+.about-card-accent {
+  background: linear-gradient(180deg, #36463b 0%, #2c382f 100%);
+  color: #f4f1ea;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.about-card-accent h4 {
+  color: #f2ede3;
+}
+
+.about-points {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.about-points li {
+  margin-bottom: 0.85rem;
+  line-height: 1.75;
+  color: #edf1ea;
+}
+
+.about-points li:last-child {
+  margin-bottom: 0;
+}
+
+.about-values {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(58, 74, 61, 0.12);
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 260px;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.about-quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
+  padding: 1.8rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(64, 83, 67, 0.96), rgba(38, 48, 40, 0.98));
+  box-shadow: 0 18px 40px rgba(31, 36, 31, 0.14);
+  text-align: left;
+}
+
+.about-quote span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.8);
+}
+
+.about-quote strong {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: -0.03em;
 }
 
 /* ===== Shop ===== */
@@ -460,6 +630,19 @@ a {
   .shop-products {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .about-shell {
+    padding: 2.2rem;
+  }
+
+  .about-grid,
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .about-quote {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 860px) {
@@ -481,6 +664,48 @@ a {
 
   .shop-products {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-shell {
+    padding: 1.45rem;
+    border-radius: 20px;
+  }
+
+  .about-header {
+    margin-bottom: 1.8rem;
+  }
+
+  .about-header h2 {
+    font-size: 2rem;
+  }
+
+  .about-lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .about-main p,
+  .about-values-text p,
+  .about-card p,
+  .about-points li {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .about-card {
+    padding: 1.2rem;
+    border-radius: 18px;
+  }
+
+  .about-quote {
+    padding: 1.35rem;
+    border-radius: 18px;
+  }
+
+  .about-quote strong {
+    font-size: 2.2rem;
   }
 }
 
