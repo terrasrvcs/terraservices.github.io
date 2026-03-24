@@ -7,9 +7,12 @@
   --border: rgba(0, 0, 0, 0.1);
   --border-strong: rgba(0, 0, 0, 0.14);
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 14px 40px rgba(31, 36, 31, 0.08);
+  --shadow-large: 0 24px 60px rgba(31, 36, 31, 0.12);
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 18px;
+  --radius-xl: 28px;
   --radius-pill: 999px;
   --container: 1100px;
   --section-pad: 56px;
@@ -204,7 +207,11 @@ a {
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.55);
   box-shadow: var(--shadow);
-  transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease, transform 0.25s ease;
+}
+
+.hero-gallery img:hover {
+  transform: translateY(-2px);
 }
 
 .hero-gallery img.is-fading {
@@ -255,13 +262,11 @@ a {
 .about-shell {
   max-width: 1120px;
   margin: 0 auto;
+  padding: 3rem;
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(58, 74, 61, 0.12);
-  border-radius: 28px;
-  padding: 3rem;
-  box-shadow:
-    0 10px 30px rgba(31, 36, 31, 0.06),
-    0 30px 70px rgba(31, 36, 31, 0.08);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft), var(--shadow-large);
   backdrop-filter: blur(8px);
 }
 
@@ -326,10 +331,10 @@ a {
 }
 
 .about-card {
+  padding: 1.5rem;
   background: #fcfbf8;
   border: 1px solid rgba(58, 74, 61, 0.12);
   border-radius: 22px;
-  padding: 1.5rem;
   box-shadow: 0 12px 28px rgba(31, 36, 31, 0.05);
 }
 
@@ -382,13 +387,13 @@ a {
 }
 
 .about-values {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(58, 74, 61, 0.12);
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) 260px;
   gap: 1.8rem;
   align-items: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(58, 74, 61, 0.12);
 }
 
 .about-quote {
