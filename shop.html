@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TERRA SERVICES | Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Shop official Terra Services merchandise and support the mission."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html" aria-label="Return to home">
+          <img src="terra-services-logo.png" alt="Terra Services logo" class="logo-image" />
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE INTRO -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Shop Terra Services</h1>
+        <p class="section-intro">
+          Support the mission with official Terra Services merchandise. More items,
+          product graphics, and better organization can be added here later as the shop grows.
+        </p>
+
+        <div class="shop-panel">
+          <h3>Official merch</h3>
+          <p>
+            Browse current Terra Services products below. Items are loaded directly
+            through the Shopify storefront integration.
+          </p>
+        </div>
+
+        <div class="shop-products">
+          <div class="shop-product-item">
+            <div id="product-component-1773022866079"></div>
+          </div>
+
+          <div class="shop-product-item">
+            <div id="product-component-1773274943034"></div>
+          </div>
+
+          <div class="shop-product-item">
+            <div id="product-component-1773273428050"></div>
+          </div>
+
+          <div class="shop-product-item">
+            <div id="product-component-1773282666476"></div>
+          </div>
+
+          <div class="shop-product-item">
+            <div id="product-component-1773287326856"></div>
+          </div>
+
+          <div class="shop-product-item">
+            <div id="product-component-1773288557942"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>TERRA SERVICES</strong>
+        <p>From concept to creation.</p>
+      </div>
+      <div class="footer-note">
+        <p>Fabrication ◦ Engineering ◦ Ideas made real</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+      const moneyFormat = "%24%7B%7Bamount%7D%7D";
+
+      const products = [
+        { id: "9125330714874", nodeId: "product-component-1773022866079" },
+        { id: "9125617598714", nodeId: "product-component-1773274943034" },
+        { id: "9131117019386", nodeId: "product-component-1773273428050" },
+        { id: "9131124850938", nodeId: "product-component-1773282666476" },
+        { id: "9131129733370", nodeId: "product-component-1773287326856" },
+        { id: "9126615810298", nodeId: "product-component-1773288557942", variant: "tumbler" }
+      ];
+
+      function createScript() {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = scriptURL;
+        script.onload = initShopify;
+        (document.head || document.body).appendChild(script);
+      }
+
+      function baseOptions() {
+        return {
+          product: {
+            styles: {
+              product: {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  width: "100%",
+                  "margin-left": "0",
+                  "margin-right": "0",
+                  "margin-bottom": "0",
+                  "min-width": "0"
+                }
+              }
+            },
+            text: {
+              button: "Add to cart"
+            }
+          },
+          modalProduct: {
+            contents: {
+              img: false,
+              imgWithCarousel: true,
+              button: false,
+              buttonWithQuantity: true
+            },
+            styles: {
+              product: {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              }
+            },
+            text: {
+              button: "Add to cart"
+            }
+          },
+          option: {},
+          cart: {
+            text: {
+              total: "Subtotal",
+              button: "Checkout"
+            }
+          },
+          toggle: {}
+        };
+      }
+
+      function tumblerOptions() {
+        const options = baseOptions();
+        options.product.styles.product["@media (min-width: 601px)"] = {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        };
+        options.productSet = {
+          styles: {
+            products: {
+              "@media (min-width: 601px)": {
+                "margin-left": "-20px"
+              }
+            }
+          }
+        };
+        return options;
+      }
+
+      function optionsFor(product) {
+        return product.variant === "tumbler" ? tumblerOptions() : baseOptions();
+      }
+
+      function buildProduct(ui, product) {
+        const node = document.getElementById(product.nodeId);
+        if (!node) return;
+
+        ui.createComponent("product", {
+          id: product.id,
+          node,
+          moneyFormat,
+          options: optionsFor(product)
+        });
+      }
+
+      function initShopify() {
+        const client = ShopifyBuy.buildClient({
+          domain: "wgebvh-ew.myshopify.com",
+          storefrontAccessToken: "880a62a42e7c57527eaaad203e878f88"
+        });
+
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          products.forEach(function (product) {
+            buildProduct(ui, product);
+          });
+        });
+      }
+
+      if (window.ShopifyBuy && window.ShopifyBuy.UI) {
+        initShopify();
+      } else {
+        createScript();
+      }
+    })();
+  </script>
+</body>
+</html>
