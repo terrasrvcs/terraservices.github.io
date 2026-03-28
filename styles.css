@@ -34,6 +34,7 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 img {
@@ -86,6 +87,15 @@ a {
   padding-block: 14px;
 }
 
+.logo {
+  flex-shrink: 0;
+}
+
+.logo a {
+  display: inline-flex;
+  align-items: center;
+}
+
 .logo-image {
   width: auto;
   height: 44px;
@@ -95,17 +105,20 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  align-items: center;
 }
 
 .main-nav a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 10px;
+  min-height: 42px;
+  padding: 8px 12px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+  text-align: center;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -124,11 +137,13 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 46px;
   padding: 10px 14px;
   border: 1px solid var(--border-strong);
   border-radius: 14px;
   font-weight: 800;
   text-decoration: none;
+  text-align: center;
   transition: transform 0.08s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -719,12 +734,36 @@ a {
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero {
+    padding-top: 42px;
+  }
+
+  .hero-media {
+    order: -1;
+  }
 }
 
 @media (max-width: 700px) {
   .header-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .main-nav a {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 120px;
   }
 
   .shop-products {
@@ -733,6 +772,47 @@ a {
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding-block: 48px;
+  }
+
+  .container {
+    padding-inline: 14px;
+  }
+
+  .hero {
+    padding: 38px 0 22px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(28px, 9vw, 38px);
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-gallery {
+    gap: 10px;
+  }
+
+  .hero-gallery img {
+    height: 150px;
+  }
+
   .about-shell {
     padding: 1.45rem;
     border-radius: 20px;
@@ -772,11 +852,42 @@ a {
   .about-quote strong {
     font-size: 2.2rem;
   }
+
+  .contact-form,
+  .contact-info,
+  .service-panel,
+  .shop-panel {
+    padding: 14px;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
 }
 
 @media (max-width: 520px) {
   .section {
-    padding-block: 44px;
+    padding-block: 40px;
+  }
+
+  .main-nav {
+    gap: 8px;
+  }
+
+  .main-nav a {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+  }
+
+  .page-title {
+    font-size: clamp(24px, 8vw, 32px);
   }
 
   .gallery-grid {
@@ -784,11 +895,38 @@ a {
   }
 
   .hero-gallery img {
-    height: 160px;
+    height: 135px;
   }
 
   .gallery-tile > img {
     height: 210px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo-image {
+    height: 38px;
+  }
+
+  .hero-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-gallery img {
+    height: 180px;
+  }
+
+  .about-eyebrow {
+    font-size: 0.76rem;
+  }
+
+  .lightbox-caption {
+    font-size: 13px;
   }
 }
 
