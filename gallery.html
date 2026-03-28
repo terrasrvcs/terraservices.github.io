@@ -20,10 +20,12 @@
           <img src="terra-services-logo.png" alt="Terra Services logo" class="logo-image" />
         </a>
       </div>
+
       <nav class="main-nav">
-        <a href="index.html#hero">Home</a>
-        <a href="index.html#services">Services</a>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
         <a href="index.html#about">About</a>
+        <a href="shop.html">Shop</a>
         <a href="gallery.html" aria-current="page">Gallery</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -38,45 +40,34 @@
       </p>
 
       <div class="gallery-grid" id="galleryGrid">
-
-        <!-- TILE: WELDING (add more <img> inside tile-slides to cycle) -->
         <figure class="gallery-tile" data-cycle="true" data-interval="3500">
           <div class="tile-slides">
             <img src="images/gallery/weld-01.jpg" alt="Custom welded bracket" loading="lazy" decoding="async" />
-            <!-- Add more, example:
-            <img src="images/gallery/weld-02.jpg" alt="Custom welded bracket — angle view" loading="lazy" decoding="async" />
-            -->
           </div>
           <figcaption>Custom welding</figcaption>
         </figure>
 
-        <!-- TILE: FIXTURE (swap image whenever you're ready) -->
         <figure class="gallery-tile" data-cycle="true" data-interval="3500">
           <div class="tile-slides">
             <img src="images/gallery/fixture-01.jpg" alt="Fabrication fixture" loading="lazy" decoding="async" />
-            <!-- Add more here to cycle -->
           </div>
           <figcaption>Fixtures and jigs</figcaption>
         </figure>
 
-        <!-- TILE: PROTOTYPE -->
         <figure class="gallery-tile" data-cycle="true" data-interval="3500">
           <div class="tile-slides">
             <img src="images/gallery/prototype-01.jpg" alt="Prototype component" loading="lazy" decoding="async" />
           </div>
-          <figcaption>Prototypes and R&D</figcaption>
+          <figcaption>Prototypes and R&amp;D</figcaption>
         </figure>
 
-        <!-- TILE: SHOP -->
         <figure class="gallery-tile" data-cycle="true" data-interval="3500">
           <div class="tile-slides">
             <img src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" loading="lazy" decoding="async" />
           </div>
           <figcaption>What we are doing and what we have done</figcaption>
         </figure>
-
       </div>
-
     </div>
   </main>
 
@@ -94,7 +85,6 @@
 
   <script>
     (function () {
-      // ---------- Lightbox ----------
       const grid = document.getElementById("galleryGrid");
       if (!grid) return;
 
@@ -127,12 +117,14 @@
         document.body.style.overflow = "";
       }
 
-      // When clicking a tile, open the currently visible slide
       grid.addEventListener("click", (e) => {
         const tile = e.target.closest(".gallery-tile");
         if (!tile) return;
 
-        const visible = tile.querySelector(".tile-slides img.is-active") || tile.querySelector(".tile-slides img");
+        const visible =
+          tile.querySelector(".tile-slides img.is-active") ||
+          tile.querySelector(".tile-slides img");
+
         if (!visible) return;
 
         const caption = tile.querySelector("figcaption")?.textContent || "";
@@ -149,7 +141,6 @@
         if (e.key === "Escape") closeLightbox();
       });
 
-      // ---------- Per-tile cycling ----------
       const tiles = Array.from(document.querySelectorAll(".gallery-tile[data-cycle='true']"));
 
       tiles.forEach((tile) => {
@@ -159,10 +150,8 @@
         const imgs = Array.from(slidesWrap.querySelectorAll("img"));
         if (imgs.length === 0) return;
 
-        // Make first active
         imgs.forEach((img, i) => img.classList.toggle("is-active", i === 0));
 
-        // If only 1 image, do nothing (prevents weird fade)
         if (imgs.length === 1) return;
 
         const interval = Math.max(1500, Number(tile.getAttribute("data-interval")) || 3500);
