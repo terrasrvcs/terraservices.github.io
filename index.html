@@ -18,14 +18,15 @@
       <div class="logo">
         <img src="terra-services-logo.png" alt="Terra Services logo" class="logo-image" />
       </div>
-     <nav class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="index.html#about">About</a>
-  <a href="shop.html">Shop</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="index.html#contact">Contact</a>
-</nav>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -40,9 +41,10 @@
         <p class="hero-sub">
           Broad fabrication, practical engineering, and real-world problem solving — from one-off prototypes to durable fixes.
         </p>
+
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Request a Project</a>
-          <a href="#services" class="btn btn-outline">Explore Services</a>
+          <a href="services.html" class="btn btn-outline">Explore Services</a>
         </div>
       </div>
 
@@ -53,43 +55,6 @@
           <img id="heroImg2" src="images/gallery/prototype-01.jpg" alt="Prototype component" loading="lazy" decoding="async" />
           <img id="heroImg3" src="images/gallery/shop-01.jpg" alt="Work in progress in the shop" loading="lazy" decoding="async" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section services">
-    <div class="container">
-      <h2>What Terra Services Does</h2>
-      <p class="section-intro">
-        We help you move from “idea on a napkin” to “object in your hands” with a mix of fabrication, engineering, and iteration.
-      </p>
-
-      <div class="card-grid">
-        <article class="card">
-          <h3>Fabrication & Metalwork</h3>
-          <p>
-            Cutting, welding, and building structures, brackets, frames, fixtures, and custom hardware for real-world use.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Engineering & Design</h3>
-          <p>
-            Turning problems into designs: refining concepts, planning builds, and thinking through loads, fit, and function.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Prototyping & Iteration</h3>
-          <p>
-            Early-stage prototypes, test parts, and one-off solutions to validate ideas before full production.
-          </p>
-        </article>
-        <article class="card">
-          <h3>3D Printing & CNC</h3>
-          <p>
-            Functional prints, jigs, organizers, and precision-cut components that support your projects and workflows.
-          </p>
-        </article>
       </div>
     </div>
   </section>
@@ -144,7 +109,7 @@
 
           <aside class="about-side">
             <div class="about-card">
-              <h3>Crafted with Purpose.<br>Guided by Conscience.</h3>
+              <h3>Crafted with Purpose.<br />Guided by Conscience.</h3>
               <p>
                 That is more than a slogan. It is the standard.
               </p>
@@ -195,153 +160,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- SHOP -->
-  <section id="shop" class="section shop">
-    <div class="container">
-      <h2>Shop Terra Services</h2>
-      <p class="section-intro">
-        Support the mission with official Terra Services merch.
-      </p>
-
-      <div class="shop-products">
-        <div class="shop-product-item"><div id="product-component-1773022866079"></div></div>
-        <div class="shop-product-item"><div id="product-component-1773274943034"></div></div>
-        <div class="shop-product-item"><div id="product-component-1773273428050"></div></div>
-        <div class="shop-product-item"><div id="product-component-1773282666476"></div></div>
-        <div class="shop-product-item"><div id="product-component-1773287326856"></div></div>
-        <div class="shop-product-item"><div id="product-component-1773288557942"></div></div>
-      </div>
-
-      <script>
-        (function () {
-          const scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
-          const moneyFormat = "%24%7B%7Bamount%7D%7D";
-
-          const products = [
-            { id: "9125330714874", nodeId: "product-component-1773022866079" },
-            { id: "9125617598714", nodeId: "product-component-1773274943034" },
-            { id: "9131117019386", nodeId: "product-component-1773273428050" },
-            { id: "9131124850938", nodeId: "product-component-1773282666476" },
-            { id: "9131129733370", nodeId: "product-component-1773287326856" },
-            { id: "9126615810298", nodeId: "product-component-1773288557942", variant: "tumbler" }
-          ];
-
-          function createScript() {
-            const script = document.createElement("script");
-            script.async = true;
-            script.src = scriptURL;
-            script.onload = initShopify;
-            (document.head || document.body).appendChild(script);
-          }
-
-          function baseOptions() {
-            return {
-              product: {
-                styles: {
-                  product: {
-                    "@media (min-width: 601px)": {
-                      "max-width": "100%",
-                      width: "100%",
-                      "margin-left": "0",
-                      "margin-right": "0",
-                      "margin-bottom": "0",
-                      "min-width": "0"
-                    }
-                  }
-                },
-                text: {
-                  button: "Add to cart"
-                }
-              },
-              modalProduct: {
-                contents: {
-                  img: false,
-                  imgWithCarousel: true,
-                  button: false,
-                  buttonWithQuantity: true
-                },
-                styles: {
-                  product: {
-                    "@media (min-width: 601px)": {
-                      "max-width": "100%",
-                      "margin-left": "0px",
-                      "margin-bottom": "0px"
-                    }
-                  }
-                },
-                text: {
-                  button: "Add to cart"
-                }
-              },
-              option: {},
-              cart: {
-                text: {
-                  total: "Subtotal",
-                  button: "Checkout"
-                }
-              },
-              toggle: {}
-            };
-          }
-
-          function tumblerOptions() {
-            const options = baseOptions();
-            options.product.styles.product["@media (min-width: 601px)"] = {
-              "max-width": "calc(25% - 20px)",
-              "margin-left": "20px",
-              "margin-bottom": "50px"
-            };
-            options.productSet = {
-              styles: {
-                products: {
-                  "@media (min-width: 601px)": {
-                    "margin-left": "-20px"
-                  }
-                }
-              }
-            };
-            return options;
-          }
-
-          function optionsFor(product) {
-            return product.variant === "tumbler" ? tumblerOptions() : baseOptions();
-          }
-
-          function buildProduct(ui, product) {
-            const node = document.getElementById(product.nodeId);
-            if (!node) return;
-
-            ui.createComponent("product", {
-              id: product.id,
-              node,
-              moneyFormat,
-              options: optionsFor(product)
-            });
-          }
-
-          function initShopify() {
-            const client = ShopifyBuy.buildClient({
-              domain: "wgebvh-ew.myshopify.com",
-              storefrontAccessToken: "880a62a42e7c57527eaaad203e878f88"
-            });
-
-            ShopifyBuy.UI.onReady(client).then(function (ui) {
-              products.forEach(function (product) {
-                buildProduct(ui, product);
-              });
-            });
-          }
-
-          if (window.ShopifyBuy && window.ShopifyBuy.UI) {
-            initShopify();
-          } else {
-            createScript();
-          }
-        })();
-      </script>
     </div>
   </section>
 
