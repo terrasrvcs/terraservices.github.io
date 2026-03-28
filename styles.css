@@ -330,37 +330,34 @@ a {
 
 /* ===== About ===== */
 .about {
-  background:
-    radial-gradient(circle at top left, rgba(111, 78, 55, 0.08), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(58, 74, 61, 0.12), transparent 34%),
-    linear-gradient(180deg, #f7f5f1 0%, #f2eee7 100%);
-  color: #1f241f;
+  background: linear-gradient(180deg, #f3eee6 0%, #eee7dc 100%);
+  color: #2c2a27;
 }
 
 .about-shell {
-  max-width: 1120px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 3rem;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(58, 74, 61, 0.12);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft), var(--shadow-large);
-  backdrop-filter: blur(8px);
+  padding: 2.25rem;
+  background: rgba(255, 252, 247, 0.9);
+  border: 1px solid rgba(80, 64, 48, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgba(31, 24, 18, 0.08);
+  backdrop-filter: blur(6px);
 }
 
 .about-header {
-  max-width: 760px;
-  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
 }
 
 .about-eyebrow {
   display: inline-block;
-  margin: 0 0 0.9rem;
-  padding: 0.45rem 0.9rem;
+  margin: 0 0 0.75rem;
+  padding: 0.42rem 0.85rem;
   border-radius: var(--radius-pill);
-  background: rgba(92, 110, 93, 0.1);
-  color: #445246;
-  font-size: 0.82rem;
+  background: rgba(120, 92, 62, 0.1);
+  color: #6a513c;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -368,34 +365,34 @@ a {
 
 .about-header h2 {
   margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #20261f;
+  color: #2b241e;
 }
 
 .about-lead {
-  margin: 1rem 0 0;
-  max-width: 700px;
-  font-size: 1.2rem;
+  margin: 0.9rem 0 0;
+  max-width: 680px;
+  font-size: 1.06rem;
   line-height: 1.7;
-  color: #4d5a4f;
+  color: #5f5145;
   font-weight: 500;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.85fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.85fr);
+  gap: 1.5rem;
   align-items: start;
 }
 
 .about-main p,
 .about-values-text p {
-  margin: 0 0 1.35rem;
-  font-size: 1.06rem;
-  line-height: 1.95;
-  color: #313a32;
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #3c352f;
 }
 
 .about-main p:last-child,
@@ -405,59 +402,59 @@ a {
 
 .about-side {
   display: grid;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .about-card {
-  padding: 1.5rem;
-  background: #fcfbf8;
-  border: 1px solid rgba(58, 74, 61, 0.12);
-  border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(31, 36, 31, 0.05);
+  padding: 1.2rem;
+  background: #faf6f1;
+  border: 1px solid rgba(80, 64, 48, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(31, 24, 18, 0.05);
 }
 
 .about-card h3 {
-  margin: 0 0 0.75rem;
-  font-size: 1.45rem;
+  margin: 0 0 0.65rem;
+  font-size: 1.28rem;
   line-height: 1.25;
-  color: #243024;
+  color: #342a23;
 }
 
 .about-card h4 {
-  margin: 0 0 1rem;
-  font-size: 1rem;
-  line-height: 1.4;
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #536454;
+  color: #5e4d3e;
 }
 
 .about-card p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #4e5a50;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #564a40;
 }
 
 .about-card-accent {
-  background: linear-gradient(180deg, #36463b 0%, #2c382f 100%);
-  color: #f4f1ea;
+  background: linear-gradient(180deg, #5b4635 0%, #49372a 100%);
+  color: #f8f2ea;
   border-color: rgba(255, 255, 255, 0.08);
 }
 
 .about-card-accent h4 {
-  color: #f2ede3;
+  color: #f5eadf;
 }
 
 .about-points {
   margin: 0;
-  padding-left: 1.2rem;
+  padding-left: 1.1rem;
 }
 
 .about-points li {
-  margin-bottom: 0.85rem;
-  line-height: 1.75;
-  color: #edf1ea;
+  margin-bottom: 0.7rem;
+  line-height: 1.6;
+  color: #f4ede5;
 }
 
 .about-points li:last-child {
@@ -466,38 +463,38 @@ a {
 
 .about-values {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) 260px;
-  gap: 1.8rem;
+  grid-template-columns: minmax(0, 1.45fr) 220px;
+  gap: 1.5rem;
   align-items: center;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(58, 74, 61, 0.12);
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(80, 64, 48, 0.12);
 }
 
 .about-quote {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 180px;
-  padding: 1.8rem;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(64, 83, 67, 0.96), rgba(38, 48, 40, 0.98));
-  box-shadow: 0 18px 40px rgba(31, 36, 31, 0.14);
+  min-height: 150px;
+  padding: 1.4rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #6b5442, #4b3a2d);
+  box-shadow: 0 12px 28px rgba(31, 24, 18, 0.12);
   text-align: left;
 }
 
 .about-quote span {
   display: block;
-  margin-bottom: 0.35rem;
-  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(245, 241, 232, 0.8);
+  color: rgba(248, 242, 234, 0.78);
 }
 
 .about-quote strong {
   display: block;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   line-height: 1.05;
   color: #ffffff;
   letter-spacing: -0.03em;
@@ -713,7 +710,7 @@ a {
   }
 
   .about-shell {
-    padding: 2.2rem;
+    padding: 2rem;
   }
 
   .about-grid,
@@ -830,43 +827,43 @@ a {
   }
 
   .about-shell {
-    padding: 1.45rem;
-    border-radius: 20px;
+    padding: 1.3rem;
+    border-radius: 18px;
   }
 
   .about-header {
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.4rem;
   }
 
   .about-header h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .about-lead {
-    font-size: 1.05rem;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .about-main p,
   .about-values-text p,
   .about-card p,
   .about-points li {
-    font-size: 1rem;
-    line-height: 1.85;
+    font-size: 0.98rem;
+    line-height: 1.7;
   }
 
   .about-card {
-    padding: 1.2rem;
-    border-radius: 18px;
+    padding: 1rem;
+    border-radius: 16px;
   }
 
   .about-quote {
-    padding: 1.35rem;
-    border-radius: 18px;
+    padding: 1.2rem;
+    border-radius: 16px;
   }
 
   .about-quote strong {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .contact-form,
