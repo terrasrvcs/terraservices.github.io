@@ -99,8 +99,8 @@ a {
 
 .logo-image {
   width: auto;
-  height: 160px;
-  max-width: min(760px, 52vw);
+  height: 256px;
+  max-width: min(980px, 62vw);
   object-fit: contain;
 }
 
@@ -728,8 +728,8 @@ a {
   }
 
   .logo-image {
-    height: 132px;
-    max-width: min(620px, 48vw);
+    height: 211px;
+    max-width: min(760px, 58vw);
   }
 }
 
@@ -762,8 +762,8 @@ a {
   }
 
   .logo-image {
-    height: 88px;
-    max-width: 92vw;
+    height: 141px;
+    max-width: 94vw;
   }
 
   .main-nav {
@@ -931,7 +931,7 @@ a {
   }
 
   .logo-image {
-    height: 74px;
+    height: 118px;
   }
 }
 
