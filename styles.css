@@ -71,35 +71,42 @@ a {
 
 /* ===== Header / Nav ===== */
 .site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 20;
-  background: rgba(245, 241, 234, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(245, 241, 234, 0.98);
   border-bottom: 1px solid var(--border);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .header-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
-  padding-block: 14px;
+  padding-block: 10px;
 }
 
 .logo {
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .logo a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 .logo-image {
-  width: auto;
-  height: 140px;
-  max-width: min(620px, 92vw);
+  display: block;
+  width: min(96vw, 1200px);
+  max-width: 100%;
+  height: auto;
+  max-height: 360px;
   object-fit: contain;
 }
 
@@ -108,6 +115,8 @@ a {
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .main-nav a {
@@ -723,6 +732,10 @@ a {
   .about-quote {
     min-height: auto;
   }
+
+  .logo-image {
+    max-height: 320px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -738,24 +751,29 @@ a {
   .hero-media {
     order: 2;
   }
+
+  .logo-image {
+    max-height: 280px;
+  }
 }
 
 @media (max-width: 700px) {
   .header-inner {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 10px;
-    padding-block: 10px;
+    padding-block: 8px;
   }
 
   .logo {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .logo-image {
-    height: 96px;
-    max-width: 94vw;
+    width: min(98vw, 1000px);
+    max-height: 240px;
   }
 
   .main-nav {
@@ -764,6 +782,7 @@ a {
     overflow-y: hidden;
     gap: 8px;
     justify-content: flex-start;
+    width: 100%;
     padding-bottom: 2px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -884,6 +903,10 @@ a {
     top: 8px;
     right: 8px;
   }
+
+  .logo-image {
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -907,6 +930,10 @@ a {
   .contact-form textarea {
     padding: 12px;
   }
+
+  .logo-image {
+    max-height: 170px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -920,6 +947,10 @@ a {
 
   .lightbox-caption {
     font-size: 13px;
+  }
+
+  .logo-image {
+    max-height: 150px;
   }
 }
 
