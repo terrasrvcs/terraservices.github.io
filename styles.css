@@ -102,9 +102,10 @@ a {
   height: 160px;
   max-width: none;
   object-fit: contain;
-  transform: scale(1.6);
+  transform: scale(2.56);
   transform-origin: left center;
 }
+
 .main-nav {
   display: flex;
   flex-wrap: wrap;
