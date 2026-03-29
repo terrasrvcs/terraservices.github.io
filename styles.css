@@ -99,11 +99,12 @@ a {
 
 .logo-image {
   width: auto;
-  height: 256px;
-  max-width: min(980px, 62vw);
+  height: 160px;
+  max-width: none;
   object-fit: contain;
+  transform: scale(1.6);
+  transform-origin: left center;
 }
-
 .main-nav {
   display: flex;
   flex-wrap: wrap;
@@ -727,10 +728,12 @@ a {
     min-height: auto;
   }
 
-  .logo-image {
-    height: 211px;
-    max-width: min(760px, 58vw);
-  }
+ .logo-image {
+  height: 132px;
+  max-width: none;
+  transform: scale(1.6);
+  transform-origin: left center;
+}
 }
 
 @media (max-width: 860px) {
@@ -930,9 +933,11 @@ a {
     font-size: 13px;
   }
 
-  .logo-image {
-    height: 118px;
-  }
+.logo-image {
+  height: 74px;
+  transform: scale(1.15);
+  transform-origin: center center;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
