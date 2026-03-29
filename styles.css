@@ -80,30 +80,27 @@ a {
 
 .header-inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding-block: 14px 12px;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 8px;
 }
 
 .logo {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
 }
 
 .logo a {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
 }
 
 .logo-image {
   width: auto;
-  height: 120px;
-  max-width: min(760px, 94vw);
+  height: 160px;
+  max-width: min(760px, 52vw);
   object-fit: contain;
 }
 
@@ -112,8 +109,8 @@ a {
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-end;
+  flex: 1 1 auto;
 }
 
 .main-nav a {
@@ -731,8 +728,8 @@ a {
   }
 
   .logo-image {
-    height: 110px;
-    max-width: min(700px, 94vw);
+    height: 132px;
+    max-width: min(620px, 48vw);
   }
 }
 
@@ -753,13 +750,20 @@ a {
 
 @media (max-width: 700px) {
   .header-inner {
+    flex-direction: column;
+    align-items: stretch;
     gap: 8px;
-    padding-block: 10px;
+    padding-block: 8px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
   }
 
   .logo-image {
-    height: 96px;
-    max-width: 95vw;
+    height: 88px;
+    max-width: 92vw;
   }
 
   .main-nav {
@@ -768,7 +772,6 @@ a {
     overflow-y: hidden;
     gap: 8px;
     justify-content: flex-start;
-    width: 100%;
     padding-bottom: 2px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -911,10 +914,6 @@ a {
   .contact-form input,
   .contact-form textarea {
     padding: 12px;
-  }
-
-  .logo-image {
-    height: 82px;
   }
 }
 
