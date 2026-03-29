@@ -764,10 +764,12 @@ a {
     justify-content: center;
   }
 
-  .logo-image {
-    height: 141px;
-    max-width: 94vw;
-  }
+ .logo-image {
+  height: 88px;
+  max-width: 92vw;
+  transform: scale(1.25);
+  transform-origin: center center;
+}
 
   .main-nav {
     flex-wrap: nowrap;
