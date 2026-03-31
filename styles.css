@@ -73,9 +73,10 @@ a {
 .site-header {
   position: relative;
   z-index: 20;
-  background: rgba(245, 241, 234, 0.92);
+  background: linear-gradient(180deg, #d8c7b2 0%, #ccb7a0 100%);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(75, 58, 45, 0.24);
+  box-shadow: 0 8px 22px rgba(75, 58, 45, 0.12);
 }
 
 .header-inner {
@@ -83,7 +84,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-block: 8px;
+  padding-block: 12px;
 }
 
 .logo {
@@ -98,12 +99,12 @@ a {
 }
 
 .logo-image {
+  display: block;
   width: auto;
-  height: 160px;
-  max-width: none;
+  height: 84px;
+  max-width: 100%;
   object-fit: contain;
-  transform: scale(2.56);
-  transform-origin: left center;
+  transform: none;
 }
 
 .main-nav {
@@ -128,16 +129,17 @@ a {
   text-align: center;
   transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
+  color: #2f241c;
 }
 
 .main-nav a:hover,
 .main-nav a:focus-visible {
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(75, 58, 45, 0.1);
   outline: none;
 }
 
 .main-nav a[aria-current="page"] {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(75, 58, 45, 0.14);
 }
 
 /* ===== Buttons ===== */
@@ -335,7 +337,7 @@ a {
   margin-bottom: 0;
 }
 
-/* ===== About ===== */
+/* ===== About Section on Home ===== */
 .about {
   background: linear-gradient(180deg, #f3eee6 0%, #eee7dc 100%);
   color: #2c2a27;
@@ -729,12 +731,11 @@ a {
     min-height: auto;
   }
 
- .logo-image {
-  height: 132px;
-  max-width: none;
-  transform: scale(1.6);
-  transform-origin: left center;
-}
+  .logo-image {
+    height: 72px;
+    max-width: 100%;
+    transform: none;
+  }
 }
 
 @media (max-width: 860px) {
@@ -765,12 +766,11 @@ a {
     justify-content: center;
   }
 
-.logo-image {
-  height: 88px;
-  max-width: 92vw;
-  transform: scale(1.25);
-  transform-origin: center center;
-}
+  .logo-image {
+    height: 56px;
+    max-width: 92vw;
+    transform: none;
+  }
 
   .main-nav {
     flex-wrap: nowrap;
@@ -936,11 +936,11 @@ a {
     font-size: 13px;
   }
 
-.logo-image {
-  height: 74px;
-  transform: scale(1.15);
-  transform-origin: center center;
-}
+  .logo-image {
+    height: 48px;
+    max-width: 92vw;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
