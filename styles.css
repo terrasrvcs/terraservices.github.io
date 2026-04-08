@@ -83,7 +83,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-block: 12px;
+  padding-block: 14px;
 }
 
 .logo {
@@ -100,7 +100,7 @@ a {
 .logo-image {
   display: block;
   width: auto;
-  height: 84px;
+  height: 132px;
   max-width: 100%;
   object-fit: contain;
   transform: none;
@@ -113,6 +113,7 @@ a {
   align-items: center;
   justify-content: flex-end;
   flex: 1 1 auto;
+  min-width: 0;
 }
 
 .main-nav a {
@@ -729,8 +730,13 @@ a {
     min-height: auto;
   }
 
+  .header-inner {
+    gap: 16px;
+    padding-block: 12px;
+  }
+
   .logo-image {
-    height: 72px;
+    height: 112px;
     max-width: 100%;
     transform: none;
   }
@@ -755,8 +761,8 @@ a {
   .header-inner {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
-    padding-block: 8px;
+    gap: 10px;
+    padding-block: 10px;
   }
 
   .logo {
@@ -764,9 +770,13 @@ a {
     justify-content: center;
   }
 
+  .logo a {
+    justify-content: center;
+  }
+
   .logo-image {
-    height: 56px;
-    max-width: 92vw;
+    height: 96px;
+    max-width: min(92vw, 520px);
     transform: none;
   }
 
@@ -919,6 +929,11 @@ a {
   .contact-form textarea {
     padding: 12px;
   }
+
+  .logo-image {
+    height: 82px;
+    max-width: 92vw;
+  }
 }
 
 @media (max-width: 420px) {
@@ -935,7 +950,7 @@ a {
   }
 
   .logo-image {
-    height: 48px;
+    height: 72px;
     max-width: 92vw;
     transform: none;
   }
