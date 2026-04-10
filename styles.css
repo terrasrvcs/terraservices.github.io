@@ -816,7 +816,7 @@ a {
 
   .logo-image {
     width: 100vw;
-    height: clamp(900px, 170vw, 1400px);
+    height: clamp(320px, 82vw, 520px);
     max-width: 100%;
     object-fit: contain;
     object-position: center;
@@ -828,7 +828,7 @@ a {
     overflow: visible;
     gap: 8px;
     justify-content: center;
-    margin-top: -150px;
+    margin-top: -48px;
     padding: 4px 8px 6px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -975,12 +975,12 @@ a {
 
   .logo-image {
     width: 100vw;
-    height: clamp(820px, 190vw, 1300px);
+    height: clamp(300px, 82vw, 460px);
     max-width: 100%;
   }
 
   .main-nav {
-    margin-top: -135px;
+    margin-top: -40px;
     padding: 4px 6px 6px;
   }
 }
@@ -1000,13 +1000,13 @@ a {
 
   .logo-image {
     width: 100vw;
-    height: clamp(760px, 205vw, 1200px);
+    height: clamp(260px, 72vw, 420px);
     max-width: 100%;
     transform: none;
   }
 
   .main-nav {
-    margin-top: -120px;
+    margin-top: -34px;
   }
 
   .main-nav a {
