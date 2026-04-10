@@ -115,7 +115,7 @@ a {
 .logo-image {
   display: block;
   width: min(100%, 1200px);
-  height: 400px;
+  height: 420px;
   max-width: 100%;
   object-fit: contain;
   object-position: center;
@@ -132,7 +132,7 @@ a {
   justify-content: center;
   flex: 0 0 auto;
   min-width: 0;
-  margin-top: -36px;
+  margin-top: -46px;
   padding: 6px 18px 8px;
   background: linear-gradient(
     180deg,
@@ -776,7 +776,7 @@ a {
   }
 
   .main-nav {
-    margin-top: -28px;
+    margin-top: -38px;
     padding: 6px 16px 8px;
   }
 }
@@ -822,7 +822,7 @@ a {
 
   .logo-image {
     width: min(94vw, 700px);
-    height: 240px;
+    height: 250px;
     max-width: 100%;
     object-position: center;
     transform: none;
@@ -833,7 +833,7 @@ a {
     overflow: visible;
     gap: 8px;
     justify-content: center;
-    margin-top: -20px;
+    margin-top: -30px;
     padding: 6px 12px 8px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
