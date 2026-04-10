@@ -816,14 +816,15 @@ a {
     justify-content: center;
     width: 100%;
     height: auto;
-    padding-inline: 10px;
+    padding-inline: 8px;
     padding-block: 0;
   }
 
   .logo-image {
-    width: min(94vw, 700px);
-    height: 250px;
+    width: min(98vw, 900px);
+    height: clamp(280px, 52vw, 420px);
     max-width: 100%;
+    object-fit: contain;
     object-position: center;
     transform: none;
   }
@@ -833,7 +834,7 @@ a {
     overflow: visible;
     gap: 8px;
     justify-content: center;
-    margin-top: -30px;
+    margin-top: -34px;
     padding: 6px 12px 8px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -979,12 +980,13 @@ a {
   }
 
   .logo-image {
-    height: 185px;
-    max-width: 94vw;
+    width: 98vw;
+    height: clamp(260px, 60vw, 380px);
+    max-width: 100%;
   }
 
   .main-nav {
-    margin-top: -14px;
+    margin-top: -26px;
     padding: 6px 10px 8px;
   }
 }
@@ -1003,9 +1005,14 @@ a {
   }
 
   .logo-image {
-    height: 155px;
-    max-width: 94vw;
+    width: 99vw;
+    height: clamp(240px, 64vw, 340px);
+    max-width: 100%;
     transform: none;
+  }
+
+  .main-nav {
+    margin-top: -22px;
   }
 
   .main-nav a {
