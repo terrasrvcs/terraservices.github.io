@@ -771,12 +771,12 @@ a {
 
   .logo-image {
     width: min(100%, 980px);
-    height: 320px;
+    height: 340px;
     max-width: 100%;
   }
 
   .main-nav {
-    margin-top: -38px;
+    margin-top: -42px;
     padding: 6px 16px 8px;
   }
 }
@@ -816,13 +816,13 @@ a {
     justify-content: center;
     width: 100%;
     height: auto;
-    padding-inline: 8px;
+    padding-inline: 4px;
     padding-block: 0;
   }
 
   .logo-image {
-    width: min(98vw, 900px);
-    height: clamp(280px, 52vw, 420px);
+    width: min(100vw, 1200px);
+    height: clamp(520px, 95vw, 820px);
     max-width: 100%;
     object-fit: contain;
     object-position: center;
@@ -834,7 +834,7 @@ a {
     overflow: visible;
     gap: 8px;
     justify-content: center;
-    margin-top: -34px;
+    margin-top: -76px;
     padding: 6px 12px 8px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -980,13 +980,13 @@ a {
   }
 
   .logo-image {
-    width: 98vw;
-    height: clamp(260px, 60vw, 380px);
+    width: 100vw;
+    height: clamp(460px, 110vw, 760px);
     max-width: 100%;
   }
 
   .main-nav {
-    margin-top: -26px;
+    margin-top: -68px;
     padding: 6px 10px 8px;
   }
 }
@@ -1005,14 +1005,14 @@ a {
   }
 
   .logo-image {
-    width: 99vw;
-    height: clamp(240px, 64vw, 340px);
+    width: 100vw;
+    height: clamp(400px, 118vw, 680px);
     max-width: 100%;
     transform: none;
   }
 
   .main-nav {
-    margin-top: -22px;
+    margin-top: -58px;
   }
 
   .main-nav a {
