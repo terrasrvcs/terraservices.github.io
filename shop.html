@@ -75,6 +75,28 @@
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="page-title">CAKE WEDNESDAY</h2>
+        <p class="section-intro">
+          Fresh merch from the Cake Wednesday corner of the shop.
+        </p>
+
+        <div class="shop-panel">
+          <h3>Featured Cake Wednesday item</h3>
+          <p>
+            This item is loaded directly through the Shopify storefront integration.
+          </p>
+        </div>
+
+        <div class="shop-products">
+          <div class="shop-product-item">
+            <div id="product-component-1775969338243"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -100,7 +122,8 @@
         { id: "9131117019386", nodeId: "product-component-1773273428050" },
         { id: "9131124850938", nodeId: "product-component-1773282666476" },
         { id: "9131129733370", nodeId: "product-component-1773287326856" },
-        { id: "9126615810298", nodeId: "product-component-1773288557942", variant: "tumbler" }
+        { id: "9126615810298", nodeId: "product-component-1773288557942", variant: "tumbler" },
+        { id: "9186463809786", nodeId: "product-component-1775969338243", variant: "cakeWednesday" }
       ];
 
       function createScript() {
@@ -180,8 +203,147 @@
         return options;
       }
 
+      function cakeWednesdayOptions() {
+        const options = baseOptions();
+
+        options.product.styles = {
+          product: {
+            "@media (min-width: 601px)": {
+              "max-width": "calc(25% - 20px)",
+              "margin-left": "20px",
+              "margin-bottom": "50px"
+            }
+          },
+          button: {
+            "font-family": "Quantico, sans-serif",
+            "font-size": "17px",
+            "padding-top": "16.5px",
+            "padding-bottom": "16.5px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000",
+              "background-color": "#dc3de5"
+            },
+            "background-color": "#f444fe",
+            ":focus": {
+              "background-color": "#dc3de5"
+            }
+          },
+          quantityInput: {
+            "font-size": "17px",
+            "padding-top": "16.5px",
+            "padding-bottom": "16.5px"
+          }
+        };
+
+        options.product.text = {
+          button: "Add to cart"
+        };
+
+        options.product.googleFonts = ["Quantico"];
+
+        options.productSet = {
+          styles: {
+            products: {
+              "@media (min-width: 601px)": {
+                "margin-left": "-20px"
+              }
+            }
+          }
+        };
+
+        options.modalProduct.styles = {
+          product: {
+            "@media (min-width: 601px)": {
+              "max-width": "100%",
+              "margin-left": "0px",
+              "margin-bottom": "0px"
+            }
+          },
+          button: {
+            "font-family": "Quantico, sans-serif",
+            "font-size": "17px",
+            "padding-top": "16.5px",
+            "padding-bottom": "16.5px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000",
+              "background-color": "#dc3de5"
+            },
+            "background-color": "#f444fe",
+            ":focus": {
+              "background-color": "#dc3de5"
+            }
+          },
+          quantityInput: {
+            "font-size": "17px",
+            "padding-top": "16.5px",
+            "padding-bottom": "16.5px"
+          }
+        };
+
+        options.modalProduct.googleFonts = ["Quantico"];
+        options.modalProduct.text = {
+          button: "Add to cart"
+        };
+
+        options.cart.styles = {
+          button: {
+            "font-family": "Quantico, sans-serif",
+            "font-size": "17px",
+            "padding-top": "16.5px",
+            "padding-bottom": "16.5px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000",
+              "background-color": "#dc3de5"
+            },
+            "background-color": "#f444fe",
+            ":focus": {
+              "background-color": "#dc3de5"
+            }
+          }
+        };
+
+        options.cart.text = {
+          total: "Subtotal",
+          button: "Checkout"
+        };
+
+        options.cart.googleFonts = ["Quantico"];
+
+        options.toggle.styles = {
+          toggle: {
+            "font-family": "Quantico, sans-serif",
+            "background-color": "#f444fe",
+            ":hover": {
+              "background-color": "#dc3de5"
+            },
+            ":focus": {
+              "background-color": "#dc3de5"
+            }
+          },
+          count: {
+            "font-size": "17px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000"
+            }
+          },
+          iconPath: {
+            fill: "#000000"
+          }
+        };
+
+        options.toggle.googleFonts = ["Quantico"];
+
+        return options;
+      }
+
       function optionsFor(product) {
-        return product.variant === "tumbler" ? tumblerOptions() : baseOptions();
+        if (product.variant === "tumbler") return tumblerOptions();
+        if (product.variant === "cakeWednesday") return cakeWednesdayOptions();
+        return baseOptions();
       }
 
       function buildProduct(ui, product) {
