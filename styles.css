@@ -967,7 +967,7 @@ a {
   top: 1.6rem;
   left: 1.2rem;
   width: 98px;
-  height: 56px;
+  height: 150px;
   animation: alien-ufo-drift-left 8.5s ease-in-out infinite;
 }
 
@@ -975,14 +975,14 @@ a {
   top: 2.1rem;
   right: 1.4rem;
   width: 110px;
-  height: 64px;
+  height: 162px;
   animation: alien-ufo-drift-right 10s ease-in-out infinite;
 }
 
 .alien-smiley-ufo-disc {
   position: absolute;
   left: 50%;
-  bottom: 14px;
+  bottom: 122px;
   width: 100%;
   height: 26px;
   transform: translateX(-50%);
@@ -994,12 +994,13 @@ a {
   box-shadow:
     0 0 8px rgba(128, 255, 175, 0.34),
     0 0 18px rgba(0, 217, 255, 0.18);
+  z-index: 3;
 }
 
 .alien-smiley-ufo-dome {
   position: absolute;
   left: 50%;
-  bottom: 28px;
+  bottom: 136px;
   width: 38%;
   height: 20px;
   transform: translateX(-50%);
@@ -1008,25 +1009,63 @@ a {
   background:
     radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.06) 50%, rgba(0, 255, 128, 0.18) 100%);
   box-shadow: 0 0 10px rgba(128, 255, 175, 0.28);
+  z-index: 4;
 }
 
 .alien-smiley-ufo-beam {
   position: absolute;
   left: 50%;
-  bottom: -2px;
-  width: 62%;
-  height: 84px;
+  top: 40px;
+  width: 66%;
+  height: 108px;
   transform: translateX(-50%);
-  clip-path: polygon(34% 0%, 66% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%);
   background:
     linear-gradient(
       180deg,
-      rgba(125, 255, 156, 0.28) 0%,
-      rgba(0, 234, 255, 0.18) 42%,
-      rgba(255, 115, 243, 0.08) 100%
+      rgba(125, 255, 156, 0.3) 0%,
+      rgba(0, 234, 255, 0.2) 38%,
+      rgba(255, 115, 243, 0.1) 100%
     );
   filter: blur(0.5px);
-  opacity: 0.72;
+  opacity: 0.82;
+  z-index: 1;
+}
+
+.alien-smiley-ufo-beam::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 28%;
+  height: 100%;
+  transform: translateX(-50%);
+  clip-path: polygon(42% 0%, 58% 0%, 100% 100%, 0% 100%);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(215, 255, 230, 0.7) 0%,
+      rgba(125, 255, 156, 0.42) 30%,
+      rgba(0, 234, 255, 0.22) 72%,
+      rgba(255, 115, 243, 0.08) 100%
+    );
+  filter: blur(1px);
+  opacity: 0.92;
+}
+
+.alien-smiley-ufo-beam::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 88%;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(125, 255, 156, 0.45) 0%, rgba(0, 234, 255, 0.18) 46%, rgba(255, 115, 243, 0.04) 72%, transparent 100%);
+  filter: blur(3px);
+  opacity: 0.95;
 }
 
 .alien-smiley-stars {
