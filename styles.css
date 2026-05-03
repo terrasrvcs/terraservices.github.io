@@ -558,6 +558,135 @@ a {
   min-width: 0;
 }
 
+.oversized-row {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-top: 1.75rem;
+}
+
+.oversized-product-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.4rem 1.25rem 1.25rem;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82)),
+    radial-gradient(circle at top, rgba(255, 68, 254, 0.2), rgba(255, 68, 254, 0.05) 45%, rgba(255, 255, 255, 0) 80%);
+  border: 3px solid #ff4dff;
+  box-shadow:
+    0 0 8px rgba(255, 77, 255, 0.75),
+    0 0 18px rgba(255, 77, 255, 0.62),
+    0 0 34px rgba(255, 77, 255, 0.45),
+    0 10px 30px rgba(0, 0, 0, 0.12);
+  animation: oversized-pulse 2.6s ease-in-out infinite;
+}
+
+.oversized-product-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 105, 255, 0.72);
+  box-shadow:
+    inset 0 0 10px rgba(255, 77, 255, 0.35),
+    0 0 12px rgba(255, 77, 255, 0.22);
+  pointer-events: none;
+}
+
+.oversized-neon-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 77, 255, 0.16);
+  border: 2px solid #ff4dff;
+  box-shadow:
+    0 0 6px rgba(255, 77, 255, 0.85),
+    0 0 14px rgba(255, 77, 255, 0.7),
+    inset 0 0 8px rgba(255, 77, 255, 0.3);
+  animation: oversized-flicker 3.4s linear infinite;
+}
+
+.oversized-neon-text {
+  display: inline-block;
+  font-family: "Quantico", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #111111;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.95),
+    0 0 2px rgba(255, 255, 255, 0.18);
+}
+
+@keyframes oversized-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(255, 77, 255, 0.75),
+      0 0 18px rgba(255, 77, 255, 0.62),
+      0 0 34px rgba(255, 77, 255, 0.45),
+      0 10px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 12px rgba(255, 77, 255, 0.95),
+      0 0 26px rgba(255, 77, 255, 0.82),
+      0 0 48px rgba(255, 77, 255, 0.62),
+      0 12px 34px rgba(0, 0, 0, 0.14);
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes oversized-flicker {
+  0%,
+  18%,
+  22%,
+  56%,
+  100% {
+    opacity: 1;
+    box-shadow:
+      0 0 6px rgba(255, 77, 255, 0.85),
+      0 0 14px rgba(255, 77, 255, 0.7),
+      inset 0 0 8px rgba(255, 77, 255, 0.3);
+  }
+
+  20% {
+    opacity: 0.82;
+    box-shadow:
+      0 0 4px rgba(255, 77, 255, 0.55),
+      0 0 10px rgba(255, 77, 255, 0.45),
+      inset 0 0 6px rgba(255, 77, 255, 0.18);
+  }
+
+  21% {
+    opacity: 0.96;
+  }
+
+  57% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.72;
+    box-shadow:
+      0 0 3px rgba(255, 77, 255, 0.45),
+      0 0 8px rgba(255, 77, 255, 0.3),
+      inset 0 0 4px rgba(255, 77, 255, 0.14);
+  }
+
+  59% {
+    opacity: 1;
+  }
+}
+
 /* ===== Contact ===== */
 .contact-grid {
   display: grid;
@@ -753,6 +882,10 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .oversized-row {
+    grid-template-columns: 1fr;
+  }
+
   .about-shell {
     padding: 2rem;
   }
@@ -847,6 +980,15 @@ a {
 
   .shop-products {
     grid-template-columns: 1fr;
+  }
+
+  .oversized-product-card {
+    max-width: 100%;
+    padding: 1.15rem 1rem 1rem;
+  }
+
+  .oversized-neon-badge {
+    margin-bottom: 0.9rem;
   }
 
   .hero {
@@ -983,6 +1125,11 @@ a {
     margin-top: -40px;
     padding: 4px 6px 6px;
   }
+
+  .oversized-neon-text {
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1012,6 +1159,14 @@ a {
   .main-nav a {
     font-size: 12px;
     padding: 6px 10px;
+  }
+
+  .oversized-product-card {
+    border-radius: 18px;
+  }
+
+  .oversized-neon-badge {
+    padding: 0.45rem 0.8rem;
   }
 }
 
