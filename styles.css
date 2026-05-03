@@ -711,6 +711,393 @@ a {
   }
 }
 
+/* ===== ALIEN and SMILEY ===== */
+.alien-smiley-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(0, 255, 128, 0.18) 0, rgba(0, 255, 128, 0) 22%),
+    radial-gradient(circle at 88% 10%, rgba(0, 217, 255, 0.18) 0, rgba(0, 217, 255, 0) 22%),
+    radial-gradient(circle at 22% 78%, rgba(255, 0, 230, 0.16) 0, rgba(255, 0, 230, 0) 24%),
+    radial-gradient(circle at 78% 72%, rgba(172, 255, 47, 0.12) 0, rgba(172, 255, 47, 0) 24%),
+    linear-gradient(180deg, #0a0914 0%, #0d1020 42%, #11152b 100%);
+  border-top: 2px solid rgba(133, 255, 200, 0.22);
+  border-bottom: 2px solid rgba(255, 0, 221, 0.22);
+  color: #f6fbff;
+}
+
+.alien-smiley-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% -8%, rgba(0, 255, 128, 0.22), rgba(0, 255, 128, 0) 28%),
+    radial-gradient(circle at 50% 108%, rgba(255, 0, 230, 0.18), rgba(255, 0, 230, 0) 26%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.alien-smiley-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 18%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 0,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px,
+      transparent 90px
+    );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.alien-smiley-shell {
+  position: relative;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 22, 0.94), rgba(10, 12, 26, 0.88)),
+    radial-gradient(circle at top, rgba(0, 255, 128, 0.08), rgba(0, 255, 128, 0) 34%);
+  border: 2px solid rgba(72, 255, 166, 0.38);
+  box-shadow:
+    0 0 0 1px rgba(255, 0, 221, 0.18),
+    0 0 22px rgba(72, 255, 166, 0.16),
+    0 0 44px rgba(0, 174, 255, 0.1),
+    0 18px 50px rgba(0, 0, 0, 0.34);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.alien-smiley-shell::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(105, 255, 180, 0.12), rgba(105, 255, 180, 0) 24%),
+    radial-gradient(circle at 30% 50%, rgba(255, 0, 230, 0.1), rgba(255, 0, 230, 0) 20%),
+    radial-gradient(circle at 70% 50%, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0) 20%);
+  pointer-events: none;
+  animation: alien-rift-breathe 6s ease-in-out infinite;
+}
+
+.alien-smiley-shell::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 0 18px rgba(0, 255, 128, 0.08),
+    inset 0 0 24px rgba(255, 0, 230, 0.05);
+  pointer-events: none;
+}
+
+.alien-smiley-title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding-right: 6.5rem;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #effff8;
+  text-shadow:
+    0 0 6px rgba(72, 255, 166, 0.52),
+    0 0 14px rgba(0, 217, 255, 0.35),
+    0 0 22px rgba(255, 0, 230, 0.22);
+}
+
+.alien-smiley-title-word-alien {
+  color: #7dff9c;
+  text-shadow:
+    0 0 6px rgba(125, 255, 156, 0.9),
+    0 0 16px rgba(125, 255, 156, 0.52),
+    0 0 28px rgba(0, 255, 128, 0.34);
+}
+
+.alien-smiley-title-word-smiley {
+  color: #ff6cf6;
+  text-shadow:
+    0 0 6px rgba(255, 108, 246, 0.9),
+    0 0 16px rgba(255, 108, 246, 0.52),
+    0 0 28px rgba(255, 0, 230, 0.34);
+}
+
+.alien-smiley-subtitle {
+  position: relative;
+  max-width: 70ch;
+  margin-top: 0.9rem;
+  margin-bottom: 0;
+  color: rgba(236, 255, 248, 0.9);
+  text-shadow: 0 0 10px rgba(0, 255, 128, 0.1);
+}
+
+.alien-smiley-panel {
+  position: relative;
+  margin-top: 1.4rem;
+  background:
+    linear-gradient(180deg, rgba(13, 18, 34, 0.78), rgba(9, 13, 27, 0.72));
+  border: 1px solid rgba(91, 255, 174, 0.3);
+  border-radius: 22px;
+  box-shadow:
+    0 0 14px rgba(0, 255, 128, 0.12),
+    inset 0 0 14px rgba(255, 0, 230, 0.05);
+  color: #edfff7;
+}
+
+.alien-smiley-panel h3,
+.alien-smiley-panel p {
+  position: relative;
+  z-index: 1;
+}
+
+.alien-smiley-panel h3 {
+  color: #87ffaf;
+  text-shadow: 0 0 10px rgba(135, 255, 175, 0.22);
+}
+
+.alien-smiley-panel p {
+  opacity: 0.96;
+}
+
+.alien-smiley-grid {
+  position: relative;
+}
+
+.alien-smiley-grid::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(0, 255, 128, 0.08), rgba(0, 255, 128, 0) 20%),
+    radial-gradient(circle at 82% 14%, rgba(0, 217, 255, 0.08), rgba(0, 217, 255, 0) 18%),
+    radial-gradient(circle at 50% 100%, rgba(255, 0, 230, 0.07), rgba(255, 0, 230, 0) 30%);
+  pointer-events: none;
+}
+
+.alien-smiley-item {
+  position: relative;
+  padding: 1rem;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(9, 12, 25, 0.84), rgba(13, 18, 35, 0.72));
+  border: 1px solid rgba(85, 255, 170, 0.26);
+  box-shadow:
+    0 0 0 1px rgba(255, 0, 230, 0.12),
+    0 0 20px rgba(0, 255, 128, 0.09),
+    inset 0 0 18px rgba(0, 217, 255, 0.04);
+  overflow: hidden;
+}
+
+.alien-smiley-item::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 50% 58%, rgba(0, 255, 128, 0.18), rgba(0, 255, 128, 0) 52%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.alien-smiley-item::after {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  right: 0.8rem;
+  width: 62px;
+  height: 28px;
+  border-radius: 50% 50% 46% 46%;
+  border: 2px solid rgba(120, 255, 175, 0.7);
+  box-shadow:
+    0 0 8px rgba(120, 255, 175, 0.45),
+    0 0 16px rgba(0, 217, 255, 0.18);
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 50%),
+    linear-gradient(180deg, rgba(70, 255, 180, 0.24), rgba(70, 255, 180, 0.08));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.alien-smiley-item .shopify-buy__product {
+  position: relative;
+  z-index: 1;
+}
+
+.alien-smiley-rift-badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-family: "Quantico", "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #07130f;
+  background: linear-gradient(90deg, #7dff9c 0%, #00eaff 50%, #ff73f3 100%);
+  box-shadow:
+    0 0 8px rgba(125, 255, 156, 0.45),
+    0 0 18px rgba(255, 115, 243, 0.28);
+}
+
+.alien-smiley-ufo {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.alien-smiley-ufo-left {
+  top: 1.6rem;
+  left: 1.2rem;
+  width: 98px;
+  height: 56px;
+  animation: alien-ufo-drift-left 8.5s ease-in-out infinite;
+}
+
+.alien-smiley-ufo-right {
+  top: 2.1rem;
+  right: 1.4rem;
+  width: 110px;
+  height: 64px;
+  animation: alien-ufo-drift-right 10s ease-in-out infinite;
+}
+
+.alien-smiley-ufo-disc {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  width: 100%;
+  height: 26px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 2px solid rgba(128, 255, 175, 0.82);
+  background:
+    linear-gradient(180deg, rgba(14, 28, 32, 0.9), rgba(9, 18, 24, 0.82)),
+    radial-gradient(circle at 50% 40%, rgba(0, 255, 128, 0.32), rgba(0, 255, 128, 0) 58%);
+  box-shadow:
+    0 0 8px rgba(128, 255, 175, 0.34),
+    0 0 18px rgba(0, 217, 255, 0.18);
+}
+
+.alien-smiley-ufo-dome {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: 38%;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 42% 42%;
+  border: 2px solid rgba(170, 255, 214, 0.72);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.06) 50%, rgba(0, 255, 128, 0.18) 100%);
+  box-shadow: 0 0 10px rgba(128, 255, 175, 0.28);
+}
+
+.alien-smiley-ufo-beam {
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 62%;
+  height: 84px;
+  transform: translateX(-50%);
+  clip-path: polygon(34% 0%, 66% 0%, 100% 100%, 0% 100%);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(125, 255, 156, 0.28) 0%,
+      rgba(0, 234, 255, 0.18) 42%,
+      rgba(255, 115, 243, 0.08) 100%
+    );
+  filter: blur(0.5px);
+  opacity: 0.72;
+}
+
+.alien-smiley-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.alien-smiley-stars::before,
+.alien-smiley-stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+}
+
+.alien-smiley-stars::before {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.85) 0 1.3px, transparent 1.8px),
+    radial-gradient(circle, rgba(125, 255, 156, 0.8) 0 1.6px, transparent 2px),
+    radial-gradient(circle, rgba(255, 115, 243, 0.8) 0 1.5px, transparent 1.9px),
+    radial-gradient(circle, rgba(0, 234, 255, 0.8) 0 1.5px, transparent 1.9px);
+  background-size: 14px 14px, 18px 18px, 20px 20px, 16px 16px;
+  background-position: 8% 24%, 84% 18%, 22% 70%, 72% 64%;
+}
+
+.alien-smiley-stars::after {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle, rgba(125, 255, 156, 0.75) 0 1.4px, transparent 1.8px),
+    radial-gradient(circle, rgba(0, 234, 255, 0.7) 0 1.3px, transparent 1.8px);
+  background-size: 12px 12px, 17px 17px, 13px 13px;
+  background-position: 58% 22%, 14% 46%, 86% 56%;
+}
+
+@keyframes alien-rift-breathe {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.05) rotate(1.2deg);
+    opacity: 1;
+  }
+}
+
+@keyframes alien-ufo-drift-left {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(6px) translateX(8px) rotate(1deg);
+  }
+}
+
+@keyframes alien-ufo-drift-right {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(-8px) translateX(-10px) rotate(-1deg);
+  }
+}
+
 /* ===== Contact ===== */
 .contact-grid {
   display: grid;
@@ -938,6 +1325,10 @@ a {
     margin-top: -50px;
     padding: 4px 10px 6px;
   }
+
+  .alien-smiley-title {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 860px) {
@@ -1023,6 +1414,29 @@ a {
 
   .oversized-product-card {
     padding: 0.85rem;
+  }
+
+  .alien-smiley-shell {
+    padding: 1.2rem;
+    border-radius: 22px;
+  }
+
+  .alien-smiley-title {
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+  }
+
+  .alien-smiley-ufo-left,
+  .alien-smiley-ufo-right {
+    display: none;
+  }
+
+  .alien-smiley-item {
+    padding-top: 1.2rem;
+  }
+
+  .alien-smiley-rift-badge {
+    position: static;
+    margin-bottom: 0.75rem;
   }
 
   .hero {
@@ -1164,6 +1578,11 @@ a {
     font-size: 0.72rem;
     letter-spacing: 0.14em;
   }
+
+  .alien-smiley-rift-badge {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1205,6 +1624,15 @@ a {
 
   .oversized-frame-label-bottom {
     bottom: -0.9rem;
+  }
+
+  .alien-smiley-shell {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .alien-smiley-item {
+    border-radius: 18px;
   }
 }
 
