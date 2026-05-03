@@ -118,6 +118,50 @@
         </div>
       </div>
     </section>
+
+    <section class="section alien-smiley-section">
+      <div class="container">
+        <div class="alien-smiley-shell">
+          <div class="alien-smiley-stars"></div>
+
+          <div class="alien-smiley-ufo alien-smiley-ufo-left" aria-hidden="true">
+            <div class="alien-smiley-ufo-dome"></div>
+            <div class="alien-smiley-ufo-disc"></div>
+            <div class="alien-smiley-ufo-beam"></div>
+          </div>
+
+          <div class="alien-smiley-ufo alien-smiley-ufo-right" aria-hidden="true">
+            <div class="alien-smiley-ufo-dome"></div>
+            <div class="alien-smiley-ufo-disc"></div>
+            <div class="alien-smiley-ufo-beam"></div>
+          </div>
+
+          <h2 class="alien-smiley-title">
+            <span class="alien-smiley-title-word-alien">ALIEN</span>
+            <span> and </span>
+            <span class="alien-smiley-title-word-smiley">SMILEY</span>
+          </h2>
+
+          <p class="alien-smiley-subtitle">
+            Strange goods from <strong>Rift Hollow</strong> — a neon-soaked storefront at the edge of a space-time tear, where the lights buzz, the beams hum, and the merch keeps arriving from somewhere beyond.
+          </p>
+
+          <div class="shop-panel alien-smiley-panel">
+            <h3>Visitor center merchandise</h3>
+            <p>
+              Welcome to the weird side of town. Retro alien chaos, gift-shop energy, laser-tag neon, and Rift Hollow souvenirs from the smiling side of the unknown.
+            </p>
+          </div>
+
+          <div class="shop-products alien-smiley-grid">
+            <div class="shop-product-item alien-smiley-item">
+              <div class="alien-smiley-rift-badge">Rift Hollow Drop</div>
+              <div id="product-component-1777773488104"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -147,7 +191,8 @@
         { id: "9195862229242", nodeId: "product-component-1776625411676", variant: "cakeWednesday" },
         { id: "9186465480954", nodeId: "product-component-1775969488952", variant: "cakeWednesday" },
         { id: "9186469871866", nodeId: "product-component-1775969665287", variant: "cakeWednesday" },
-        { id: "9214165123322", nodeId: "product-component-1777772925445", variant: "cakeWednesday" }
+        { id: "9214165123322", nodeId: "product-component-1777772925445", variant: "cakeWednesday" },
+        { id: "9206608888058", nodeId: "product-component-1777773488104", variant: "alienSmiley" }
       ];
 
       function createScript() {
@@ -364,9 +409,176 @@
         return options;
       }
 
+      function alienSmileyOptions() {
+        const options = baseOptions();
+
+        options.product.styles = {
+          product: {
+            "@media (min-width: 601px)": {
+              "max-width": "100%",
+              width: "100%",
+              "margin-left": "0",
+              "margin-right": "0",
+              "margin-bottom": "0",
+              "min-width": "0"
+            }
+          },
+          title: {
+            color: "#f2fff7",
+            "font-family": "Quantico, sans-serif",
+            "font-size": "24px"
+          },
+          price: {
+            color: "#8dffb3",
+            "font-family": "Quantico, sans-serif",
+            "font-size": "18px"
+          },
+          button: {
+            "font-family": "Quantico, sans-serif",
+            "font-size": "18px",
+            "padding-top": "17px",
+            "padding-bottom": "17px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000",
+              "background-color": "#00e612"
+            },
+            "background-color": "#00ff14",
+            ":focus": {
+              "background-color": "#00e612"
+            }
+          },
+          quantityInput: {
+            "font-size": "18px",
+            "padding-top": "17px",
+            "padding-bottom": "17px",
+            color: "#f2fff7",
+            "background-color": "#10182a",
+            border: "1px solid rgba(121, 255, 177, 0.38)"
+          }
+        };
+
+        options.product.text = {
+          button: "Add to cart"
+        };
+
+        options.product.googleFonts = ["Quantico"];
+
+        options.productSet = {
+          styles: {
+            products: {
+              "@media (min-width: 601px)": {
+                "margin-left": "0"
+              }
+            }
+          }
+        };
+
+        options.modalProduct.styles = {
+          product: {
+            "@media (min-width: 601px)": {
+              "max-width": "100%",
+              "margin-left": "0px",
+              "margin-bottom": "0px"
+            }
+          },
+          title: {
+            color: "#f2fff7",
+            "font-family": "Quantico, sans-serif",
+            "font-size": "24px"
+          },
+          price: {
+            color: "#8dffb3",
+            "font-family": "Quantico, sans-serif",
+            "font-size": "18px"
+          },
+          button: {
+            "font-family": "Quantico, sans-serif",
+            "font-size": "18px",
+            "padding-top": "17px",
+            "padding-bottom": "17px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000",
+              "background-color": "#00e612"
+            },
+            "background-color": "#00ff14",
+            ":focus": {
+              "background-color": "#00e612"
+            }
+          },
+          quantityInput: {
+            "font-size": "18px",
+            "padding-top": "17px",
+            "padding-bottom": "17px",
+            color: "#f2fff7",
+            "background-color": "#10182a",
+            border: "1px solid rgba(121, 255, 177, 0.38)"
+          }
+        };
+
+        options.modalProduct.googleFonts = ["Quantico"];
+        options.modalProduct.text = {
+          button: "Add to cart"
+        };
+
+        options.cart.styles = {
+          button: {
+            "font-family": "Quantico, sans-serif",
+            "font-size": "18px",
+            "padding-top": "17px",
+            "padding-bottom": "17px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000",
+              "background-color": "#00e612"
+            },
+            "background-color": "#00ff14",
+            ":focus": {
+              "background-color": "#00e612"
+            }
+          }
+        };
+
+        options.cart.text = {
+          total: "Subtotal",
+          button: "Checkout"
+        };
+
+        options.cart.googleFonts = ["Quantico"];
+
+        options.toggle.styles = {
+          toggle: {
+            "font-family": "Quantico, sans-serif",
+            "background-color": "#00ff14",
+            ":hover": {
+              "background-color": "#00e612"
+            },
+            ":focus": {
+              "background-color": "#00e612"
+            }
+          },
+          count: {
+            "font-size": "18px",
+            color: "#000000",
+            ":hover": {
+              color: "#000000"
+            }
+          },
+          iconPath: {
+            fill: "#000000"
+          }
+        };
+
+        options.toggle.googleFonts = ["Quantico"];
+
+        return options;
+      }
+
       function optionsFor(product) {
         if (product.variant === "tumbler") return tumblerOptions();
         if (product.variant === "cakeWednesday") return cakeWednesdayOptions();
+        if (product.variant === "alienSmiley") return alienSmileyOptions();
         return baseOptions();
       }
 
