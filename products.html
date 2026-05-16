@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Official Terra Services merch, including shirts and future Terra Services goods."
+    content="Official Terra Services merch, apparel, shirts, small goods, and future Terra Services product drops."
   />
   <link rel="stylesheet" href="styles.css" />
 
@@ -71,7 +71,8 @@
     }
 
     .merch-hero,
-    .merch-products-section {
+    .merch-products-section,
+    .future-merch-section {
       position: relative;
       z-index: 1;
     }
@@ -270,7 +271,7 @@
     }
 
     .merch-products-section {
-      padding: 26px 0 72px;
+      padding: 26px 0 42px;
     }
 
     .merch-products-header {
@@ -379,17 +380,85 @@
         0 12px 28px rgba(31, 24, 18, 0.07);
     }
 
-    #product-component-1778967577747,
-    #product-component-1778967925522 {
+    .shopify-product-node {
       width: 100%;
       max-width: 680px;
     }
 
-    #product-component-1778967577747 iframe,
-    #product-component-1778967925522 iframe,
-    #product-component-1778967577747 img,
-    #product-component-1778967925522 img {
+    .shopify-product-node iframe,
+    .shopify-product-node img {
       max-width: 100%;
+    }
+
+    .future-merch-section {
+      padding: 0 0 72px;
+    }
+
+    .future-merch-shell {
+      padding: clamp(1.25rem, 3vw, 1.8rem);
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.88), rgba(255, 255, 255, 0.64));
+      border: 1px solid rgba(80, 64, 48, 0.12);
+      box-shadow:
+        0 16px 42px rgba(31, 24, 18, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+    }
+
+    .future-merch-header {
+      max-width: 760px;
+      margin-bottom: 1.1rem;
+    }
+
+    .future-merch-header h2 {
+      margin: 0;
+      color: #2b241e;
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .future-merch-header p {
+      margin: 0.75rem 0 0;
+      color: #5f5145;
+      line-height: 1.7;
+    }
+
+    .future-merch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .future-merch-card {
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(91, 70, 53, 0.94), rgba(73, 55, 42, 0.9)),
+        radial-gradient(circle at top right, rgba(255, 160, 70, 0.2), transparent 40%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8f2ea;
+      box-shadow:
+        0 12px 28px rgba(31, 24, 18, 0.12),
+        inset 0 0 18px rgba(255, 255, 255, 0.04);
+    }
+
+    .future-merch-card h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.15;
+    }
+
+    .future-merch-card p {
+      margin: 0.5rem 0 0;
+      color: rgba(248, 242, 234, 0.78);
+      font-size: 0.92rem;
+      line-height: 1.45;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -405,6 +474,30 @@
 
       .product-card:nth-child(2) {
         animation-delay: -1.6s;
+      }
+
+      .product-card:nth-child(3) {
+        animation-delay: -2.4s;
+      }
+
+      .product-card:nth-child(4) {
+        animation-delay: -3.2s;
+      }
+
+      .product-card:nth-child(5) {
+        animation-delay: -4s;
+      }
+
+      .product-card:nth-child(6) {
+        animation-delay: -4.8s;
+      }
+
+      .product-card:nth-child(7) {
+        animation-delay: -5.6s;
+      }
+
+      .product-card:nth-child(8) {
+        animation-delay: -6.4s;
       }
 
       .merch-eyebrow {
@@ -499,7 +592,8 @@
 
     @media (max-width: 900px) {
       .merch-hero-shell,
-      .product-grid {
+      .product-grid,
+      .future-merch-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -510,11 +604,16 @@
       }
 
       .merch-products-section {
-        padding: 24px 0 54px;
+        padding: 24px 0 38px;
+      }
+
+      .future-merch-section {
+        padding-bottom: 54px;
       }
 
       .merch-hero-shell,
-      .product-card {
+      .product-card,
+      .future-merch-shell {
         border-radius: 20px;
       }
 
@@ -612,7 +711,7 @@
             </div>
 
             <div class="buy-button-frame">
-              <div id="product-component-1778967577747"></div>
+              <div id="product-component-1778967577747" class="shopify-product-node"></div>
             </div>
           </article>
 
@@ -623,9 +722,106 @@
             </div>
 
             <div class="buy-button-frame">
-              <div id="product-component-1778967925522"></div>
+              <div id="product-component-1778967925522" class="shopify-product-node"></div>
             </div>
           </article>
+
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Merch Drop 03</h3>
+            </div>
+
+            <div class="buy-button-frame">
+              <div id="product-component-1778975478350" class="shopify-product-node"></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Merch Drop 04</h3>
+            </div>
+
+            <div class="buy-button-frame">
+              <div id="product-component-1778975551101" class="shopify-product-node"></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Merch Drop 05</h3>
+            </div>
+
+            <div class="buy-button-frame">
+              <div id="product-component-1778975612602" class="shopify-product-node"></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Merch Drop 06</h3>
+            </div>
+
+            <div class="buy-button-frame">
+              <div id="product-component-1778975671300" class="shopify-product-node"></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Merch Drop 07</h3>
+            </div>
+
+            <div class="buy-button-frame">
+              <div id="product-component-1778975716217" class="shopify-product-node"></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Merch Drop 08</h3>
+            </div>
+
+            <div class="buy-button-frame">
+              <div id="product-component-1778975770319" class="shopify-product-node"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="future-merch-section">
+      <div class="container">
+        <div class="future-merch-shell">
+          <div class="future-merch-header">
+            <h2>More Terra Services Goods Coming Soon</h2>
+            <p>
+              Future shirts, small goods, stickers, shop items, limited drops, and seasonal releases
+              will appear here as they become available.
+            </p>
+          </div>
+
+          <div class="future-merch-grid">
+            <article class="future-merch-card">
+              <h3>More Shirts</h3>
+              <p>Additional Terra Services apparel and future shirt designs.</p>
+            </article>
+
+            <article class="future-merch-card">
+              <h3>Stickers &amp; Small Goods</h3>
+              <p>Shop marks, decals, small batches, and practical add-on items.</p>
+            </article>
+
+            <article class="future-merch-card">
+              <h3>Limited Drops</h3>
+              <p>Short-run releases, seasonal goods, and special project merch.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -656,6 +852,30 @@
         {
           id: "9125617598714",
           nodeId: "product-component-1778967925522"
+        },
+        {
+          id: "9131129733370",
+          nodeId: "product-component-1778975478350"
+        },
+        {
+          id: "9131124850938",
+          nodeId: "product-component-1778975551101"
+        },
+        {
+          id: "9131117019386",
+          nodeId: "product-component-1778975612602"
+        },
+        {
+          id: "9126615810298",
+          nodeId: "product-component-1778975671300"
+        },
+        {
+          id: "9196109857018",
+          nodeId: "product-component-1778975716217"
+        },
+        {
+          id: "9196111003898",
+          nodeId: "product-component-1778975770319"
         }
       ];
 
