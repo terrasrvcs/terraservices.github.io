@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TERRA SERVICES | Official Merch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Official Terra Services merch, including the Founder’s Shirt and future Terra Services goods."
+  />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===== Terra Services Merch Page ===== */
+
+    .merch-page {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 14%, rgba(255, 160, 70, 0.13), transparent 26%),
+        radial-gradient(circle at 88% 16%, rgba(120, 92, 62, 0.12), transparent 24%),
+        radial-gradient(circle at 52% 92%, rgba(255, 255, 255, 0.44), transparent 32%),
+        linear-gradient(180deg, #f5f1ea 0%, #eee7dc 100%);
+      isolation: isolate;
+    }
+
+    .merch-page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          115deg,
+          rgba(255, 255, 255, 0.34) 0%,
+          rgba(255, 255, 255, 0) 24%,
+          rgba(255, 255, 255, 0) 70%,
+          rgba(255, 255, 255, 0.22) 100%
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(80, 64, 48, 0.035) 0,
+          rgba(80, 64, 48, 0.035) 1px,
+          transparent 1px,
+          transparent 92px
+        );
+      opacity: 0.82;
+    }
+
+    .merch-page::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        conic-gradient(
+          from 180deg,
+          transparent,
+          rgba(255, 160, 70, 0.09),
+          transparent,
+          rgba(189, 207, 143, 0.11),
+          transparent,
+          rgba(255, 160, 70, 0.08),
+          transparent
+        );
+      filter: blur(28px);
+      opacity: 0.72;
+      animation: merchAuraRotate 26s linear infinite;
+    }
+
+    .merch-hero,
+    .featured-product-section,
+    .future-merch-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .merch-hero {
+      padding: 56px 0 28px;
+    }
+
+    .merch-hero-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: clamp(1.4rem, 4vw, 2.4rem);
+      align-items: center;
+      padding: clamp(1.4rem, 4vw, 2.3rem);
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.88), rgba(255, 255, 255, 0.64)),
+        radial-gradient(circle at top right, rgba(255, 160, 70, 0.13), transparent 36%);
+      border: 1px solid rgba(80, 64, 48, 0.13);
+      box-shadow:
+        0 18px 48px rgba(31, 24, 18, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
+    }
+
+    .merch-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 0.9rem;
+      padding: 0.46rem 1rem;
+      border-radius: var(--radius-pill);
+      background: rgba(120, 92, 62, 0.1);
+      color: #6a513c;
+      border: 1px solid rgba(120, 92, 62, 0.12);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .merch-hero h1 {
+      margin: 0;
+      color: #2b241e;
+      font-size: clamp(2.5rem, 6vw, 5.2rem);
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+      text-shadow: 0 10px 28px rgba(80, 64, 48, 0.12);
+    }
+
+    .merch-hero h1 span {
+      display: block;
+    }
+
+    .merch-hero-copy {
+      max-width: 68ch;
+      margin: 1.1rem 0 0;
+      color: #5f5145;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      font-weight: 500;
+    }
+
+    .merch-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1.3rem;
+    }
+
+    .merch-hero-card {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255, 160, 70, 0.32), transparent 18%),
+        radial-gradient(circle at 66% 60%, rgba(189, 207, 143, 0.22), transparent 18%),
+        linear-gradient(135deg, #362012 0%, #7a461f 24%, #1f160f 66%, #0c0d10 100%);
+      border: 1px solid rgba(255, 160, 70, 0.48);
+      box-shadow:
+        0 0 0 1px rgba(255, 160, 70, 0.14),
+        0 0 30px rgba(255, 160, 70, 0.24),
+        0 22px 58px rgba(0, 0, 0, 0.28);
+      isolation: isolate;
+    }
+
+    .merch-hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 226, 190, 0.28);
+      box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.05),
+        0 0 20px rgba(255, 160, 70, 0.2);
+      z-index: 2;
+    }
+
+    .merch-hero-card::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        linear-gradient(
+          115deg,
+          transparent 0%,
+          transparent 42%,
+          rgba(255, 255, 255, 0.16) 48%,
+          rgba(255, 255, 255, 0.36) 50%,
+          rgba(255, 255, 255, 0.12) 53%,
+          transparent 61%,
+          transparent 100%
+        );
+      z-index: 1;
+      opacity: 0.72;
+      animation: merchCardShine 5.8s ease-in-out infinite;
+    }
+
+    .merch-card-art {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.18), transparent 18%),
+        radial-gradient(circle at 78% 16%, rgba(255, 160, 70, 0.22), transparent 20%),
+        radial-gradient(circle at 72% 80%, rgba(189, 207, 143, 0.18), transparent 22%);
+    }
+
+    .merch-card-art::before {
+      content: "";
+      position: absolute;
+      right: -34px;
+      top: -34px;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      border: 18px solid rgba(255, 159, 69, 0.18);
+      box-shadow:
+        0 0 30px rgba(255, 159, 69, 0.28),
+        inset 0 0 30px rgba(255, 159, 69, 0.14);
+    }
+
+    .merch-card-art::after {
+      content: "";
+      position: absolute;
+      right: 72px;
+      top: 92px;
+      width: 96px;
+      height: 96px;
+      transform: rotate(45deg);
+      border: 2px solid rgba(255, 240, 220, 0.25);
+      box-shadow:
+        0 0 20px rgba(255, 159, 69, 0.28),
+        inset 0 0 20px rgba(255, 159, 69, 0.12);
+    }
+
+    .merch-hero-card-content {
+      position: relative;
+      z-index: 3;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      color: #fff0df;
+    }
+
+    .merch-hero-card-content p {
+      margin: 0 0 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 240, 223, 0.88);
+    }
+
+    .merch-hero-card-content h2 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.88;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      color: #f7a65f;
+      text-shadow:
+        0 0 12px rgba(255, 160, 70, 0.38),
+        0 2px 5px rgba(0, 0, 0, 0.58),
+        0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .merch-hero-card-content h2 span {
+      display: block;
+      color: #fff0df;
+      font-size: 0.72em;
+    }
+
+    .featured-product-section {
+      padding: 22px 0 58px;
+    }
+
+    .featured-product-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+      gap: clamp(1.2rem, 4vw, 2rem);
+      align-items: start;
+    }
+
+    .featured-product-copy,
+    .buy-button-shell,
+    .future-merch-shell {
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.88), rgba(255, 255, 255, 0.64));
+      border: 1px solid rgba(80, 64, 48, 0.12);
+      box-shadow:
+        0 16px 42px rgba(31, 24, 18, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+    }
+
+    .featured-product-copy {
+      padding: clamp(1.25rem, 3vw, 1.8rem);
+      position: sticky;
+      top: 18px;
+    }
+
+    .featured-product-copy h2 {
+      margin: 0;
+      color: #2b241e;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .featured-product-copy p {
+      margin: 1rem 0 0;
+      color: #5f5145;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .merch-detail-list {
+      display: grid;
+      gap: 0.7rem;
+      margin: 1.2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .merch-detail-list li {
+      padding: 0.75rem 0.85rem;
+      border-radius: 14px;
+      background: rgba(120, 92, 62, 0.08);
+      color: #4f4035;
+      font-size: 0.94rem;
+      font-weight: 750;
+      border: 1px solid rgba(120, 92, 62, 0.1);
+    }
+
+    .buy-button-shell {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.1rem, 3vw, 1.8rem);
+      min-height: 420px;
+    }
+
+    .buy-button-shell::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255, 160, 70, 0.13), transparent 22%),
+        radial-gradient(circle at 86% 18%, rgba(189, 207, 143, 0.16), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.34), transparent 30%);
+      opacity: 0.9;
+    }
+
+    .buy-button-frame {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      min-height: 390px;
+      padding: 1rem;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 252, 247, 0.6));
+      border: 1px solid rgba(120, 92, 62, 0.11);
+      box-shadow:
+        inset 0 0 24px rgba(255, 255, 255, 0.36),
+        0 12px 28px rgba(31, 24, 18, 0.07);
+    }
+
+    #product-component-1778967577747 {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    #product-component-1778967577747 iframe,
+    #product-component-1778967577747 img {
+      max-width: 100%;
+    }
+
+    .future-merch-section {
+      padding: 0 0 70px;
+    }
+
+    .future-merch-shell {
+      padding: clamp(1.25rem, 3vw, 1.8rem);
+    }
+
+    .future-merch-header {
+      max-width: 760px;
+      margin-bottom: 1.1rem;
+    }
+
+    .future-merch-header h2 {
+      margin: 0;
+      color: #2b241e;
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .future-merch-header p {
+      margin: 0.75rem 0 0;
+      color: #5f5145;
+      line-height: 1.7;
+    }
+
+    .future-merch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .future-merch-card {
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(91, 70, 53, 0.94), rgba(73, 55, 42, 0.9)),
+        radial-gradient(circle at top right, rgba(255, 160, 70, 0.2), transparent 40%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8f2ea;
+      box-shadow:
+        0 12px 28px rgba(31, 24, 18, 0.12),
+        inset 0 0 18px rgba(255, 255, 255, 0.04);
+    }
+
+    .future-merch-card h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.15;
+    }
+
+    .future-merch-card p {
+      margin: 0.5rem 0 0;
+      color: rgba(248, 242, 234, 0.78);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .merch-hero-card {
+        animation:
+          merchFloat 7s ease-in-out infinite,
+          merchGlow 4.8s ease-in-out infinite;
+      }
+
+      .merch-eyebrow {
+        animation: merchEyebrowPulse 4.5s ease-in-out infinite;
+      }
+    }
+
+    @keyframes merchFloat {
+      0%,
+      100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -9px;
+      }
+    }
+
+    @keyframes merchGlow {
+      0%,
+      100% {
+        box-shadow:
+          0 0 0 1px rgba(255, 160, 70, 0.14),
+          0 0 30px rgba(255, 160, 70, 0.24),
+          0 22px 58px rgba(0, 0, 0, 0.28);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 1px rgba(255, 160, 70, 0.24),
+          0 0 42px rgba(255, 160, 70, 0.34),
+          0 0 78px rgba(189, 207, 143, 0.16),
+          0 26px 68px rgba(0, 0, 0, 0.32);
+      }
+    }
+
+    @keyframes merchCardShine {
+      0%,
+      42% {
+        transform: translateX(-35%);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+
+      64%,
+      100% {
+        transform: translateX(35%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes merchAuraRotate {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+
+    @keyframes merchEyebrowPulse {
+      0%,
+      100% {
+        box-shadow:
+          0 8px 22px rgba(31, 24, 18, 0.07),
+          0 0 20px rgba(255, 160, 70, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.78);
+      }
+
+      50% {
+        box-shadow:
+          0 8px 24px rgba(31, 24, 18, 0.09),
+          0 0 28px rgba(255, 160, 70, 0.16),
+          inset 0 1px 0 rgba(255, 255, 255, 0.84);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .merch-hero-shell,
+      .featured-product-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-product-copy {
+        position: relative;
+        top: auto;
+      }
+
+      .future-merch-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .merch-hero {
+        padding: 40px 0 22px;
+      }
+
+      .featured-product-section {
+        padding-bottom: 44px;
+      }
+
+      .future-merch-section {
+        padding-bottom: 52px;
+      }
+
+      .merch-hero-shell,
+      .featured-product-copy,
+      .buy-button-shell,
+      .future-merch-shell {
+        border-radius: 20px;
+      }
+
+      .merch-hero-card {
+        min-height: 260px;
+        border-radius: 20px;
+      }
+
+      .merch-hero-card-content {
+        min-height: 260px;
+        padding: 22px;
+      }
+
+      .buy-button-frame {
+        min-height: 340px;
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html" aria-label="Return to home">
+          <img src="terra-services-banner-logo-v2.png?v=1" alt="Terra Services logo" class="logo-image" />
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="merch-page">
+    <section class="merch-hero">
+      <div class="container">
+        <div class="merch-hero-shell">
+          <div>
+            <p class="merch-eyebrow">Official Terra Services Merch</p>
+
+            <h1>
+              <span>Terra</span>
+              <span>Services</span>
+              <span>Merch</span>
+            </h1>
+
+            <p class="merch-hero-copy">
+              The official Terra Services storefront starts here with the Founder’s Shirt.
+              This page is built to grow, so future shirts, hats, shop goods, stickers,
+              and limited drops can be added without rebuilding the whole page.
+            </p>
+
+            <div class="merch-hero-actions">
+              <a href="#founders-shirt" class="btn btn-primary">Shop Founder’s Shirt</a>
+              <a href="shop.html" class="btn btn-outline">Back to Shop Directory</a>
+            </div>
+          </div>
+
+          <div class="merch-hero-card" aria-hidden="true">
+            <div class="merch-card-art"></div>
+            <div class="merch-hero-card-content">
+              <p>First Official Drop</p>
+              <h2>
+                Founder’s
+                <span>Shirt</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="founders-shirt" class="featured-product-section">
+      <div class="container">
+        <div class="featured-product-shell">
+          <aside class="featured-product-copy">
+            <p class="merch-eyebrow">Featured Product</p>
+
+            <h2>Founder’s Shirt</h2>
+
+            <p>
+              The first official Terra Services shirt. A clean starting point for the
+              merch collection and the foundation for future Terra Services drops.
+            </p>
+
+            <ul class="merch-detail-list">
+              <li>Official Terra Services product</li>
+              <li>Built into a reusable merch page layout</li>
+              <li>Ready for more products below</li>
+              <li>Checkout handled securely through Shopify</li>
+            </ul>
+          </aside>
+
+          <div class="buy-button-shell">
+            <div class="buy-button-frame">
+              <div id="product-component-1778967577747"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="future-merch-section">
+      <div class="container">
+        <div class="future-merch-shell">
+          <div class="future-merch-header">
+            <h2>Future Terra Services Goods</h2>
+            <p>
+              This area is ready for additional official Terra Services products.
+              As new Shopify buy buttons are created, we can add them here as full
+              product cards, featured drops, or seasonal collections.
+            </p>
+          </div>
+
+          <div class="future-merch-grid">
+            <article class="future-merch-card">
+              <h3>More Shirts</h3>
+              <p>Additional Terra Services apparel can be added here.</p>
+            </article>
+
+            <article class="future-merch-card">
+              <h3>Stickers &amp; Small Goods</h3>
+              <p>Simple add-on products, shop marks, decals, and small batches.</p>
+            </article>
+
+            <article class="future-merch-card">
+              <h3>Limited Drops</h3>
+              <p>Short-run releases, founder editions, and special project merch.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>TERRA SERVICES</strong>
+        <p>From concept to creation.</p>
+      </div>
+      <div class="footer-note">
+        <p>Fabrication ◦ Technical Design Support ◦ Ideas made real</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    /*<![CDATA[*/
+    (function () {
+      var scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit();
+        } else {
+          loadScript();
+        }
+      } else {
+        loadScript();
+      }
+
+      function loadScript() {
+        var script = document.createElement("script");
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: "wgebvh-ew.myshopify.com",
+          storefrontAccessToken: "880a62a42e7c57527eaaad203e878f88"
+        });
+
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          ui.createComponent("product", {
+            id: "9125330714874",
+            node: document.getElementById("product-component-1778967577747"),
+            moneyFormat: "%24%7B%7Bamount%7D%7D",
+            options: {
+              product: {
+                styles: {
+                  product: {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "width": "100%",
+                      "margin-left": "0",
+                      "margin-right": "0",
+                      "margin-bottom": "0"
+                    }
+                  },
+                  img: {
+                    "border-radius": "18px"
+                  },
+                  title: {
+                    "font-family": "Quantico, Segoe UI, sans-serif",
+                    "font-size": "24px",
+                    "color": "#2b241e"
+                  },
+                  price: {
+                    "font-family": "Quantico, Segoe UI, sans-serif",
+                    "font-size": "18px",
+                    "color": "#5f5145"
+                  },
+                  button: {
+                    "font-family": "Quantico, sans-serif",
+                    "font-size": "18px",
+                    "font-weight": "900",
+                    "padding-top": "17px",
+                    "padding-bottom": "17px",
+                    "color": "#000000",
+                    "background-color": "#bdcf8f",
+                    "border-radius": "14px",
+                    ":hover": {
+                      "color": "#000000",
+                      "background-color": "#aaba81"
+                    },
+                    ":focus": {
+                      "background-color": "#aaba81"
+                    }
+                  },
+                  quantityInput: {
+                    "font-size": "18px",
+                    "padding-top": "17px",
+                    "padding-bottom": "17px",
+                    "border-radius": "12px"
+                  }
+                },
+                text: {
+                  button: "Add to cart"
+                },
+                googleFonts: [
+                  "Quantico"
+                ]
+              },
+              productSet: {
+                styles: {
+                  products: {
+                    "@media (min-width: 601px)": {
+                      "margin-left": "0"
+                    }
+                  }
+                }
+              },
+              modalProduct: {
+                contents: {
+                  img: false,
+                  imgWithCarousel: true,
+                  button: false,
+                  buttonWithQuantity: true
+                },
+                styles: {
+                  product: {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0px",
+                      "margin-bottom": "0px"
+                    }
+                  },
+                  button: {
+                    "font-family": "Quantico, sans-serif",
+                    "font-size": "18px",
+                    "font-weight": "900",
+                    "padding-top": "17px",
+                    "padding-bottom": "17px",
+                    "color": "#000000",
+                    "background-color": "#bdcf8f",
+                    "border-radius": "14px",
+                    ":hover": {
+                      "color": "#000000",
+                      "background-color": "#aaba81"
+                    },
+                    ":focus": {
+                      "background-color": "#aaba81"
+                    }
+                  },
+                  quantityInput: {
+                    "font-size": "18px",
+                    "padding-top": "17px",
+                    "padding-bottom": "17px",
+                    "border-radius": "12px"
+                  }
+                },
+                googleFonts: [
+                  "Quantico"
+                ],
+                text: {
+                  button: "Add to cart"
+                }
+              },
+              option: {},
+              cart: {
+                styles: {
+                  button: {
+                    "font-family": "Quantico, sans-serif",
+                    "font-size": "18px",
+                    "font-weight": "900",
+                    "padding-top": "17px",
+                    "padding-bottom": "17px",
+                    "color": "#000000",
+                    "background-color": "#bdcf8f",
+                    "border-radius": "14px",
+                    ":hover": {
+                      "color": "#000000",
+                      "background-color": "#aaba81"
+                    },
+                    ":focus": {
+                      "background-color": "#aaba81"
+                    }
+                  }
+                },
+                text: {
+                  total: "Subtotal",
+                  button: "Checkout"
+                },
+                googleFonts: [
+                  "Quantico"
+                ]
+              },
+              toggle: {
+                styles: {
+                  toggle: {
+                    "font-family": "Quantico, sans-serif",
+                    "background-color": "#bdcf8f",
+                    "border-radius": "999px",
+                    ":hover": {
+                      "background-color": "#aaba81"
+                    },
+                    ":focus": {
+                      "background-color": "#aaba81"
+                    }
+                  },
+                  count: {
+                    "font-size": "18px",
+                    "color": "#000000",
+                    ":hover": {
+                      "color": "#000000"
+                    }
+                  },
+                  iconPath: {
+                    "fill": "#000000"
+                  }
+                },
+                googleFonts: [
+                  "Quantico"
+                ]
+              }
+            }
+          });
+        });
+      }
+    })();
+    /*]]>*/
+  </script>
+</body>
+</html>
