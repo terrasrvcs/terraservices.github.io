@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Official Terra Services merch, including the Founder’s Shirt and future Terra Services goods."
+    content="Official Terra Services merch, including shirts and future Terra Services goods."
   />
   <link rel="stylesheet" href="styles.css" />
 
@@ -71,14 +71,13 @@
     }
 
     .merch-hero,
-    .featured-product-section,
-    .future-merch-section {
+    .merch-products-section {
       position: relative;
       z-index: 1;
     }
 
     .merch-hero {
-      padding: 56px 0 28px;
+      padding: 56px 0 30px;
     }
 
     .merch-hero-shell {
@@ -270,77 +269,57 @@
       font-size: 0.72em;
     }
 
-    .featured-product-section {
-      padding: 22px 0 58px;
+    .merch-products-section {
+      padding: 26px 0 72px;
     }
 
-    .featured-product-shell {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
-      gap: clamp(1.2rem, 4vw, 2rem);
-      align-items: start;
+    .merch-products-header {
+      max-width: 780px;
+      margin: 0 auto 24px;
+      text-align: center;
     }
 
-    .featured-product-copy,
-    .buy-button-shell,
-    .future-merch-shell {
-      border-radius: 24px;
-      background:
-        linear-gradient(180deg, rgba(255, 252, 247, 0.88), rgba(255, 255, 255, 0.64));
-      border: 1px solid rgba(80, 64, 48, 0.12);
-      box-shadow:
-        0 16px 42px rgba(31, 24, 18, 0.09),
-        inset 0 1px 0 rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(10px);
-    }
-
-    .featured-product-copy {
-      padding: clamp(1.25rem, 3vw, 1.8rem);
-      position: sticky;
-      top: 18px;
-    }
-
-    .featured-product-copy h2 {
+    .merch-products-header h2 {
       margin: 0;
       color: #2b241e;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(2rem, 5vw, 3.6rem);
       line-height: 0.98;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.06em;
     }
 
-    .featured-product-copy p {
-      margin: 1rem 0 0;
+    .merch-products-header p {
+      max-width: 68ch;
+      margin: 0.9rem auto 0;
       color: #5f5145;
       font-size: 1rem;
       line-height: 1.7;
+      font-weight: 500;
     }
 
-    .merch-detail-list {
+    .product-grid {
       display: grid;
-      gap: 0.7rem;
-      margin: 1.2rem 0 0;
-      padding: 0;
-      list-style: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 3vw, 28px);
+      align-items: start;
     }
 
-    .merch-detail-list li {
-      padding: 0.75rem 0.85rem;
-      border-radius: 14px;
-      background: rgba(120, 92, 62, 0.08);
-      color: #4f4035;
-      font-size: 0.94rem;
-      font-weight: 750;
-      border: 1px solid rgba(120, 92, 62, 0.1);
-    }
-
-    .buy-button-shell {
+    .product-card {
       position: relative;
       overflow: hidden;
-      padding: clamp(1.1rem, 3vw, 1.8rem);
-      min-height: 420px;
+      min-height: 520px;
+      padding: clamp(1rem, 3vw, 1.5rem);
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.9), rgba(255, 255, 255, 0.68)),
+        radial-gradient(circle at top right, rgba(255, 160, 70, 0.13), transparent 36%);
+      border: 1px solid rgba(80, 64, 48, 0.13);
+      box-shadow:
+        0 18px 46px rgba(31, 24, 18, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(10px);
     }
 
-    .buy-button-shell::before {
+    .product-card::before {
       content: "";
       position: absolute;
       inset: -30%;
@@ -352,93 +331,65 @@
       opacity: 0.9;
     }
 
+    .product-card::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(120, 92, 62, 0.1);
+      pointer-events: none;
+    }
+
+    .product-card-header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+
+    .product-card-header p {
+      margin: 0 0 0.45rem;
+      color: #6a513c;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .product-card-header h3 {
+      margin: 0;
+      color: #2b241e;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
     .buy-button-frame {
       position: relative;
       z-index: 1;
       display: grid;
       place-items: center;
-      min-height: 390px;
+      min-height: 420px;
       padding: 1rem;
       border-radius: 20px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 252, 247, 0.6));
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 252, 247, 0.62));
       border: 1px solid rgba(120, 92, 62, 0.11);
       box-shadow:
         inset 0 0 24px rgba(255, 255, 255, 0.36),
         0 12px 28px rgba(31, 24, 18, 0.07);
     }
 
-    #product-component-1778967577747 {
+    #product-component-1778967577747,
+    #product-component-1778967925522 {
       width: 100%;
       max-width: 680px;
     }
 
     #product-component-1778967577747 iframe,
-    #product-component-1778967577747 img {
+    #product-component-1778967925522 iframe,
+    #product-component-1778967577747 img,
+    #product-component-1778967925522 img {
       max-width: 100%;
-    }
-
-    .future-merch-section {
-      padding: 0 0 70px;
-    }
-
-    .future-merch-shell {
-      padding: clamp(1.25rem, 3vw, 1.8rem);
-    }
-
-    .future-merch-header {
-      max-width: 760px;
-      margin-bottom: 1.1rem;
-    }
-
-    .future-merch-header h2 {
-      margin: 0;
-      color: #2b241e;
-      font-size: clamp(1.7rem, 4vw, 2.7rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-
-    .future-merch-header p {
-      margin: 0.75rem 0 0;
-      color: #5f5145;
-      line-height: 1.7;
-    }
-
-    .future-merch-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .future-merch-card {
-      min-height: 160px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1rem;
-      border-radius: 18px;
-      background:
-        linear-gradient(135deg, rgba(91, 70, 53, 0.94), rgba(73, 55, 42, 0.9)),
-        radial-gradient(circle at top right, rgba(255, 160, 70, 0.2), transparent 40%);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #f8f2ea;
-      box-shadow:
-        0 12px 28px rgba(31, 24, 18, 0.12),
-        inset 0 0 18px rgba(255, 255, 255, 0.04);
-    }
-
-    .future-merch-card h3 {
-      margin: 0;
-      font-size: 1.12rem;
-      line-height: 1.15;
-    }
-
-    .future-merch-card p {
-      margin: 0.5rem 0 0;
-      color: rgba(248, 242, 234, 0.78);
-      font-size: 0.92rem;
-      line-height: 1.45;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -446,6 +397,14 @@
         animation:
           merchFloat 7s ease-in-out infinite,
           merchGlow 4.8s ease-in-out infinite;
+      }
+
+      .product-card {
+        animation: productCardFloat 7.5s ease-in-out infinite;
+      }
+
+      .product-card:nth-child(2) {
+        animation-delay: -1.6s;
       }
 
       .merch-eyebrow {
@@ -461,6 +420,17 @@
 
       50% {
         translate: 0 -9px;
+      }
+    }
+
+    @keyframes productCardFloat {
+      0%,
+      100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -7px;
       }
     }
 
@@ -529,16 +499,7 @@
 
     @media (max-width: 900px) {
       .merch-hero-shell,
-      .featured-product-shell {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-product-copy {
-        position: relative;
-        top: auto;
-      }
-
-      .future-merch-grid {
+      .product-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -548,18 +509,12 @@
         padding: 40px 0 22px;
       }
 
-      .featured-product-section {
-        padding-bottom: 44px;
-      }
-
-      .future-merch-section {
-        padding-bottom: 52px;
+      .merch-products-section {
+        padding: 24px 0 54px;
       }
 
       .merch-hero-shell,
-      .featured-product-copy,
-      .buy-button-shell,
-      .future-merch-shell {
+      .product-card {
         border-radius: 20px;
       }
 
@@ -615,13 +570,12 @@
             </h1>
 
             <p class="merch-hero-copy">
-              The official Terra Services storefront starts here with the Founder’s Shirt.
-              This page is built to grow, so future shirts, hats, shop goods, stickers,
-              and limited drops can be added without rebuilding the whole page.
+              Official Terra Services apparel and goods. This storefront begins with the first
+              Terra Services shirt drops and will continue growing with new releases.
             </p>
 
             <div class="merch-hero-actions">
-              <a href="#founders-shirt" class="btn btn-primary">Shop Founder’s Shirt</a>
+              <a href="#official-merch" class="btn btn-primary">Shop Merch</a>
               <a href="shop.html" class="btn btn-outline">Back to Shop Directory</a>
             </div>
           </div>
@@ -629,10 +583,10 @@
           <div class="merch-hero-card" aria-hidden="true">
             <div class="merch-card-art"></div>
             <div class="merch-hero-card-content">
-              <p>First Official Drop</p>
+              <p>Official Storefront</p>
               <h2>
-                Founder’s
-                <span>Shirt</span>
+                Terra
+                <span>Goods</span>
               </h2>
             </div>
           </div>
@@ -640,64 +594,38 @@
       </div>
     </section>
 
-    <section id="founders-shirt" class="featured-product-section">
+    <section id="official-merch" class="merch-products-section">
       <div class="container">
-        <div class="featured-product-shell">
-          <aside class="featured-product-copy">
-            <p class="merch-eyebrow">Featured Product</p>
+        <div class="merch-products-header">
+          <p class="merch-eyebrow">Available Now</p>
+          <h2>Official Merch</h2>
+          <p>
+            Select a product below to view details, choose options, and add it to your cart.
+          </p>
+        </div>
 
-            <h2>Founder’s Shirt</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>First Official Drop</p>
+              <h3>Founder’s Shirt</h3>
+            </div>
 
-            <p>
-              The first official Terra Services shirt. A clean starting point for the
-              merch collection and the foundation for future Terra Services drops.
-            </p>
-
-            <ul class="merch-detail-list">
-              <li>Official Terra Services product</li>
-              <li>Built into a reusable merch page layout</li>
-              <li>Ready for more products below</li>
-              <li>Checkout handled securely through Shopify</li>
-            </ul>
-          </aside>
-
-          <div class="buy-button-shell">
             <div class="buy-button-frame">
               <div id="product-component-1778967577747"></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </article>
 
-    <section class="future-merch-section">
-      <div class="container">
-        <div class="future-merch-shell">
-          <div class="future-merch-header">
-            <h2>Future Terra Services Goods</h2>
-            <p>
-              This area is ready for additional official Terra Services products.
-              As new Shopify buy buttons are created, we can add them here as full
-              product cards, featured drops, or seasonal collections.
-            </p>
-          </div>
+          <article class="product-card">
+            <div class="product-card-header">
+              <p>Official Terra Services Merch</p>
+              <h3>Terra Services Shirt</h3>
+            </div>
 
-          <div class="future-merch-grid">
-            <article class="future-merch-card">
-              <h3>More Shirts</h3>
-              <p>Additional Terra Services apparel can be added here.</p>
-            </article>
-
-            <article class="future-merch-card">
-              <h3>Stickers &amp; Small Goods</h3>
-              <p>Simple add-on products, shop marks, decals, and small batches.</p>
-            </article>
-
-            <article class="future-merch-card">
-              <h3>Limited Drops</h3>
-              <p>Short-run releases, founder editions, and special project merch.</p>
-            </article>
-          </div>
+            <div class="buy-button-frame">
+              <div id="product-component-1778967925522"></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -719,6 +647,17 @@
     /*<![CDATA[*/
     (function () {
       var scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+
+      var products = [
+        {
+          id: "9125330714874",
+          nodeId: "product-component-1778967577747"
+        },
+        {
+          id: "9125617598714",
+          nodeId: "product-component-1778967925522"
+        }
+      ];
 
       if (window.ShopifyBuy) {
         if (window.ShopifyBuy.UI) {
@@ -745,181 +684,190 @@
         });
 
         ShopifyBuy.UI.onReady(client).then(function (ui) {
-          ui.createComponent("product", {
-            id: "9125330714874",
-            node: document.getElementById("product-component-1778967577747"),
-            moneyFormat: "%24%7B%7Bamount%7D%7D",
-            options: {
-              product: {
-                styles: {
-                  product: {
-                    "@media (min-width: 601px)": {
-                      "max-width": "100%",
-                      "width": "100%",
-                      "margin-left": "0",
-                      "margin-right": "0",
-                      "margin-bottom": "0"
-                    }
-                  },
-                  img: {
-                    "border-radius": "18px"
-                  },
-                  title: {
-                    "font-family": "Quantico, Segoe UI, sans-serif",
-                    "font-size": "24px",
-                    "color": "#2b241e"
-                  },
-                  price: {
-                    "font-family": "Quantico, Segoe UI, sans-serif",
-                    "font-size": "18px",
-                    "color": "#5f5145"
-                  },
-                  button: {
-                    "font-family": "Quantico, sans-serif",
-                    "font-size": "18px",
-                    "font-weight": "900",
-                    "padding-top": "17px",
-                    "padding-bottom": "17px",
-                    "color": "#000000",
-                    "background-color": "#bdcf8f",
-                    "border-radius": "14px",
-                    ":hover": {
-                      "color": "#000000",
-                      "background-color": "#aaba81"
-                    },
-                    ":focus": {
-                      "background-color": "#aaba81"
-                    }
-                  },
-                  quantityInput: {
-                    "font-size": "18px",
-                    "padding-top": "17px",
-                    "padding-bottom": "17px",
-                    "border-radius": "12px"
-                  }
-                },
-                text: {
-                  button: "Add to cart"
-                },
-                googleFonts: [
-                  "Quantico"
-                ]
-              },
-              productSet: {
-                styles: {
-                  products: {
-                    "@media (min-width: 601px)": {
-                      "margin-left": "0"
-                    }
-                  }
-                }
-              },
-              modalProduct: {
-                contents: {
-                  img: false,
-                  imgWithCarousel: true,
-                  button: false,
-                  buttonWithQuantity: true
-                },
-                styles: {
-                  product: {
-                    "@media (min-width: 601px)": {
-                      "max-width": "100%",
-                      "margin-left": "0px",
-                      "margin-bottom": "0px"
-                    }
-                  },
-                  button: {
-                    "font-family": "Quantico, sans-serif",
-                    "font-size": "18px",
-                    "font-weight": "900",
-                    "padding-top": "17px",
-                    "padding-bottom": "17px",
-                    "color": "#000000",
-                    "background-color": "#bdcf8f",
-                    "border-radius": "14px",
-                    ":hover": {
-                      "color": "#000000",
-                      "background-color": "#aaba81"
-                    },
-                    ":focus": {
-                      "background-color": "#aaba81"
-                    }
-                  },
-                  quantityInput: {
-                    "font-size": "18px",
-                    "padding-top": "17px",
-                    "padding-bottom": "17px",
-                    "border-radius": "12px"
-                  }
-                },
-                googleFonts: [
-                  "Quantico"
-                ],
-                text: {
-                  button: "Add to cart"
-                }
-              },
-              option: {},
-              cart: {
-                styles: {
-                  button: {
-                    "font-family": "Quantico, sans-serif",
-                    "font-size": "18px",
-                    "font-weight": "900",
-                    "padding-top": "17px",
-                    "padding-bottom": "17px",
-                    "color": "#000000",
-                    "background-color": "#bdcf8f",
-                    "border-radius": "14px",
-                    ":hover": {
-                      "color": "#000000",
-                      "background-color": "#aaba81"
-                    },
-                    ":focus": {
-                      "background-color": "#aaba81"
-                    }
-                  }
-                },
-                text: {
-                  total: "Subtotal",
-                  button: "Checkout"
-                },
-                googleFonts: [
-                  "Quantico"
-                ]
-              },
-              toggle: {
-                styles: {
-                  toggle: {
-                    "font-family": "Quantico, sans-serif",
-                    "background-color": "#bdcf8f",
-                    "border-radius": "999px",
-                    ":hover": {
-                      "background-color": "#aaba81"
-                    },
-                    ":focus": {
-                      "background-color": "#aaba81"
-                    }
-                  },
-                  count: {
-                    "font-size": "18px",
-                    "color": "#000000",
-                    ":hover": {
-                      "color": "#000000"
-                    }
-                  },
-                  iconPath: {
-                    "fill": "#000000"
-                  }
-                },
-                googleFonts: [
-                  "Quantico"
-                ]
-              }
-            }
+          products.forEach(function (product) {
+            var node = document.getElementById(product.nodeId);
+            if (!node) return;
+
+            ui.createComponent("product", {
+              id: product.id,
+              node: node,
+              moneyFormat: "%24%7B%7Bamount%7D%7D",
+              options: storefrontOptions()
+            });
           });
         });
+      }
+
+      function storefrontOptions() {
+        return {
+          product: {
+            styles: {
+              product: {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "width": "100%",
+                  "margin-left": "0",
+                  "margin-right": "0",
+                  "margin-bottom": "0"
+                }
+              },
+              img: {
+                "border-radius": "18px"
+              },
+              title: {
+                "font-family": "Quantico, Segoe UI, sans-serif",
+                "font-size": "24px",
+                "color": "#2b241e"
+              },
+              price: {
+                "font-family": "Quantico, Segoe UI, sans-serif",
+                "font-size": "18px",
+                "color": "#5f5145"
+              },
+              button: {
+                "font-family": "Quantico, sans-serif",
+                "font-size": "18px",
+                "font-weight": "900",
+                "padding-top": "17px",
+                "padding-bottom": "17px",
+                "color": "#000000",
+                "background-color": "#bdcf8f",
+                "border-radius": "14px",
+                ":hover": {
+                  "color": "#000000",
+                  "background-color": "#aaba81"
+                },
+                ":focus": {
+                  "background-color": "#aaba81"
+                }
+              },
+              quantityInput: {
+                "font-size": "18px",
+                "padding-top": "17px",
+                "padding-bottom": "17px",
+                "border-radius": "12px"
+              }
+            },
+            text: {
+              button: "Add to cart"
+            },
+            googleFonts: [
+              "Quantico"
+            ]
+          },
+          productSet: {
+            styles: {
+              products: {
+                "@media (min-width: 601px)": {
+                  "margin-left": "0"
+                }
+              }
+            }
+          },
+          modalProduct: {
+            contents: {
+              img: false,
+              imgWithCarousel: true,
+              button: false,
+              buttonWithQuantity: true
+            },
+            styles: {
+              product: {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              },
+              button: {
+                "font-family": "Quantico, sans-serif",
+                "font-size": "18px",
+                "font-weight": "900",
+                "padding-top": "17px",
+                "padding-bottom": "17px",
+                "color": "#000000",
+                "background-color": "#bdcf8f",
+                "border-radius": "14px",
+                ":hover": {
+                  "color": "#000000",
+                  "background-color": "#aaba81"
+                },
+                ":focus": {
+                  "background-color": "#aaba81"
+                }
+              },
+              quantityInput: {
+                "font-size": "18px",
+                "padding-top": "17px",
+                "padding-bottom": "17px",
+                "border-radius": "12px"
+              }
+            },
+            googleFonts: [
+              "Quantico"
+            ],
+            text: {
+              button: "Add to cart"
+            }
+          },
+          option: {},
+          cart: {
+            styles: {
+              button: {
+                "font-family": "Quantico, sans-serif",
+                "font-size": "18px",
+                "font-weight": "900",
+                "padding-top": "17px",
+                "padding-bottom": "17px",
+                "color": "#000000",
+                "background-color": "#bdcf8f",
+                "border-radius": "14px",
+                ":hover": {
+                  "color": "#000000",
+                  "background-color": "#aaba81"
+                },
+                ":focus": {
+                  "background-color": "#aaba81"
+                }
+              }
+            },
+            text: {
+              total: "Subtotal",
+              button: "Checkout"
+            },
+            googleFonts: [
+              "Quantico"
+            ]
+          },
+          toggle: {
+            styles: {
+              toggle: {
+                "font-family": "Quantico, sans-serif",
+                "background-color": "#bdcf8f",
+                "border-radius": "999px",
+                ":hover": {
+                  "background-color": "#aaba81"
+                },
+                ":focus": {
+                  "background-color": "#aaba81"
+                }
+              },
+              count: {
+                "font-size": "18px",
+                "color": "#000000",
+                ":hover": {
+                  "color": "#000000"
+                }
+              },
+              iconPath: {
+                "fill": "#000000"
+              }
+            },
+            googleFonts: [
+              "Quantico"
+            ]
+          }
+        };
       }
     })();
     /*]]>*/
