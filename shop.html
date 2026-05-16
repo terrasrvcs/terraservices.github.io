@@ -6,9 +6,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Browse the Terra Services shop by storefront. Choose your adventure through themed shop tiles for merch, fabrication, electronics, 3D printing, Rift Hollow, and seasonal drops."
+    content="Browse the Terra Services shop by storefront. Choose your adventure through themed shop tiles for merch, fabrication, electronics, 3D printing, Cake Wednesday, Rift Hollow, and seasonal drops."
   />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .shop-directory-stage {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .shop-directory-panel {
+      max-width: 78ch;
+    }
+
+    .shop-directory-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04) 42%, rgba(255, 255, 255, 0) 72%),
+        linear-gradient(180deg, rgba(30, 30, 30, 0.96), rgba(18, 18, 18, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.24),
+        0 10px 28px rgba(0, 0, 0, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .shop-directory-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .shop-directory-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .shop-directory-note {
+      margin: 0.75rem 0 0;
+      font-size: 0.95rem;
+      opacity: 0.82;
+      text-align: center;
+    }
+
+    .shop-directory-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+    }
+
+    .shop-directory-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.18s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .shop-directory-links a:hover,
+    .shop-directory-links a:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.22);
+      outline: none;
+    }
+
+    @media (max-width: 700px) {
+      .shop-directory-wrap {
+        padding: 0.8rem;
+        border-radius: 22px;
+      }
+
+      .shop-directory-wrap::before {
+        inset: 10px;
+        border-radius: 16px;
+      }
+
+      .shop-directory-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -32,104 +131,88 @@
   </header>
 
   <main>
-    <section class="section shop-tile-page">
+    <section class="section">
       <div class="container">
         <h1 class="page-title">Choose Your Adventure</h1>
         <p class="section-intro">
-          Enter the Terra Services shop through themed storefront tiles. Each destination is its own lane, built to grow over time without burying the rest of the shop.
+          Enter the Terra Services shop through themed storefront tiles. Each lane has its own identity and can now grow without turning the shop into one endless scroll.
         </p>
 
         <div class="shop-panel shop-directory-panel">
           <h3>Shop Directory</h3>
           <p>
-            Select a storefront below to enter that section of the shop. As the store expands, new tiles can be added without turning the page into one endless scroll.
+            Click a tile below to enter that storefront. As new product lines and seasonal collections are added, new tiles can be dropped into the directory cleanly.
           </p>
         </div>
 
-        <div class="shop-tile-grid">
-          <a class="shop-tile tile-terra" href="shop-terra-services.html" aria-label="Enter Terra Services storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">Core Store</span>
-              <span class="shop-tile-title">TERRA SERVICES</span>
-              <span class="shop-tile-text">
-                Official merch, maker goods, and flagship shop items.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
+        <div class="shop-directory-stage">
+          <div class="shop-directory-wrap">
+            <img
+              src="shop-directory-tiles-v1.png"
+              alt="Terra Services shop directory showing tiles for Terra Services, Fabrication, Terra Circuit Works, LUNARLAYERS, Cake Wednesday, Rift Hollow, and Independence Day."
+              class="shop-directory-image"
+              usemap="#shop-directory-map"
+            />
 
-          <a class="shop-tile tile-fabrication" href="shop-fabrication.html" aria-label="Enter Fabrication storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">Custom Work</span>
-              <span class="shop-tile-title">Fabrication</span>
-              <span class="shop-tile-text">
-                Metalwork, custom builds, repair, and visual examples of real fabrication work.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
+            <map name="shop-directory-map">
+              <area
+                shape="rect"
+                coords="23,24,671,363"
+                href="shop-terra-services.html"
+                alt="TERRA SERVICES storefront"
+              />
+              <area
+                shape="rect"
+                coords="704,24,1347,363"
+                href="shop-fabrication.html"
+                alt="Fabrication storefront"
+              />
+              <area
+                shape="rect"
+                coords="22,374,672,712"
+                href="shop-terra-circuit-works.html"
+                alt="Terra Circuit Works storefront"
+              />
+              <area
+                shape="rect"
+                coords="704,374,1347,712"
+                href="shop-lunarlayers.html"
+                alt="LUNARLAYERS storefront"
+              />
+              <area
+                shape="rect"
+                coords="22,724,672,1061"
+                href="shop-cake-wednesday.html"
+                alt="Cake Wednesday storefront"
+              />
+              <area
+                shape="rect"
+                coords="704,724,1347,1061"
+                href="shop-rift-hollow.html"
+                alt="Rift Hollow storefront"
+              />
+              <area
+                shape="rect"
+                coords="22,1074,1347,1285"
+                href="shop-independence-day.html"
+                alt="Independence Day storefront"
+              />
+            </map>
+          </div>
 
-          <a class="shop-tile tile-circuit" href="shop-terra-circuit-works.html" aria-label="Enter Terra Circuit Works storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">Premium Maker-Lab</span>
-              <span class="shop-tile-title">Terra Circuit Works</span>
-              <span class="shop-tile-text">
-                Premium electronics, desk devices, compact systems, and small technical builds.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
+          <p class="shop-directory-note">
+            If a tile link is not active yet, that storefront page is the next one to build.
+          </p>
 
-          <a class="shop-tile tile-lunarlayers" href="shop-lunarlayers.html" aria-label="Enter LUNARLAYERS storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">3D Printing</span>
-              <span class="shop-tile-title">LUNARLAYERS</span>
-              <span class="shop-tile-text">
-                Printed products, layered creations, and customer print requests.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
-
-          <a class="shop-tile tile-cake" href="shop-cake-wednesday.html" aria-label="Enter Cake Wednesday storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">Character Collection</span>
-              <span class="shop-tile-title">CAKE WEDNESDAY</span>
-              <span class="shop-tile-text">
-                Fresh shirts, gear, and strange little delights from the Cake Wednesday corner.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
-
-          <a class="shop-tile tile-rift" href="shop-rift-hollow.html" aria-label="Enter Rift Hollow storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">Rift Hollow</span>
-              <span class="shop-tile-title">Rift Hollow</span>
-              <span class="shop-tile-text">
-                Strange goods from the neon-soaked edge of the unknown.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
-
-          <a class="shop-tile tile-independence" href="shop-independence-day.html" aria-label="Enter Independence Day storefront">
-            <span class="shop-tile-glow"></span>
-            <span class="shop-tile-content">
-              <span class="shop-tile-kicker">Seasonal Collection</span>
-              <span class="shop-tile-title">Independence Day</span>
-              <span class="shop-tile-text">
-                Returning Fourth of July merchandise and annual patriotic drops.
-              </span>
-              <span class="shop-tile-cta">Enter Storefront</span>
-            </span>
-          </a>
+          <div class="shop-directory-links">
+            <a href="shop-terra-services.html">TERRA SERVICES</a>
+            <a href="shop-fabrication.html">Fabrication</a>
+            <a href="shop-terra-circuit-works.html">Terra Circuit Works</a>
+            <a href="shop-lunarlayers.html">LUNARLAYERS</a>
+            <a href="shop-cake-wednesday.html">CAKE WEDNESDAY</a>
+            <a href="shop-rift-hollow.html">Rift Hollow</a>
+            <a href="shop-independence-day.html">Independence Day</a>
+          </div>
         </div>
       </div>
     </section>
