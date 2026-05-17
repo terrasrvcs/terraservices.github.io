@@ -6,21 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Independence Day merch from Terra Services. 2026 patriotic drops, fireworks, red white and blue neon, and limited seasonal goods."
+    content="Independence Day merch from Terra Services. A 2026 patriotic collection featuring special-edition shirts, fireworks, red white and blue neon, and American commercial energy."
   />
   <link rel="stylesheet" href="styles.css" />
 
   <style>
+    :root {
+      --id-red: #ff1f1f;
+      --id-red-deep: #d70000;
+      --id-white: #ffffff;
+      --id-blue: #2f6bff;
+      --id-blue-deep: #103cbb;
+      --id-dark: #040915;
+      --id-dark-2: #09152d;
+      --id-dark-3: #1b0e18;
+      --glow-red: 0 0 10px rgba(255, 31, 31, 0.72), 0 0 24px rgba(255, 31, 31, 0.46);
+      --glow-white: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 18px rgba(255, 255, 255, 0.32);
+      --glow-blue: 0 0 10px rgba(47, 107, 255, 0.72), 0 0 24px rgba(47, 107, 255, 0.46);
+    }
+
     .independence-page {
       position: relative;
       overflow: hidden;
       isolation: isolate;
       color: #f8fbff;
       background:
-        radial-gradient(circle at 12% 12%, rgba(255, 0, 0, 0.2), transparent 24%),
-        radial-gradient(circle at 88% 12%, rgba(0, 98, 255, 0.22), transparent 24%),
-        radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.12), transparent 30%),
-        linear-gradient(180deg, #030815 0%, #071436 34%, #120819 70%, #05050c 100%);
+        radial-gradient(circle at 12% 10%, rgba(255, 0, 0, 0.18), transparent 20%),
+        radial-gradient(circle at 88% 12%, rgba(47, 107, 255, 0.2), transparent 22%),
+        radial-gradient(circle at 50% 74%, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(180deg, #020611 0%, #07112a 26%, #10162f 54%, #160b15 78%, #03040a 100%);
     }
 
     .independence-page::before {
@@ -29,13 +43,14 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
+      opacity: 0.55;
       background:
         repeating-linear-gradient(
           90deg,
-          rgba(255, 255, 255, 0.024) 0,
-          rgba(255, 255, 255, 0.024) 1px,
+          rgba(255, 255, 255, 0.025) 0,
+          rgba(255, 255, 255, 0.025) 1px,
           transparent 1px,
-          transparent 92px
+          transparent 88px
         ),
         linear-gradient(
           115deg,
@@ -44,34 +59,33 @@
           rgba(255, 255, 255, 0) 82%,
           rgba(255, 255, 255, 0.05) 100%
         );
-      opacity: 0.75;
     }
 
     .independence-page::after {
       content: "";
       position: absolute;
-      inset: -40%;
+      inset: -35%;
       z-index: 0;
       pointer-events: none;
+      opacity: 0.82;
+      filter: blur(34px);
       background:
         conic-gradient(
-          from 180deg,
+          from 0deg,
+          rgba(255, 31, 31, 0.16),
           transparent,
-          rgba(255, 0, 0, 0.13),
+          rgba(255, 255, 255, 0.08),
           transparent,
-          rgba(255, 255, 255, 0.1),
+          rgba(47, 107, 255, 0.16),
           transparent,
-          rgba(0, 98, 255, 0.14),
-          transparent,
-          rgba(255, 0, 0, 0.11),
+          rgba(255, 31, 31, 0.14),
           transparent
         );
-      filter: blur(34px);
-      opacity: 0.82;
-      animation: freedomAuraSpin 26s linear infinite;
+      animation: freedomAuraSpin 28s linear infinite;
     }
 
     .independence-hero,
+    .independence-commercial,
     .independence-products-section,
     .independence-future-section {
       position: relative;
@@ -79,28 +93,28 @@
     }
 
     .independence-hero {
-      padding: 56px 0 30px;
+      padding: 56px 0 26px;
     }
 
     .independence-hero-shell {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-      gap: clamp(1.4rem, 4vw, 2.5rem);
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: clamp(1.4rem, 4vw, 2.4rem);
       align-items: center;
-      padding: clamp(1.3rem, 4vw, 2.25rem);
+      padding: clamp(1.35rem, 4vw, 2.2rem);
       border-radius: 30px;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(6, 14, 34, 0.94), rgba(20, 9, 25, 0.9)),
-        radial-gradient(circle at top right, rgba(255, 0, 0, 0.18), transparent 34%),
-        radial-gradient(circle at bottom left, rgba(0, 98, 255, 0.2), transparent 36%);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+        linear-gradient(180deg, rgba(5, 13, 34, 0.94), rgba(21, 11, 24, 0.92)),
+        radial-gradient(circle at top right, rgba(255, 31, 31, 0.16), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(47, 107, 255, 0.16), transparent 34%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow:
-        0 24px 58px rgba(0, 0, 0, 0.34),
-        0 0 34px rgba(255, 0, 0, 0.1),
-        0 0 44px rgba(0, 98, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+        0 24px 56px rgba(0, 0, 0, 0.34),
+        0 0 32px rgba(255, 31, 31, 0.1),
+        0 0 40px rgba(47, 107, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
     }
 
@@ -113,19 +127,19 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow:
         inset 0 0 20px rgba(255, 255, 255, 0.04),
-        inset 0 0 28px rgba(255, 0, 0, 0.06),
-        inset 0 0 34px rgba(0, 98, 255, 0.06);
+        inset 0 0 24px rgba(255, 31, 31, 0.05),
+        inset 0 0 24px rgba(47, 107, 255, 0.05);
     }
 
     .independence-eyebrow {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin: 0 0 0.95rem;
+      margin: 0 0 1rem;
       padding: 0.45rem 1rem;
       border-radius: 999px;
       background:
-        linear-gradient(90deg, rgba(255, 0, 0, 0.18), rgba(255, 255, 255, 0.1), rgba(0, 98, 255, 0.18));
+        linear-gradient(90deg, rgba(255, 31, 31, 0.18), rgba(255, 255, 255, 0.12), rgba(47, 107, 255, 0.18));
       border: 1px solid rgba(255, 255, 255, 0.18);
       color: #ffffff;
       font-size: 0.78rem;
@@ -133,22 +147,23 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       box-shadow:
-        0 0 16px rgba(255, 0, 0, 0.12),
-        0 0 18px rgba(0, 98, 255, 0.12),
-        inset 0 0 14px rgba(255, 255, 255, 0.04);
+        0 0 16px rgba(255, 31, 31, 0.12),
+        0 0 18px rgba(47, 107, 255, 0.12),
+        inset 0 0 12px rgba(255, 255, 255, 0.04);
+      animation: eyebrowPulse 4.5s ease-in-out infinite;
     }
 
     .independence-hero h1 {
       margin: 0;
-      font-size: clamp(2.45rem, 6vw, 5.2rem);
+      font-size: clamp(2.5rem, 6vw, 5.3rem);
       line-height: 0.9;
       letter-spacing: -0.075em;
       color: #ffffff;
       text-shadow:
         0 0 14px rgba(255, 255, 255, 0.14),
-        0 0 20px rgba(255, 0, 0, 0.14),
-        0 0 26px rgba(0, 98, 255, 0.16),
-        0 10px 28px rgba(0, 0, 0, 0.42);
+        0 0 18px rgba(255, 31, 31, 0.16),
+        0 0 22px rgba(47, 107, 255, 0.16),
+        0 12px 30px rgba(0, 0, 0, 0.42);
     }
 
     .independence-hero h1 span {
@@ -157,9 +172,9 @@
 
     .independence-hero-copy {
       max-width: 70ch;
-      margin: 1.05rem 0 0;
+      margin: 1rem 0 0;
       color: rgba(238, 244, 255, 0.92);
-      font-size: 1.05rem;
+      font-size: 1.04rem;
       line-height: 1.72;
       font-weight: 500;
     }
@@ -168,7 +183,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 1.3rem;
+      margin-top: 1.35rem;
     }
 
     .fireworks-scene {
@@ -177,17 +192,20 @@
       overflow: hidden;
       border-radius: 24px;
       background:
-        radial-gradient(circle at 20% 18%, rgba(255, 0, 0, 0.18), transparent 18%),
-        radial-gradient(circle at 78% 20%, rgba(0, 98, 255, 0.2), transparent 20%),
+        radial-gradient(circle at 20% 18%, rgba(255, 31, 31, 0.18), transparent 18%),
+        radial-gradient(circle at 78% 20%, rgba(47, 107, 255, 0.2), transparent 20%),
         radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.1), transparent 18%),
         linear-gradient(180deg, rgba(6, 14, 34, 0.92) 0%, rgba(7, 16, 44, 0.96) 56%, rgba(12, 7, 16, 1) 100%);
       border: 1px solid rgba(255, 255, 255, 0.16);
       box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.06),
-        0 0 28px rgba(255, 0, 0, 0.12),
-        0 0 36px rgba(0, 98, 255, 0.12),
+        0 0 30px rgba(255, 31, 31, 0.14),
+        0 0 36px rgba(47, 107, 255, 0.14),
         0 20px 52px rgba(0, 0, 0, 0.28);
       isolation: isolate;
+      animation:
+        sceneFloat 7s ease-in-out infinite,
+        sceneGlow 5.2s ease-in-out infinite;
     }
 
     .scene-stars {
@@ -197,9 +215,9 @@
       pointer-events: none;
       background-image:
         radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle, rgba(255, 40, 40, 0.9) 0 1.4px, transparent 2px),
+        radial-gradient(circle, rgba(255, 40, 40, 0.92) 0 1.4px, transparent 2px),
         radial-gradient(circle, rgba(70, 140, 255, 0.92) 0 1.4px, transparent 2px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.6px);
+        radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.6px);
       background-size: 14px 14px, 18px 18px, 20px 20px, 12px 12px;
       background-position: 12% 24%, 82% 16%, 24% 68%, 74% 62%;
     }
@@ -231,8 +249,8 @@
         );
       clip-path: polygon(0 0, 100% 8%, 92% 52%, 100% 100%, 0 92%);
       filter:
-        drop-shadow(0 0 16px rgba(255, 0, 0, 0.24))
-        drop-shadow(0 0 20px rgba(0, 98, 255, 0.12));
+        drop-shadow(0 0 16px rgba(255, 31, 31, 0.24))
+        drop-shadow(0 0 20px rgba(47, 107, 255, 0.12));
       animation: flagWave 5.5s ease-in-out infinite;
     }
 
@@ -277,21 +295,21 @@
     .firework-red {
       top: 74px;
       right: 94px;
-      color: #ff2b2b;
+      color: var(--id-red);
       animation-delay: 0s;
     }
 
     .firework-blue {
       top: 146px;
       left: 92px;
-      color: #4b8dff;
+      color: var(--id-blue);
       animation-delay: 1s;
     }
 
     .firework-white {
       top: 88px;
       left: 48%;
-      color: #ffffff;
+      color: var(--id-white);
       animation-delay: 1.9s;
     }
 
@@ -311,17 +329,17 @@
       color: #ffffff;
       text-shadow:
         0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 18px rgba(255, 0, 0, 0.55),
-        0 0 26px rgba(0, 98, 255, 0.55);
+        0 0 18px rgba(255, 31, 31, 0.55),
+        0 0 26px rgba(47, 107, 255, 0.55);
       animation: fireworkTextPulse 4.4s ease-in-out infinite;
     }
 
     .firework-text span:first-child {
-      color: #ff4d4d;
+      color: #ff5a5a;
     }
 
     .firework-text span:last-child {
-      color: #76a8ff;
+      color: #83adff;
     }
 
     .skyline-ground {
@@ -348,7 +366,7 @@
       padding: 0.35rem 0.9rem;
       border-radius: 999px;
       background:
-        linear-gradient(90deg, #ff0000 0%, #ffffff 50%, #276dff 100%);
+        linear-gradient(90deg, var(--id-red) 0%, var(--id-white) 50%, var(--id-blue) 100%);
       color: #030815;
       font-family: "Quantico", "Segoe UI", sans-serif;
       font-size: 0.82rem;
@@ -356,14 +374,122 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       box-shadow:
-        0 0 8px rgba(255, 0, 0, 0.42),
+        0 0 8px rgba(255, 31, 31, 0.42),
         0 0 16px rgba(255, 255, 255, 0.22),
-        0 0 22px rgba(0, 98, 255, 0.32);
+        0 0 22px rgba(47, 107, 255, 0.32);
       animation: uvTextFlicker 3.4s linear infinite;
     }
 
+    .independence-commercial {
+      padding: 6px 0 30px;
+    }
+
+    .independence-commercial-shell {
+      position: relative;
+      padding: clamp(1.25rem, 3vw, 1.7rem);
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(7, 16, 44, 0.94), rgba(18, 9, 22, 0.92));
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    .independence-commercial-shell::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      pointer-events: none;
+    }
+
+    .commercial-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .commercial-header h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.9rem, 5vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      text-shadow:
+        0 0 14px rgba(255, 255, 255, 0.12),
+        0 0 18px rgba(255, 31, 31, 0.14),
+        0 0 18px rgba(47, 107, 255, 0.14);
+    }
+
+    .commercial-header p {
+      max-width: 72ch;
+      margin: 0.85rem auto 0;
+      color: rgba(238, 244, 255, 0.88);
+      line-height: 1.7;
+    }
+
+    .commercial-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .commercial-burst {
+      position: relative;
+      overflow: hidden;
+      min-height: 150px;
+      padding: 1rem;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(28, 16, 25, 0.96), rgba(12, 23, 49, 0.94)),
+        radial-gradient(circle at top right, rgba(255, 31, 31, 0.16), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(47, 107, 255, 0.14), transparent 40%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        inset 0 0 18px rgba(255, 255, 255, 0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .commercial-burst::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(255, 31, 31, 0.22), transparent 18%),
+        radial-gradient(circle at 82% 22%, rgba(47, 107, 255, 0.22), transparent 18%),
+        radial-gradient(circle at 54% 68%, rgba(255, 255, 255, 0.14), transparent 18%);
+      filter: blur(12px);
+      opacity: 0.8;
+    }
+
+    .commercial-burst h3,
+    .commercial-burst p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .commercial-burst h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+
+    .commercial-burst p {
+      margin: 0.5rem 0 0;
+      color: rgba(238, 244, 255, 0.76);
+      font-size: 0.93rem;
+      line-height: 1.45;
+    }
+
     .independence-products-section {
-      padding: 28px 0 42px;
+      padding: 8px 0 42px;
     }
 
     .independence-products-header {
@@ -380,8 +506,8 @@
       letter-spacing: -0.06em;
       text-shadow:
         0 0 16px rgba(255, 255, 255, 0.12),
-        0 0 22px rgba(255, 0, 0, 0.14),
-        0 0 26px rgba(0, 98, 255, 0.14);
+        0 0 22px rgba(255, 31, 31, 0.14),
+        0 0 26px rgba(47, 107, 255, 0.14);
     }
 
     .independence-products-header p {
@@ -402,42 +528,21 @@
 
     .product-card {
       position: relative;
-      overflow: hidden;
-      min-height: 520px;
+      overflow: visible;
+      min-height: 620px;
       padding: clamp(1rem, 3vw, 1.5rem);
-      border-radius: 26px;
+      border-radius: 28px;
       background:
         linear-gradient(180deg, rgba(7, 16, 44, 0.94), rgba(18, 9, 22, 0.92)),
-        radial-gradient(circle at top right, rgba(255, 0, 0, 0.12), transparent 34%),
-        radial-gradient(circle at bottom left, rgba(0, 98, 255, 0.12), transparent 34%);
+        radial-gradient(circle at top right, rgba(255, 31, 31, 0.12), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(47, 107, 255, 0.12), transparent 34%);
       border: 1px solid rgba(255, 255, 255, 0.14);
       box-shadow:
         0 18px 46px rgba(0, 0, 0, 0.24),
-        0 0 24px rgba(255, 0, 0, 0.06),
-        0 0 28px rgba(0, 98, 255, 0.06),
+        0 0 24px rgba(255, 31, 31, 0.06),
+        0 0 28px rgba(47, 107, 255, 0.06),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
-    }
-
-    .product-card::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 18% 12%, rgba(255, 0, 0, 0.1), transparent 20%),
-        radial-gradient(circle at 86% 18%, rgba(0, 98, 255, 0.12), transparent 22%),
-        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.08), transparent 28%);
-      opacity: 0.9;
-    }
-
-    .product-card::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      pointer-events: none;
     }
 
     .product-card-header {
@@ -449,7 +554,7 @@
 
     .product-card-header p {
       margin: 0 0 0.45rem;
-      color: #ffd3d3;
+      color: #ffd9d9;
       font-size: 0.76rem;
       font-weight: 900;
       letter-spacing: 0.12em;
@@ -464,59 +569,33 @@
       letter-spacing: -0.045em;
       text-shadow:
         0 0 10px rgba(255, 255, 255, 0.14),
-        0 0 18px rgba(255, 0, 0, 0.16),
-        0 0 24px rgba(0, 98, 255, 0.16);
+        0 0 18px rgba(255, 31, 31, 0.16),
+        0 0 24px rgba(47, 107, 255, 0.16);
     }
 
-    .buy-frame {
-      position: relative;
-      z-index: 3;
-      display: grid;
-      place-items: center;
-      min-height: 420px;
-      padding: 1rem;
-      border-radius: 20px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow:
-        inset 0 0 24px rgba(255, 255, 255, 0.02),
-        0 12px 28px rgba(0, 0, 0, 0.16);
-    }
-
-    .shopify-product-node {
-      width: 100%;
-      max-width: 720px;
-    }
-
-    .shopify-product-node iframe,
-    .shopify-product-node img {
-      max-width: 100%;
-    }
-
-    .special-2026-shell {
+    .special-shell {
       position: relative;
       width: 100%;
       max-width: 760px;
       margin: 0 auto;
-      padding: 3.25rem 1.05rem;
+      padding: 3.2rem 1.05rem;
       border-radius: 30px;
       background:
-        radial-gradient(circle at 20% 18%, rgba(255, 0, 0, 0.08), transparent 22%),
-        radial-gradient(circle at 82% 20%, rgba(0, 98, 255, 0.09), transparent 24%),
+        radial-gradient(circle at 20% 18%, rgba(255, 31, 31, 0.08), transparent 22%),
+        radial-gradient(circle at 82% 20%, rgba(47, 107, 255, 0.09), transparent 24%),
         rgba(255, 255, 255, 0.025);
       box-shadow:
-        0 0 8px rgba(255, 0, 0, 0.82),
+        0 0 8px rgba(255, 31, 31, 0.82),
         0 0 16px rgba(255, 255, 255, 0.5),
-        0 0 26px rgba(0, 98, 255, 0.76),
-        0 0 52px rgba(255, 0, 0, 0.32),
+        0 0 26px rgba(47, 107, 255, 0.76),
+        0 0 52px rgba(255, 31, 31, 0.32),
         inset 0 0 14px rgba(255, 255, 255, 0.08);
       animation:
-        special2026Pulse 2.6s ease-in-out infinite,
-        special2026Hover 6s ease-in-out infinite;
+        specialPulse 2.6s ease-in-out infinite,
+        specialHover 6s ease-in-out infinite;
     }
 
-    .special-2026-shell::before {
+    .special-shell::before {
       content: "";
       position: absolute;
       inset: 9px;
@@ -525,13 +604,13 @@
       background:
         conic-gradient(
           from var(--spin-angle),
-          #ff0000,
-          #ffffff,
-          #276dff,
-          #ffffff,
-          #ff0000,
-          #276dff,
-          #ff0000
+          var(--id-red),
+          var(--id-white),
+          var(--id-blue),
+          var(--id-white),
+          var(--id-red),
+          var(--id-blue),
+          var(--id-red)
         );
       -webkit-mask:
         linear-gradient(#000 0 0) content-box,
@@ -540,13 +619,13 @@
       mask-composite: exclude;
       pointer-events: none;
       filter:
-        drop-shadow(0 0 8px rgba(255, 0, 0, 0.72))
+        drop-shadow(0 0 8px rgba(255, 31, 31, 0.72))
         drop-shadow(0 0 10px rgba(255, 255, 255, 0.42))
-        drop-shadow(0 0 14px rgba(39, 109, 255, 0.72));
+        drop-shadow(0 0 14px rgba(47, 107, 255, 0.72));
       animation: borderSpin 3.8s linear infinite;
     }
 
-    .special-2026-shell::after {
+    .special-shell::after {
       content: "";
       position: absolute;
       inset: 22px;
@@ -554,7 +633,7 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow:
         inset 0 0 18px rgba(255, 255, 255, 0.05),
-        0 0 20px rgba(255, 255, 255, 0.1);
+        0 0 20px rgba(255, 255, 255, 0.08);
       pointer-events: none;
     }
 
@@ -579,12 +658,12 @@
       color: #ffffff;
       text-shadow:
         0 0 6px rgba(255, 255, 255, 0.95),
-        0 0 14px rgba(255, 0, 0, 0.72),
-        0 0 22px rgba(0, 98, 255, 0.72);
+        0 0 14px rgba(255, 31, 31, 0.72),
+        0 0 22px rgba(47, 107, 255, 0.72);
       box-shadow:
-        0 0 8px rgba(255, 0, 0, 0.7),
+        0 0 8px rgba(255, 31, 31, 0.7),
         0 0 14px rgba(255, 255, 255, 0.42),
-        0 0 24px rgba(0, 98, 255, 0.68);
+        0 0 24px rgba(47, 107, 255, 0.68);
       animation: uvTextFlicker 3.1s linear infinite;
     }
 
@@ -643,81 +722,103 @@
     .mini-firework-1 {
       top: 74px;
       left: 22%;
-      color: #ff2b2b;
+      color: var(--id-red);
       animation-delay: 0.2s;
     }
 
     .mini-firework-2 {
       top: 120px;
       right: 18%;
-      color: #4b8dff;
+      color: var(--id-blue);
       animation-delay: 1.1s;
     }
 
     .mini-firework-3 {
       bottom: 110px;
       left: 48%;
-      color: #ffffff;
+      color: var(--id-white);
       animation-delay: 2s;
     }
 
     .mini-firework-4 {
       bottom: 84px;
       right: 34%;
-      color: #ff2b2b;
+      color: var(--id-red);
       animation-delay: 2.7s;
     }
 
-    .merica-card {
-      animation: mericaFloat 7s ease-in-out infinite;
+    .mini-firework-5 {
+      top: 44%;
+      left: 12%;
+      color: var(--id-blue);
+      animation-delay: 0.8s;
     }
 
-    .merica-card .buy-frame {
+    .mini-firework-6 {
+      top: 30%;
+      right: 12%;
+      color: var(--id-white);
+      animation-delay: 2.2s;
+    }
+
+    .special-copy {
+      position: absolute;
+      inset-inline: 1rem;
+      bottom: 1.3rem;
+      z-index: 3;
+      display: grid;
+      gap: 0.3rem;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .special-copy strong {
+      display: block;
+      font-family: "Quantico", "Segoe UI", sans-serif;
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.85),
+        0 0 14px rgba(255, 31, 31, 0.56),
+        0 0 18px rgba(47, 107, 255, 0.56);
+      animation: specialCopyPulse 4.6s ease-in-out infinite;
+    }
+
+    .special-copy span {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: rgba(242, 246, 255, 0.88);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.18);
+    }
+
+    .buy-frame {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      min-height: 430px;
+      padding: 1rem 1rem 4.8rem;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow:
-        inset 0 0 24px rgba(255, 255, 255, 0.025),
-        0 0 18px rgba(255, 0, 0, 0.1),
-        0 0 22px rgba(0, 98, 255, 0.1),
+        inset 0 0 24px rgba(255, 255, 255, 0.02),
         0 12px 28px rgba(0, 0, 0, 0.16);
     }
 
-    .merica-stripes {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 0.1;
-      background:
-        linear-gradient(
-          180deg,
-          #ff0000 0 8%,
-          #ffffff 8% 16%,
-          #ff0000 16% 24%,
-          #ffffff 24% 32%,
-          #ff0000 32% 40%,
-          #ffffff 40% 48%,
-          #ff0000 48% 56%,
-          #ffffff 56% 64%,
-          #ff0000 64% 72%,
-          #ffffff 72% 80%,
-          #ff0000 80% 88%,
-          #ffffff 88% 96%,
-          #ff0000 96% 100%
-        );
-      mix-blend-mode: screen;
+    .shopify-product-node {
+      width: 100%;
+      max-width: 720px;
     }
 
-    .merica-stripes::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 44%;
-      height: 48%;
-      background:
-        radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.8px),
-        #276dff;
-      background-size: 14px 14px;
-      background-position: 2px 3px;
+    .shopify-product-node iframe,
+    .shopify-product-node img {
+      max-width: 100%;
     }
 
     .independence-future-section {
@@ -770,8 +871,8 @@
       border-radius: 18px;
       background:
         linear-gradient(135deg, rgba(32, 18, 30, 0.96), rgba(10, 22, 48, 0.94)),
-        radial-gradient(circle at top right, rgba(255, 0, 0, 0.16), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(0, 98, 255, 0.14), transparent 40%);
+        radial-gradient(circle at top right, rgba(255, 31, 31, 0.16), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(47, 107, 255, 0.14), transparent 40%);
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: #f8fbff;
       box-shadow:
@@ -796,18 +897,6 @@
       syntax: "<angle>";
       inherits: false;
       initial-value: 0deg;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .fireworks-scene {
-        animation:
-          sceneFloat 7s ease-in-out infinite,
-          sceneGlow 4.8s ease-in-out infinite;
-      }
-
-      .independence-eyebrow {
-        animation: eyebrowPulse 4.5s ease-in-out infinite;
-      }
     }
 
     @keyframes freedomAuraSpin {
@@ -836,16 +925,16 @@
       100% {
         box-shadow:
           0 0 0 1px rgba(255, 255, 255, 0.06),
-          0 0 28px rgba(255, 0, 0, 0.12),
-          0 0 36px rgba(0, 98, 255, 0.12),
+          0 0 28px rgba(255, 31, 31, 0.12),
+          0 0 36px rgba(47, 107, 255, 0.12),
           0 20px 52px rgba(0, 0, 0, 0.28);
       }
 
       50% {
         box-shadow:
           0 0 0 1px rgba(255, 255, 255, 0.12),
-          0 0 40px rgba(255, 0, 0, 0.18),
-          0 0 52px rgba(0, 98, 255, 0.2),
+          0 0 40px rgba(255, 31, 31, 0.18),
+          0 0 52px rgba(47, 107, 255, 0.2),
           0 24px 58px rgba(0, 0, 0, 0.32);
       }
     }
@@ -855,16 +944,16 @@
       100% {
         box-shadow:
           0 8px 22px rgba(0, 0, 0, 0.08),
-          0 0 20px rgba(255, 0, 0, 0.1),
-          0 0 22px rgba(0, 98, 255, 0.1),
+          0 0 20px rgba(255, 31, 31, 0.1),
+          0 0 22px rgba(47, 107, 255, 0.1),
           inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
 
       50% {
         box-shadow:
           0 8px 24px rgba(0, 0, 0, 0.1),
-          0 0 28px rgba(255, 0, 0, 0.16),
-          0 0 32px rgba(0, 98, 255, 0.16),
+          0 0 28px rgba(255, 31, 31, 0.16),
+          0 0 32px rgba(47, 107, 255, 0.16),
           inset 0 1px 0 rgba(255, 255, 255, 0.08);
       }
     }
@@ -958,28 +1047,28 @@
       }
     }
 
-    @keyframes special2026Pulse {
+    @keyframes specialPulse {
       0%,
       100% {
         box-shadow:
-          0 0 8px rgba(255, 0, 0, 0.82),
+          0 0 8px rgba(255, 31, 31, 0.82),
           0 0 16px rgba(255, 255, 255, 0.5),
-          0 0 26px rgba(0, 98, 255, 0.76),
-          0 0 52px rgba(255, 0, 0, 0.32),
+          0 0 26px rgba(47, 107, 255, 0.76),
+          0 0 52px rgba(255, 31, 31, 0.32),
           inset 0 0 14px rgba(255, 255, 255, 0.08);
       }
 
       50% {
         box-shadow:
-          0 0 14px rgba(255, 0, 0, 1),
+          0 0 14px rgba(255, 31, 31, 1),
           0 0 24px rgba(255, 255, 255, 0.72),
-          0 0 38px rgba(0, 98, 255, 0.94),
-          0 0 68px rgba(0, 98, 255, 0.38),
+          0 0 38px rgba(47, 107, 255, 0.94),
+          0 0 68px rgba(47, 107, 255, 0.38),
           inset 0 0 20px rgba(255, 255, 255, 0.12);
       }
     }
 
-    @keyframes special2026Hover {
+    @keyframes specialHover {
       0%,
       100% {
         transform: translateY(0);
@@ -990,14 +1079,14 @@
       }
     }
 
-    @keyframes mericaFloat {
+    @keyframes specialCopyPulse {
       0%,
       100% {
-        translate: 0 0;
+        opacity: 0.82;
       }
 
       50% {
-        translate: 0 -7px;
+        opacity: 1;
       }
     }
 
@@ -1036,9 +1125,10 @@
       }
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .independence-hero-shell,
       .independence-product-grid,
+      .commercial-strip,
       .independence-future-grid {
         grid-template-columns: 1fr;
       }
@@ -1058,6 +1148,7 @@
       }
 
       .independence-hero-shell,
+      .independence-commercial-shell,
       .product-card,
       .independence-future-shell {
         border-radius: 20px;
@@ -1077,12 +1168,7 @@
         font-size: 0.8rem;
       }
 
-      .buy-frame {
-        min-height: 340px;
-        padding: 0.75rem;
-      }
-
-      .special-2026-shell {
+      .special-shell {
         padding: 3rem 0.75rem;
         border-radius: 24px;
       }
@@ -1091,6 +1177,24 @@
         font-size: 0.76rem;
         letter-spacing: 0.18em;
         padding: 0.22rem 0.78rem;
+      }
+
+      .buy-frame {
+        min-height: 380px;
+        padding: 0.75rem 0.75rem 5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -1124,19 +1228,19 @@
             <p class="independence-eyebrow">Independence Day Collection</p>
 
             <h1>
-              <span>Independence</span>
-              <span>Day</span>
-              <span>2026</span>
+              <span>America</span>
+              <span>In Full</span>
+              <span>Color</span>
             </h1>
 
             <p class="independence-hero-copy">
-              A red, white, and blue seasonal Terra Services drop built around celebration,
-              fireworks, unity, and limited-release goods. The first special product carries the
-              message: one people, one world.
+              This page is built like a commercial for America: fireworks, neon, motion,
+              red-white-and-blue spectacle, and two featured shirts at the heart of the 2026
+              Independence Day drop. One celebrates unity. The other goes full Merica.
             </p>
 
             <div class="independence-hero-actions">
-              <a href="#independence-products" class="btn btn-primary">Shop 2026 Drop</a>
+              <a href="#independence-products" class="btn btn-primary">Shop the Featured Drop</a>
               <a href="shop.html" class="btn btn-outline">Back to Shop Directory</a>
             </div>
           </div>
@@ -1161,13 +1265,47 @@
       </div>
     </section>
 
+    <section class="independence-commercial">
+      <div class="container">
+        <div class="independence-commercial-shell">
+          <div class="commercial-header">
+            <p class="independence-eyebrow">Commercial Energy</p>
+            <h2>Freedom. Fireworks. Fabric.</h2>
+            <p>
+              Two flagship shirts. One full patriotic presentation. This collection is meant to
+              feel like a glowing seasonal ad campaign rather than a plain product page.
+            </p>
+          </div>
+
+          <div class="commercial-strip">
+            <article class="commercial-burst">
+              <h3>One People One World</h3>
+              <p>Unity-themed Americana with a celebratory 2026 presentation.</p>
+            </article>
+
+            <article class="commercial-burst">
+              <h3>Merica</h3>
+              <p>Unapologetic red-white-and-blue energy with a full-feature special showcase.</p>
+            </article>
+
+            <article class="commercial-burst">
+              <h3>Annual Drop</h3>
+              <p>Designed to return and grow each year as the Independence Day collection expands.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="independence-products" class="independence-products-section">
       <div class="container">
         <div class="independence-products-header">
-          <p class="independence-eyebrow">Available Now</p>
-          <h2>2026 Independence Day Drop</h2>
+          <p class="independence-eyebrow">Featured Products</p>
+          <h2>The 2026 Independence Day Headliners</h2>
           <p>
-            Select a product below to view details, choose options, and add it to your cart.
+            Both of these shirts now receive the full special treatment: swirling neon borders,
+            floating presentation, fireworks, glowing 2026 labels, and commercial-style page
+            energy.
           </p>
         </div>
 
@@ -1178,7 +1316,7 @@
               <h3>One People One World</h3>
             </div>
 
-            <div class="special-2026-shell">
+            <div class="special-shell">
               <span class="special-label special-label-top">2026</span>
 
               <div class="special-fireworks" aria-hidden="true">
@@ -1186,11 +1324,18 @@
                 <span class="mini-firework mini-firework-2"></span>
                 <span class="mini-firework mini-firework-3"></span>
                 <span class="mini-firework mini-firework-4"></span>
+                <span class="mini-firework mini-firework-5"></span>
+                <span class="mini-firework mini-firework-6"></span>
               </div>
 
               <div class="special-product-inner">
                 <div class="buy-frame">
                   <div id="product-component-1778978476232" class="shopify-product-node"></div>
+
+                  <div class="special-copy">
+                    <strong>One People • One World</strong>
+                    <span>Celebrating America’s 250th anniversary with fireworks and unity.</span>
+                  </div>
                 </div>
               </div>
 
@@ -1198,16 +1343,36 @@
             </div>
           </article>
 
-          <article class="product-card merica-card">
-            <div class="merica-stripes" aria-hidden="true"></div>
-
+          <article class="product-card">
             <div class="product-card-header">
-              <p>Merica Version</p>
-              <h3>Merica Drop</h3>
+              <p>Special Merica Drop</p>
+              <h3>Merica</h3>
             </div>
 
-            <div class="buy-frame">
-              <div id="product-component-1778978557522" class="shopify-product-node"></div>
+            <div class="special-shell">
+              <span class="special-label special-label-top">2026</span>
+
+              <div class="special-fireworks" aria-hidden="true">
+                <span class="mini-firework mini-firework-1"></span>
+                <span class="mini-firework mini-firework-2"></span>
+                <span class="mini-firework mini-firework-3"></span>
+                <span class="mini-firework mini-firework-4"></span>
+                <span class="mini-firework mini-firework-5"></span>
+                <span class="mini-firework mini-firework-6"></span>
+              </div>
+
+              <div class="special-product-inner">
+                <div class="buy-frame">
+                  <div id="product-component-1778978557522" class="shopify-product-node"></div>
+
+                  <div class="special-copy">
+                    <strong>Merica • Red White Blue</strong>
+                    <span>Loud, proud, neon-soaked patriotic energy with full commercial treatment.</span>
+                  </div>
+                </div>
+              </div>
+
+              <span class="special-label special-label-bottom">2026</span>
             </div>
           </article>
         </div>
@@ -1221,7 +1386,7 @@
             <h2>More Independence Day Goods Coming Soon</h2>
             <p>
               Future shirts, patriotic goods, annual drops, small items, stickers, and seasonal
-              releases will appear here as they become available.
+              releases will appear here as the Independence Day section grows.
             </p>
           </div>
 
@@ -1350,10 +1515,10 @@
                 "border-radius": "14px",
                 ":hover": {
                   "color": "#000000",
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 },
                 ":focus": {
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 }
               },
               quantityInput: {
@@ -1405,10 +1570,10 @@
                 "border-radius": "14px",
                 ":hover": {
                   "color": "#000000",
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 },
                 ":focus": {
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 }
               },
               quantityInput: {
@@ -1439,10 +1604,10 @@
                 "border-radius": "14px",
                 ":hover": {
                   "color": "#000000",
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 },
                 ":focus": {
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 }
               }
             },
@@ -1461,10 +1626,10 @@
                 "background-color": "#ff0000",
                 "border-radius": "999px",
                 ":hover": {
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 },
                 ":focus": {
-                  "background-color": "#e60000"
+                  "background-color": "#d70000"
                 }
               },
               count: {
