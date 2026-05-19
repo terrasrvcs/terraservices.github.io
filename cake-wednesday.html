@@ -15,13 +15,12 @@
       position: relative;
       overflow: hidden;
       isolation: isolate;
+      color: #4d2734;
       background:
-        radial-gradient(circle at 10% 10%, rgba(255, 174, 201, 0.28), transparent 24%),
-        radial-gradient(circle at 90% 10%, rgba(255, 216, 107, 0.22), transparent 24%),
-        radial-gradient(circle at 18% 88%, rgba(255, 120, 170, 0.18), transparent 22%),
-        radial-gradient(circle at 86% 84%, rgba(255, 195, 214, 0.24), transparent 26%),
-        linear-gradient(180deg, #fff9fc 0%, #ffeef5 48%, #ffe5ef 100%);
-      color: #4f2a36;
+        radial-gradient(circle at 12% 12%, rgba(255, 133, 178, 0.24), transparent 26%),
+        radial-gradient(circle at 88% 10%, rgba(255, 210, 78, 0.22), transparent 24%),
+        radial-gradient(circle at 50% 88%, rgba(255, 138, 184, 0.18), transparent 30%),
+        linear-gradient(180deg, #fff9fc 0%, #fff0f6 48%, #ffe6ef 100%);
     }
 
     .cake-page::before {
@@ -30,41 +29,12 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.45;
+      opacity: 0.38;
       background:
-        radial-gradient(circle at 16% 22%, rgba(255, 255, 255, 0.95) 0 2px, transparent 3px),
-        radial-gradient(circle at 34% 78%, rgba(255, 255, 255, 0.9) 0 3px, transparent 4px),
-        radial-gradient(circle at 66% 18%, rgba(255, 255, 255, 0.95) 0 2px, transparent 3px),
-        radial-gradient(circle at 88% 72%, rgba(255, 255, 255, 0.85) 0 3px, transparent 4px),
-        repeating-linear-gradient(
-          45deg,
-          rgba(255, 255, 255, 0.16) 0,
-          rgba(255, 255, 255, 0.16) 1px,
-          transparent 1px,
-          transparent 48px
-        );
-    }
-
-    .cake-page::after {
-      content: "";
-      position: absolute;
-      inset: -24%;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.28;
-      filter: blur(34px);
-      background:
-        conic-gradient(
-          from 120deg,
-          transparent,
-          rgba(255, 77, 162, 0.28),
-          transparent,
-          rgba(255, 206, 77, 0.22),
-          transparent,
-          rgba(255, 123, 173, 0.3),
-          transparent
-        );
-      animation: cake-aura-spin 30s linear infinite;
+        radial-gradient(circle at 18% 26%, rgba(255, 255, 255, 0.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 32% 80%, rgba(255, 255, 255, 0.75) 0 3px, transparent 4px),
+        radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.85) 0 2px, transparent 3px),
+        radial-gradient(circle at 88% 74%, rgba(255, 255, 255, 0.72) 0 3px, transparent 4px);
     }
 
     .cake-hero,
@@ -88,14 +58,11 @@
       border-radius: 30px;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 245, 249, 0.92)),
-        radial-gradient(circle at top right, rgba(255, 87, 156, 0.08), transparent 34%),
-        radial-gradient(circle at bottom left, rgba(255, 206, 77, 0.08), transparent 34%);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 245, 249, 0.94));
       border: 1px solid rgba(255, 132, 177, 0.16);
       box-shadow:
         0 24px 58px rgba(176, 81, 118, 0.12),
-        0 0 26px rgba(255, 132, 177, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.74);
+        inset 0 1px 0 rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(12px);
     }
 
@@ -104,11 +71,8 @@
       position: absolute;
       inset: 12px;
       border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(255, 255, 255, 0.62);
       pointer-events: none;
-      box-shadow:
-        inset 0 0 20px rgba(255, 98, 158, 0.04),
-        inset 0 0 24px rgba(255, 206, 77, 0.05);
     }
 
     .cake-eyebrow {
@@ -125,9 +89,6 @@
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      box-shadow:
-        0 0 14px rgba(255, 76, 151, 0.08),
-        inset 0 0 14px rgba(255, 255, 255, 0.42);
     }
 
     .cake-hero h1 {
@@ -168,78 +129,52 @@
 
     .cake-hero-art {
       position: relative;
-      min-height: 500px;
+      min-height: 470px;
       border-radius: 24px;
       overflow: hidden;
+      isolation: isolate;
       background:
-        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.84), transparent 20%),
-        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.78), transparent 16%),
-        radial-gradient(circle at 80% 18%, rgba(255, 229, 155, 0.34), transparent 18%),
-        linear-gradient(180deg, #fffdfd 0%, #fff0f6 46%, #ffe6ef 100%);
+        radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.85), transparent 22%),
+        radial-gradient(circle at 78% 18%, rgba(255, 224, 138, 0.35), transparent 22%),
+        linear-gradient(180deg, #fffdfd 0%, #fff0f6 50%, #ffe4ee 100%);
       border: 1px solid rgba(255, 132, 177, 0.16);
       box-shadow:
-        0 0 0 1px rgba(255, 206, 77, 0.18),
-        0 0 28px rgba(255, 132, 177, 0.1),
+        0 0 0 1px rgba(255, 210, 78, 0.16),
         0 20px 52px rgba(176, 81, 118, 0.12);
-      isolation: isolate;
-      animation:
-        cake-scene-float 7s ease-in-out infinite,
-        cake-scene-glow 5s ease-in-out infinite;
+      animation: cakeSceneFloat 7s ease-in-out infinite;
     }
 
     .cake-hero-art::before {
       content: "";
       position: absolute;
-      inset: 0;
+      left: -10%;
+      right: -10%;
+      bottom: -16px;
       z-index: 1;
-      pointer-events: none;
-      opacity: 0.34;
+      height: 164px;
       background:
-        linear-gradient(rgba(255, 132, 177, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 132, 177, 0.08) 1px, transparent 1px);
-      background-size: 36px 36px;
-      transform: perspective(520px) rotateX(63deg) translateY(146px) scale(1.28);
-      transform-origin: bottom center;
+        linear-gradient(180deg, rgba(255, 196, 214, 0) 0%, rgba(255, 196, 214, 0.5) 22%, rgba(255, 161, 191, 0.9) 100%);
+      clip-path: polygon(0 62%, 10% 56%, 22% 64%, 34% 56%, 46% 62%, 58% 54%, 70% 61%, 82% 55%, 100% 62%, 100% 100%, 0 100%);
     }
 
     .cake-hero-art::after {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 11;
+      z-index: 20;
       pointer-events: none;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 14%, transparent 84%, rgba(255, 96, 150, 0.08)),
-        radial-gradient(circle at center, transparent 0 58%, rgba(176, 81, 118, 0.12) 100%);
-      opacity: 0.8;
-    }
-
-    .cake-clouds {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      opacity: 0.72;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.94) 0 16px, transparent 18px),
-        radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.8) 0 22px, transparent 24px),
-        radial-gradient(circle at 74% 18%, rgba(255, 255, 255, 0.92) 0 18px, transparent 20px),
-        radial-gradient(circle at 84% 20%, rgba(255, 255, 255, 0.78) 0 24px, transparent 26px),
-        radial-gradient(circle at 78% 82%, rgba(255, 255, 255, 0.72) 0 18px, transparent 20px),
-        radial-gradient(circle at 88% 84%, rgba(255, 255, 255, 0.64) 0 26px, transparent 28px);
-      animation: cake-cloud-drift 11s ease-in-out infinite;
+        linear-gradient(180deg, rgba(255, 255, 255, 0.32), transparent 18%, transparent 84%, rgba(255, 96, 150, 0.08)),
+        radial-gradient(circle at center, transparent 0 62%, rgba(176, 81, 118, 0.10) 100%);
     }
 
     .cake-sign {
       position: absolute;
+      z-index: 10;
       left: 50%;
-      top: 26px;
-      z-index: 8;
-      width: min(92%, 540px);
+      top: 30px;
+      width: min(88%, 440px);
       transform: translateX(-50%);
-      display: grid;
-      gap: 0.3rem;
-      justify-items: center;
       text-align: center;
       pointer-events: none;
     }
@@ -248,22 +183,20 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 74px;
-      padding: 0.55rem 1.2rem;
-      border-radius: 22px;
+      padding: 0.7rem 1.15rem;
+      border-radius: 24px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 240, 246, 0.86));
-      border: 1px solid rgba(255, 132, 177, 0.18);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 238, 245, 0.92));
+      border: 1px solid rgba(255, 132, 177, 0.22);
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.62),
-        0 10px 24px rgba(176, 81, 118, 0.08),
-        0 0 18px rgba(255, 206, 77, 0.12);
+        0 12px 24px rgba(176, 81, 118, 0.08),
+        0 0 18px rgba(255, 210, 78, 0.14);
     }
 
     .cake-sign-title strong {
       display: block;
       font-family: "Quantico", "Segoe UI", sans-serif;
-      font-size: clamp(1.85rem, 4.8vw, 3.05rem);
+      font-size: clamp(1.7rem, 4.5vw, 2.8rem);
       line-height: 0.9;
       font-weight: 900;
       letter-spacing: 0.08em;
@@ -271,18 +204,16 @@
       color: #db3d72;
       text-shadow:
         0 0 8px rgba(255, 255, 255, 0.96),
-        0 0 20px rgba(255, 96, 150, 0.18),
-        0 10px 24px rgba(176, 81, 118, 0.1);
-      animation: cake-title-pulse 4.4s ease-in-out infinite;
+        0 0 18px rgba(255, 96, 150, 0.18);
     }
 
     .cake-sign-subtitle {
       display: block;
-      margin-top: 0.3rem;
+      margin-top: 0.45rem;
       font-family: "Quantico", "Segoe UI", sans-serif;
-      font-size: clamp(0.72rem, 1.8vw, 0.95rem);
+      font-size: clamp(0.68rem, 1.7vw, 0.9rem);
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #94405b;
     }
@@ -291,102 +222,46 @@
       position: absolute;
       left: 18px;
       top: 18px;
-      z-index: 9;
+      z-index: 11;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 36px;
-      padding: 0.35rem 0.84rem;
+      min-height: 34px;
+      padding: 0.35rem 0.78rem;
       border-radius: 999px;
       background: linear-gradient(90deg, #ff78ac 0%, #ffd04c 100%);
       color: #5d2436;
       font-family: "Quantico", "Segoe UI", sans-serif;
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       font-weight: 900;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      box-shadow:
-        0 0 8px rgba(255, 120, 172, 0.2),
-        0 0 18px rgba(255, 208, 76, 0.12);
-    }
-
-    .sparkle {
-      position: absolute;
-      z-index: 5;
-      width: 20px;
-      height: 7px;
-      border-radius: 999px;
-      background: currentColor;
-      opacity: 0.94;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.24);
-      animation: sparkle-float 5.8s ease-in-out infinite;
-    }
-
-    .sparkle.s1 { top: 68px; left: 46px; color: #ff5f95; transform: rotate(24deg); }
-    .sparkle.s2 { top: 98px; right: 56px; color: #ffd24e; transform: rotate(-30deg); animation-delay: -1s; }
-    .sparkle.s3 { top: 176px; left: 94px; color: #ff87b2; transform: rotate(48deg); animation-delay: -2s; }
-    .sparkle.s4 { top: 128px; left: 55%; color: #f268a9; transform: rotate(-18deg); animation-delay: -3s; }
-    .sparkle.s5 { top: 242px; right: 94px; color: #ffd54f; transform: rotate(20deg); animation-delay: -1.5s; }
-    .sparkle.s6 { top: 286px; left: 34px; color: #ff5f95; transform: rotate(-40deg); animation-delay: -2.8s; }
-    .sparkle.s7 { top: 62px; right: 132px; color: #ff87b2; transform: rotate(16deg); animation-delay: -0.4s; }
-    .sparkle.s8 { top: 320px; right: 32px; color: #ffd24e; transform: rotate(-26deg); animation-delay: -3.4s; }
-
-    .dessert-shelf {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 4;
-      height: 164px;
-      background:
-        linear-gradient(180deg, rgba(255, 196, 214, 0) 0%, rgba(255, 196, 214, 0.5) 22%, rgba(255, 161, 191, 0.88) 100%);
-      clip-path: polygon(0 64%, 9% 58%, 20% 64%, 30% 56%, 42% 62%, 52% 52%, 64% 60%, 74% 54%, 86% 62%, 100% 56%, 100% 100%, 0 100%);
-    }
-
-    .dessert-shelf::before {
-      content: "";
-      position: absolute;
-      inset: 44px 0 0;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.24), transparent 48%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(176, 81, 118, 0.14));
     }
 
     .display-tray {
       position: absolute;
+      z-index: 4;
       left: 50%;
       bottom: 48px;
-      z-index: 6;
-      width: min(82%, 470px);
-      height: 160px;
+      width: min(82%, 440px);
+      height: 136px;
       transform: translateX(-50%);
-      border-radius: 28px 28px 24px 24px;
+      border-radius: 30px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 235, 242, 0.84));
-      border: 1px solid rgba(255, 132, 177, 0.16);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 235, 242, 0.88));
+      border: 1px solid rgba(255, 132, 177, 0.18);
       box-shadow:
         0 14px 26px rgba(176, 81, 118, 0.1),
-        inset 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    .display-tray::before {
-      content: "";
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      top: 16px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(255, 181, 205, 0.46);
+        inset 0 0 20px rgba(255, 255, 255, 0.28);
     }
 
     .display-tray::after {
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -16px;
-      width: 76%;
-      height: 22px;
+      bottom: -18px;
+      width: 74%;
+      height: 24px;
       transform: translateX(-50%);
       border-radius: 50%;
       background: radial-gradient(circle, rgba(176, 81, 118, 0.18) 0%, rgba(176, 81, 118, 0.06) 52%, transparent 82%);
@@ -397,67 +272,63 @@
       position: absolute;
       z-index: 7;
       filter: drop-shadow(0 14px 20px rgba(176, 81, 118, 0.14));
-      animation: dessert-bob 6s ease-in-out infinite;
+      animation: dessertBob 6s ease-in-out infinite;
     }
 
     .cake-slice {
       left: 50%;
-      bottom: 88px;
-      width: 210px;
-      height: 210px;
+      bottom: 84px;
+      width: 220px;
+      height: 214px;
       transform: translateX(-50%);
-      animation-delay: -0.8s;
     }
 
-    .cake-slice .cake-plate {
+    .cake-plate {
       position: absolute;
       left: 50%;
-      bottom: 10px;
-      width: 184px;
-      height: 30px;
+      bottom: 8px;
+      width: 186px;
+      height: 32px;
       transform: translateX(-50%);
       border-radius: 50%;
       background:
-        radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.92), rgba(255, 234, 242, 0.9) 70%, rgba(243, 193, 210, 0.82) 100%);
-      box-shadow:
-        inset 0 3px 0 rgba(255, 255, 255, 0.72),
-        0 4px 12px rgba(176, 81, 118, 0.1);
+        radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.95), rgba(255, 234, 242, 0.9) 70%, rgba(243, 193, 210, 0.82) 100%);
+      box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.72);
     }
 
-    .cake-slice .cake-layer {
+    .cake-layer {
       position: absolute;
       left: 50%;
       bottom: 30px;
-      width: 150px;
-      height: 112px;
+      width: 154px;
+      height: 116px;
       transform: translateX(-50%);
-      clip-path: polygon(0 100%, 22% 10%, 86% 16%, 100% 100%);
+      clip-path: polygon(0 100%, 24% 8%, 88% 16%, 100% 100%);
       background:
         linear-gradient(180deg, #fff1e6 0 16%, #ffd94d 16% 44%, #ff668f 44% 56%, #ffd94d 56% 84%, #ff668f 84% 100%);
       border-radius: 12px 16px 12px 16px;
+      border: 3px solid rgba(226, 169, 0, 0.16);
       box-shadow:
         inset -8px 0 0 rgba(204, 123, 0, 0.1),
         inset 0 10px 0 rgba(255, 255, 255, 0.16);
-      border: 3px solid rgba(226, 169, 0, 0.16);
     }
 
-    .cake-slice .cake-top {
+    .cake-top {
       position: absolute;
       left: 50%;
-      bottom: 128px;
-      width: 158px;
-      height: 42px;
+      bottom: 130px;
+      width: 162px;
+      height: 44px;
       transform: translateX(-50%);
       border-radius: 32px 32px 18px 18px;
       background:
         radial-gradient(circle at 22% 34%, rgba(255, 255, 255, 0.44), transparent 20%),
-        radial-gradient(circle at 60% 26%, rgba(255, 255, 255, 0.36), transparent 16%),
         linear-gradient(180deg, #ff84b0 0%, #ff4e7f 100%);
       border: 3px solid rgba(220, 41, 88, 0.2);
     }
 
-    .cake-slice .cake-top::before,
-    .cake-slice .cake-top::after {
+    .cake-top::before,
+    .cake-top::after {
       content: "";
       position: absolute;
       bottom: -9px;
@@ -465,29 +336,20 @@
       height: 18px;
       border-radius: 50%;
       background: #ff4e7f;
-      border-bottom: 2px solid rgba(220, 41, 88, 0.18);
     }
 
-    .cake-slice .cake-top::before { left: 10px; }
-    .cake-slice .cake-top::after { right: 8px; }
-
-    .cake-slice .cake-drip {
-      position: absolute;
-      bottom: 106px;
-      width: 18px;
-      border-radius: 0 0 20px 20px;
-      background: #ff527f;
-      opacity: 0.95;
+    .cake-top::before {
+      left: 10px;
     }
 
-    .cake-slice .drip-1 { left: 64px; height: 34px; }
-    .cake-slice .drip-2 { left: 94px; height: 46px; }
-    .cake-slice .drip-3 { left: 122px; height: 28px; }
+    .cake-top::after {
+      right: 8px;
+    }
 
-    .cake-slice .cake-cherry {
+    .cake-cherry {
       position: absolute;
-      left: 106px;
-      bottom: 150px;
+      left: 112px;
+      bottom: 154px;
       width: 38px;
       height: 36px;
       border-radius: 48% 52% 50% 50%;
@@ -495,10 +357,9 @@
         radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.72), transparent 16%),
         linear-gradient(180deg, #ff172b 0%, #d70f21 100%);
       border: 3px solid rgba(174, 0, 14, 0.22);
-      box-shadow: 0 4px 0 rgba(119, 0, 10, 0.08);
     }
 
-    .cake-slice .cake-cherry::before {
+    .cake-cherry::before {
       content: "";
       position: absolute;
       left: 16px;
@@ -511,19 +372,19 @@
     }
 
     .cupcake {
-      left: 34px;
-      bottom: 106px;
-      width: 126px;
-      height: 182px;
+      left: 42px;
+      bottom: 94px;
+      width: 122px;
+      height: 168px;
       animation-delay: -1.4s;
     }
 
-    .cupcake .cupcake-top {
+    .cupcake-top {
       position: absolute;
       left: 14px;
       right: 14px;
       top: 0;
-      height: 90px;
+      height: 86px;
       border-radius: 42px 42px 30px 30px;
       background:
         radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.56), transparent 22%),
@@ -531,12 +392,12 @@
       border: 3px solid rgba(255, 95, 149, 0.22);
     }
 
-    .cupcake .cupcake-base {
+    .cupcake-base {
       position: absolute;
       left: 24px;
       right: 24px;
       bottom: 12px;
-      height: 72px;
+      height: 70px;
       background:
         repeating-linear-gradient(
           90deg,
@@ -548,7 +409,7 @@
       border-radius: 10px 10px 16px 16px;
     }
 
-    .cupcake .cupcake-cherry {
+    .cupcake-cherry {
       position: absolute;
       top: -8px;
       left: 48px;
@@ -560,14 +421,14 @@
     }
 
     .donut {
-      right: 38px;
-      bottom: 128px;
+      right: 46px;
+      bottom: 114px;
       width: 132px;
       height: 132px;
       animation-delay: -2s;
     }
 
-    .donut .donut-ring {
+    .donut-ring {
       position: absolute;
       inset: 0;
       border-radius: 50%;
@@ -578,7 +439,7 @@
       border: 3px solid rgba(255, 107, 162, 0.18);
     }
 
-    .donut .donut-ring::before {
+    .donut-ring::before {
       content: "";
       position: absolute;
       inset: 16px;
@@ -589,25 +450,15 @@
         radial-gradient(circle at 50% 35%, #ff9bc0 0 36px, transparent 37px);
     }
 
-    .donut .donut-sprinkles {
-      position: absolute;
-      inset: 20px;
-      opacity: 0.9;
-      background:
-        linear-gradient(26deg, transparent 0 8px, #ffd24e 8px 12px, transparent 12px 18px, #ff5f95 18px 22px, transparent 22px 28px, #fff 28px 32px, transparent 32px 100%),
-        linear-gradient(-36deg, transparent 0 10px, #ff8ec1 10px 14px, transparent 14px 22px, #ffd24e 22px 26px, transparent 26px 100%);
-      border-radius: 50%;
-    }
-
     .cookie {
-      right: 128px;
-      bottom: 94px;
+      right: 132px;
+      bottom: 82px;
       width: 88px;
       height: 88px;
       animation-delay: -2.6s;
     }
 
-    .cookie .cookie-body {
+    .cookie-body {
       position: absolute;
       inset: 0;
       border-radius: 50%;
@@ -620,7 +471,7 @@
       border: 3px solid rgba(232, 165, 52, 0.18);
     }
 
-    .cookie .cookie-bite {
+    .cookie-bite {
       position: absolute;
       right: 2px;
       top: -2px;
@@ -633,66 +484,23 @@
         -3px 17px 0 #fff1f6;
     }
 
-    .milkshake {
-      left: 120px;
-      bottom: 88px;
-      width: 72px;
-      height: 146px;
-      animation-delay: -1.8s;
-    }
-
-    .milkshake .shake-cup {
+    .sprinkle {
       position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 8px;
-      height: 96px;
-      border-radius: 16px 16px 18px 18px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 233, 241, 0.94)),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 132, 177, 0.18) 0 8px,
-          rgba(255, 255, 255, 0) 8px 16px
-        );
-      border: 3px solid rgba(255, 132, 177, 0.16);
-      box-shadow: inset 0 8px 0 rgba(255, 255, 255, 0.36);
-    }
-
-    .milkshake .shake-frost {
-      position: absolute;
-      left: 6px;
-      right: 6px;
-      top: 18px;
-      height: 48px;
-      border-radius: 26px 26px 18px 18px;
-      background:
-        radial-gradient(circle at 28% 26%, rgba(255, 255, 255, 0.5), transparent 20%),
-        linear-gradient(180deg, #ff93b9 0%, #ff6fa6 100%);
-      border: 3px solid rgba(255, 95, 149, 0.2);
-    }
-
-    .milkshake .shake-cherry {
-      position: absolute;
-      left: 30px;
-      top: 2px;
+      z-index: 8;
       width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #ff2d48;
-      border: 2px solid #df0f2a;
+      height: 6px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: 0.9;
+      animation: sprinkleFloat 5.8s ease-in-out infinite;
     }
 
-    .milkshake .shake-straw {
-      position: absolute;
-      left: 42px;
-      top: -12px;
-      width: 6px;
-      height: 42px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #ffd24e 0%, #ff5f95 100%);
-      transform: rotate(10deg);
-    }
+    .sprinkle.s1 { top: 88px; left: 44px; color: #ff5f95; transform: rotate(24deg); }
+    .sprinkle.s2 { top: 96px; right: 58px; color: #ffd24e; transform: rotate(-30deg); animation-delay: -1s; }
+    .sprinkle.s3 { top: 180px; left: 92px; color: #ff87b2; transform: rotate(48deg); animation-delay: -2s; }
+    .sprinkle.s4 { top: 142px; left: 55%; color: #f268a9; transform: rotate(-18deg); animation-delay: -3s; }
+    .sprinkle.s5 { top: 250px; right: 94px; color: #ffd54f; transform: rotate(20deg); animation-delay: -1.5s; }
+    .sprinkle.s6 { top: 292px; left: 34px; color: #ff5f95; transform: rotate(-40deg); animation-delay: -2.8s; }
 
     .cake-products-section {
       padding: 26px 0 42px;
@@ -710,9 +518,6 @@
       font-size: clamp(2rem, 5vw, 3.6rem);
       line-height: 0.98;
       letter-spacing: -0.06em;
-      text-shadow:
-        0 0 12px rgba(255, 255, 255, 0.7),
-        0 0 16px rgba(255, 120, 172, 0.08);
     }
 
     .cake-products-header p {
@@ -738,32 +543,18 @@
       padding: clamp(1rem, 3vw, 1.5rem);
       border-radius: 26px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 245, 249, 0.94)),
-        radial-gradient(circle at top right, rgba(255, 98, 158, 0.09), transparent 34%);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 245, 249, 0.94));
       border: 1px solid rgba(255, 132, 177, 0.16);
       box-shadow:
         0 18px 46px rgba(176, 81, 118, 0.12),
-        0 0 24px rgba(255, 132, 177, 0.06),
         inset 0 1px 0 rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(12px);
-      animation: product-card-float 7.5s ease-in-out infinite;
+      animation: productCardFloat 7.5s ease-in-out infinite;
     }
 
     .cake-product-card:nth-child(2) { animation-delay: -1.2s; }
     .cake-product-card:nth-child(3) { animation-delay: -2.4s; }
     .cake-product-card:nth-child(4) { animation-delay: -3.6s; }
-
-    .cake-product-card::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      pointer-events: none;
-      opacity: 0.78;
-      background:
-        radial-gradient(circle at 18% 12%, rgba(255, 163, 191, 0.14), transparent 20%),
-        radial-gradient(circle at 86% 18%, rgba(255, 215, 102, 0.16), transparent 22%),
-        radial-gradient(circle at 50% 100%, rgba(255, 97, 149, 0.12), transparent 28%);
-    }
 
     .cake-product-card::after {
       content: "";
@@ -833,8 +624,6 @@
 
     .cake-product-card.is-oversized {
       overflow: visible;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 245, 249, 0.96));
       border-color: rgba(255, 0, 224, 0.2);
       box-shadow:
         0 18px 46px rgba(176, 81, 118, 0.14),
@@ -855,7 +644,7 @@
         0 0 22px rgba(255, 77, 243, 0.7),
         0 0 40px rgba(255, 77, 243, 0.45),
         inset 0 0 12px rgba(255, 77, 243, 0.18);
-      animation: oversized-frame-pulse 2.2s ease-in-out infinite;
+      animation: oversizedFramePulse 2.2s ease-in-out infinite;
     }
 
     .oversized-shell::before {
@@ -864,9 +653,6 @@
       inset: 10px;
       border: 2px solid rgba(255, 110, 247, 0.75);
       border-radius: 18px;
-      box-shadow:
-        0 0 8px rgba(255, 77, 243, 0.45),
-        inset 0 0 8px rgba(255, 77, 243, 0.18);
       pointer-events: none;
     }
 
@@ -885,14 +671,6 @@
       letter-spacing: 0.22em;
       color: #050505;
       text-transform: uppercase;
-      box-shadow:
-        0 0 5px rgba(255, 77, 243, 0.95),
-        0 0 12px rgba(255, 77, 243, 0.9),
-        0 0 20px rgba(255, 77, 243, 0.65);
-      text-shadow:
-        0 0 1px rgba(0, 0, 0, 0.95),
-        0 0 2px rgba(0, 0, 0, 0.75);
-      animation: oversized-text-flicker 3.1s linear infinite;
       z-index: 2;
     }
 
@@ -948,8 +726,7 @@
       padding: 1rem;
       border-radius: 18px;
       background:
-        linear-gradient(135deg, rgba(255, 241, 246, 0.98), rgba(255, 230, 238, 0.96)),
-        radial-gradient(circle at top right, rgba(255, 201, 64, 0.14), transparent 40%);
+        linear-gradient(135deg, rgba(255, 241, 246, 0.98), rgba(255, 230, 238, 0.96));
       border: 1px solid rgba(255, 255, 255, 0.7);
       color: #4d2734;
       box-shadow:
@@ -970,66 +747,27 @@
       line-height: 1.45;
     }
 
-    @keyframes cake-aura-spin {
-      0% { transform: rotate(0deg) scale(1); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-
-    @keyframes cake-scene-float {
+    @keyframes cakeSceneFloat {
       0%, 100% { translate: 0 0; }
       50% { translate: 0 -7px; }
     }
 
-    @keyframes cake-scene-glow {
-      0%, 100% {
-        box-shadow:
-          0 0 0 1px rgba(255, 206, 77, 0.18),
-          0 0 28px rgba(255, 132, 177, 0.1),
-          0 20px 52px rgba(176, 81, 118, 0.12);
-      }
-
-      50% {
-        box-shadow:
-          0 0 0 1px rgba(255, 206, 77, 0.24),
-          0 0 40px rgba(255, 132, 177, 0.16),
-          0 0 54px rgba(255, 96, 150, 0.1),
-          0 24px 58px rgba(176, 81, 118, 0.14);
-      }
+    @keyframes dessertBob {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -7px; }
     }
 
-    @keyframes cake-cloud-drift {
-      0%, 100% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(8px) translateY(-6px); }
-    }
-
-    @keyframes sparkle-float {
+    @keyframes sprinkleFloat {
       0%, 100% { translate: 0 0; }
       50% { translate: 0 -8px; }
     }
 
-    @keyframes cake-title-pulse {
-      0%, 100% {
-        opacity: 0.92;
-        transform: scale(0.99);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.025);
-      }
-    }
-
-    @keyframes dessert-bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    @keyframes product-card-float {
+    @keyframes productCardFloat {
       0%, 100% { translate: 0 0; }
       50% { translate: 0 -7px; }
     }
 
-    @keyframes oversized-frame-pulse {
+    @keyframes oversizedFramePulse {
       0%, 100% {
         box-shadow:
           0 0 6px rgba(255, 77, 243, 0.9),
@@ -1049,13 +787,6 @@
       }
     }
 
-    @keyframes oversized-text-flicker {
-      0%, 18%, 22%, 36%, 64%, 100% { opacity: 1; }
-      20% { opacity: 0.72; }
-      37% { opacity: 0.82; }
-      65% { opacity: 0.75; }
-    }
-
     @media (max-width: 960px) {
       .cake-hero-shell,
       .cake-product-grid,
@@ -1066,28 +797,23 @@
 
     @media (max-width: 700px) {
       .cake-slice {
-        width: 188px;
-        height: 188px;
+        width: 190px;
+        height: 190px;
       }
 
       .cupcake {
         left: 16px;
-        transform: scale(0.9);
+        transform: scale(0.86);
       }
 
       .donut {
         right: 18px;
-        transform: scale(0.88);
+        transform: scale(0.84);
       }
 
       .cookie {
-        right: 88px;
-        transform: scale(0.88);
-      }
-
-      .milkshake {
-        left: 92px;
-        transform: scale(0.9);
+        right: 92px;
+        transform: scale(0.82);
       }
     }
 
@@ -1111,85 +837,72 @@
       }
 
       .cake-hero-art {
-        min-height: 430px;
+        min-height: 410px;
         border-radius: 20px;
       }
 
       .cake-sign {
-        top: 48px;
+        top: 46px;
       }
 
       .cake-sign-title strong {
-        font-size: clamp(1.55rem, 9vw, 2.35rem);
+        font-size: clamp(1.5rem, 9vw, 2.2rem);
       }
 
       .cake-sign-subtitle {
-        font-size: 0.64rem;
+        font-size: 0.62rem;
         letter-spacing: 0.1em;
       }
 
       .scene-badge {
-        font-size: 0.66rem;
-        letter-spacing: 0.1em;
+        font-size: 0.64rem;
+        letter-spacing: 0.08em;
       }
 
       .display-tray {
         width: min(88%, 380px);
-        height: 136px;
-        bottom: 38px;
+        height: 126px;
+        bottom: 36px;
       }
 
       .cake-slice {
-        width: 162px;
-        height: 162px;
-        bottom: 74px;
+        width: 158px;
+        height: 158px;
+        bottom: 72px;
       }
 
-      .cake-slice .cake-layer {
-        width: 126px;
-        height: 94px;
+      .cake-layer {
+        width: 122px;
+        height: 90px;
       }
 
-      .cake-slice .cake-top {
-        width: 132px;
-        bottom: 108px;
+      .cake-top {
+        width: 128px;
+        bottom: 104px;
       }
 
-      .cake-slice .cake-drip.d1,
-      .cake-slice .drip-1 {
-        left: 50px;
-      }
-
-      .cake-slice .drip-2 {
-        left: 76px;
-      }
-
-      .cake-slice .drip-3 {
-        left: 100px;
+      .cake-cherry {
+        left: 96px;
+        bottom: 128px;
+        transform: scale(0.82);
       }
 
       .cupcake {
-        left: 4px;
-        bottom: 92px;
-        transform: scale(0.72);
-      }
-
-      .donut {
-        right: 2px;
-        bottom: 112px;
-        transform: scale(0.72);
-      }
-
-      .cookie {
-        right: 60px;
-        bottom: 82px;
+        left: 0;
+        bottom: 84px;
         transform: scale(0.68);
       }
 
-      .milkshake {
-        left: 58px;
+      .donut {
+        right: -4px;
+        bottom: 106px;
+        transform: scale(0.68);
+      }
+
+      .cookie {
+        right: 52px;
         bottom: 76px;
-        transform: scale(0.72);
+        transform: scale(0.62);
       }
 
       .cake-buy-frame {
@@ -1258,8 +971,8 @@
 
             <p class="cake-hero-copy">
               Cake Wednesday is playful, sugary, and gloriously unserious in the best possible way.
-              This collection leans into bakery-window energy with bright dessert colors, soft neon glow,
-              and a sweet-shop poster feel built right into the page.
+              This collection keeps the hero clean and bakery-inspired with a bright cake display,
+              soft pink glow, and sweet-shop energy.
             </p>
 
             <div class="cake-hero-actions">
@@ -1269,25 +982,21 @@
           </div>
 
           <div class="cake-hero-art" aria-hidden="true">
-            <span class="scene-badge">Bakery Display Online</span>
-
-            <div class="cake-clouds"></div>
+            <span class="scene-badge">Bakery Display</span>
 
             <div class="cake-sign">
               <div class="cake-sign-title">
                 <strong>Cake Wednesday</strong>
               </div>
-              <span class="cake-sign-subtitle">Fresh Merch • Sweet Designs • Wednesdays Deserve Better</span>
+              <span class="cake-sign-subtitle">Fresh Merch • Sweet Designs</span>
             </div>
 
-            <span class="sparkle s1"></span>
-            <span class="sparkle s2"></span>
-            <span class="sparkle s3"></span>
-            <span class="sparkle s4"></span>
-            <span class="sparkle s5"></span>
-            <span class="sparkle s6"></span>
-            <span class="sparkle s7"></span>
-            <span class="sparkle s8"></span>
+            <span class="sprinkle s1"></span>
+            <span class="sprinkle s2"></span>
+            <span class="sprinkle s3"></span>
+            <span class="sprinkle s4"></span>
+            <span class="sprinkle s5"></span>
+            <span class="sprinkle s6"></span>
 
             <div class="display-tray"></div>
 
@@ -1295,9 +1004,6 @@
               <div class="cake-plate"></div>
               <div class="cake-layer"></div>
               <div class="cake-top"></div>
-              <div class="cake-drip drip-1"></div>
-              <div class="cake-drip drip-2"></div>
-              <div class="cake-drip drip-3"></div>
               <div class="cake-cherry"></div>
             </div>
 
@@ -1309,22 +1015,12 @@
 
             <div class="dessert donut">
               <div class="donut-ring"></div>
-              <div class="donut-sprinkles"></div>
             </div>
 
             <div class="dessert cookie">
               <div class="cookie-body"></div>
               <div class="cookie-bite"></div>
             </div>
-
-            <div class="dessert milkshake">
-              <div class="shake-straw"></div>
-              <div class="shake-cherry"></div>
-              <div class="shake-frost"></div>
-              <div class="shake-cup"></div>
-            </div>
-
-            <div class="dessert-shelf"></div>
           </div>
         </div>
       </div>
@@ -1404,8 +1100,8 @@
           <div class="cake-future-header">
             <h2>More Cake Wednesday Goods Coming Soon</h2>
             <p>
-              Future Cake Wednesday drops, sticker ideas, bakery-themed expansions, and more sweet nonsense
-              can be added here as the collection grows.
+              Future Cake Wednesday drops, bakery-themed expansions, and more sweet nonsense can be
+              added here as the collection grows.
             </p>
           </div>
 
